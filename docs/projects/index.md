@@ -15,10 +15,13 @@ The Manitec empire in project form. Each one built with purpose — some finishe
 | [Manitec Apps](manitec-apps.md) | Python | 🟢 Updated Mar 26 | — |
 | [Ebbinor](ebbinor.md) | Luanti/Minetest, C | 🔵 Maintenance | [ebbinor.joesfaves.com](https://ebbinor.joesfaves.com) |
 | [Joe's Faves](joesfaves.md) | Bootstrap, DashNex, Froala | 🟢 Live | [joesfaves.com](https://joesfaves.com) |
+| [Control Hub](control-hub.md) | DashNex | 🟢 Live | — |
+| [Command Hub](command-hub.md) | Next.js, Vercel | 🟢 Live | — |
+| [Nyx](nyx.md) | Perplexity, HF MCP, GitHub MCP | 🟢 Active | — |
+| [Tasks](tasks.md) | GitHub Issues, MkDocs Snippets | 🟢 Auto-updated | — |
 
 ## Related Pages
 
-- [Tasks](tasks.md)
 - [Infrastructure](../infra/index.md)
 - [Tools & Services](../infra/tools.md)
 
