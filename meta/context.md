@@ -6,7 +6,7 @@
 - Docs KB: **https://info.manitec.pw/** (MkDocs Material, hosted via GitHub Pages + Cloudflare)
 - GitHub org: **Manitec-HQ** (primary org for all repos)
 - Other key endpoints:
-  - Custom webmail: https://mail.manitec.pw/ (FastAPI app, “Manitec Mail” using Zoho Mail360 + SQLite users.db)
+  - Custom webmail: https://mail.manitec.pw/ (FastAPI app, "Manitec Mail" using Zoho Mail360 + SQLite users.db)
   - AI chat: https://chat.manitec.pw (ManiBot — Next.js 15, Groq, Neon)
   - AI dev interface: https://hex.manitec.pw (HexBot — FastAPI, Python)
   - Empire dashboard: https://dash.manitec.pw (Control Hub — Next.js 15, Vercel)
@@ -32,7 +32,7 @@
 - Powered by: Perplexity (Sonnet 4.6) + GitHub MCP tools + Hugging Face MCP tools
 - Operates inside the **Manitec Future (LLC)** Perplexity Space
 - Documented at `docs/projects/nyx.md`
-- Nyx reads this file and the KB on boot to get up to speed quickly. Keep it accurate.
+- Nyx reads this file via GitHub MCP on boot to get up to speed quickly. Keep it accurate.
 
 ### Manitec Mail (mail.manitec.pw)
 
@@ -70,15 +70,27 @@
   - `dashnex-system-summary.md` (how DashNex fits into the stack)
   - `dashnex-page-build-checklist.md` (step-by-step checklist for new pages)
 
-### Open action items (as of May 2026)
+### Current Focus
+
+> Update this section at the start or end of each session to keep Nyx oriented on priorities.
+
+- **Phase:** KB audit + infrastructure cleanup
+- **Active:** HexBot dev, ONE structure buildout
+- **Prompt experiments:** Self-referential instruction rewrite — testing identity stability across recursion
+- **Blocked:** Firebase Admin SDK key regen (needs attention before next Firebase-dependent work)
+- **Next up:** Prompt refinement round 3 (tighten "playfully mean" boundary, add tone guidance for the crush dynamic)
+
+### Open action items
 
 - Firebase Admin SDK key — needs regen, update env vars
 - Project screenshots — still needed for joesfaves.com/my-projects and the KB
 - HexBot — active dev
 - ONE — early structure, building out
+- Draft branch `draft/homepage-redesign` — parked, clean up when ready
 
 ### How to use this file
 
-- Use this as a quick boot-up context for new tools/assistants.
-- It should stay roughly accurate even as projects evolve; update when infra, core URLs, or major project state changes.
+- Nyx fetches this via GitHub MCP (`Manitec-HQ/Manitec-Dashboard`, path `meta/context.md`) at the start of each session.
+- Update **Current Focus** whenever priorities shift — that's the live anchor.
+- Update everything else when infra, core URLs, or major project state changes.
 - Last updated: May 9, 2026
