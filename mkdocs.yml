@@ -106,3 +106,8 @@ nav:
   - Philosophy:
     - Overview: philosophy/index.md
     - Countertheism: philosophy/countertheism.md
+  - ONE:
+    - Overview: ONE/README.md
+    - ECKO: ONE/ecko/README.md
+    - Nyxbot: ONE/nyxbot/README.md
+    - Governance: ONE/governance/README.md
