@@ -1,7 +1,7 @@
 site_name: Manitec Projects KB
 site_url: https://info.manitec.pw/
-repo_url: https://github.com/Manitec/Manitec-Dashboard
-repo_name: Manitec/Manitec-Dashboard
+repo_url: https://github.com/Manitec-HQ/Manitec-Dashboard
+repo_name: Manitec-HQ/Manitec-Dashboard
 
 theme:
   name: material
