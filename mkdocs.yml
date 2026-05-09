@@ -31,7 +31,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Manitec
+      link: https://github.com/Manitec-HQ
     - icon: fontawesome/solid/globe
       link: https://manitec.pw
 

@@ -28,6 +28,7 @@ Cloudflare (DNS/CDN)
 | Chat | HexBot | [hex.manitec.pw](https://hex.manitec.pw) | AI chat interface |
 | Chat | ManiBot | [chat.manitec.pw](https://chat.manitec.pw) | Personal AI assistant |
 | Dashboard | Control Hub | [dash.manitec.pw](https://dash.manitec.pw) | Empire command center |
+| API | GenX Router | — | Internal routing API |
 
 !!! warning "Action Items"
     - Regenerate Firebase Admin SDK key (see env var CSV).
