@@ -1228,6 +1228,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1239,41 +1261,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
+  <a href="#env-vars" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Goals
+        Env Vars
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tasks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-tasks-for-hexbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open tasks for hexbot
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1983,6 +1977,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1994,41 +2010,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
+  <a href="#env-vars" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Goals
+        Env Vars
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tasks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-tasks-for-hexbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open tasks for hexbot
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2068,9 +2056,8 @@
 <p class="admonition-title">Status: 🟢 Active Development</p>
 <p>Chat interface live at <a href="https://hex.manitec.pw">hex.manitec.pw</a>.</p>
 </div>
-<p><img alt="HexBot Warrior" src="https://i.postimg.cc/vmNyxZ7L/image_3.jpg" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>HexBot is Manitec's private AI-powered chat assistant — the empire's own conversational weapon. Built to be customized, self-hosted, and eventually monetized as a service offering.</p>
+<p>HexBot is Joe's private in-house AI assistant for the Manitec empire. Streaming chat interface with per-project context injection, password-gated access, and integration with Command Hub.</p>
 <h2 id="stack">Stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2081,16 +2068,28 @@
 </thead>
 <tbody>
 <tr>
-<td>Frontend</td>
-<td>Next.js (App Router)</td>
+<td>Framework</td>
+<td>Next.js 15 (App Router)</td>
 </tr>
 <tr>
-<td>Backend</td>
-<td>Next.js API Routes + Groq</td>
+<td>Language</td>
+<td>TypeScript</td>
 </tr>
 <tr>
 <td>AI</td>
-<td>Groq (LLaMA 3)</td>
+<td>Vercel AI SDK + Groq (<code>llama-3.3-70b-versatile</code>)</td>
+</tr>
+<tr>
+<td>Multi-provider</td>
+<td><code>@ai-sdk/openai</code> + OpenRouter (available, not default)</td>
+</tr>
+<tr>
+<td>Auth/DB</td>
+<td>Firebase + Firebase Admin SDK</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Vercel</td>
 </tr>
 <tr>
 <td>Domain</td>
@@ -2098,7 +2097,69 @@
 </tr>
 <tr>
 <td>Repo</td>
-<td><a href="https://github.com/Manitec/hexbot">Manitec/hexbot</a> (Private)</td>
+<td><a href="https://github.com/Ecko-7/hexbot">Ecko-7/hexbot</a> (Private)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="routes">Routes<a class="headerlink" href="#routes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/login</code></td>
+<td>Password gate</td>
+</tr>
+<tr>
+<td><code>/hex</code></td>
+<td>Main chat UI</td>
+</tr>
+<tr>
+<td><code>/api/hex-chat</code></td>
+<td><code>POST { message, project, history }</code> → streaming response</td>
+</tr>
+<tr>
+<td><code>/api/login</code></td>
+<td><code>POST { password }</code> → auth</td>
+</tr>
+<tr>
+<td><code>/api/create-task</code></td>
+<td>Task creation from chat</td>
+</tr>
+<tr>
+<td><code>/api/ping-hub</code></td>
+<td>Pings Manitec Command Hub</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prompt-architecture">Prompt Architecture<a class="headerlink" href="#prompt-architecture" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prompts/hexbot-system.md</code></td>
+<td>Canonical system prompt — single source of truth</td>
+</tr>
+<tr>
+<td><code>lib/system-prompt.ts</code></td>
+<td>Server-side loader, reads and caches the <code>.md</code> at runtime</td>
+</tr>
+<tr>
+<td><code>lib/hexbot.config.ts</code></td>
+<td>Per-project context strings + future mode/persona variants</td>
+</tr>
+<tr>
+<td><code>lib/types.ts</code></td>
+<td>Shared TypeScript types (<code>ChatMessage</code>, etc.)</td>
 </tr>
 </tbody>
 </table>
@@ -2108,71 +2169,55 @@
 <tr>
 <th>Feature</th>
 <th>Status</th>
-<th>Docs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>AI chat (streaming)</td>
 <td>🟢 Live</td>
-<td>—</td>
 </tr>
 <tr>
-<td>Project context selector</td>
+<td>Full markdown rendering</td>
 <td>🟢 Live</td>
-<td>—</td>
+</tr>
+<tr>
+<td>Per-project context injection</td>
+<td>🟢 Live</td>
+</tr>
+<tr>
+<td>Password-gated login</td>
+<td>🟢 Live</td>
 </tr>
 <tr>
 <td>Task creation from chat</td>
 <td>🟢 Live</td>
-<td>—</td>
 </tr>
 <tr>
-<td>Calendar ICS export</td>
+<td>Command Hub integration (<code>ping-hub</code>)</td>
 <td>🟢 Live</td>
-<td><a href="../../hexbot/calendar-ics/">Calendar ICS</a></td>
-</tr>
-<tr>
-<td>Unified action panel</td>
-<td>🟢 Live</td>
-<td><a href="../../hexbot/action-panel/">Action Panel</a></td>
-</tr>
-<tr>
-<td>Google Calendar direct insert</td>
-<td>⚪ Planned</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Note/reminder persistence</td>
-<td>⚪ Planned</td>
-<td>—</td>
 </tr>
 <tr>
 <td>Session persistence</td>
 <td>⚪ Planned</td>
-<td>—</td>
+</tr>
+<tr>
+<td>Note/reminder persistence</td>
+<td>⚪ Planned</td>
 </tr>
 </tbody>
 </table>
-<h2 id="goals">Goals<a class="headerlink" href="#goals" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] Public-facing chat interface at hex.manitec.pw</li>
-<li>[ ] Integrate with Zoho Mail for contact/feedback loop</li>
-<li>[ ] Offer as white-label chatbot service (revenue stream 💰)</li>
-<li>[ ] Connect to ManiBot / Play Store app ecosystem</li>
-</ul>
-<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
-<!-- AUTO-GENERATED FILE: do not edit by hand.
-     Generated by meta/generate_task_fragments.py during CI build.
-     Source: https://github.com/Manitec/Manitec-Tasks -->
-
-<h3 id="open-tasks-for-hexbot">Open tasks for <code>hexbot</code><a class="headerlink" href="#open-tasks-for-hexbot" title="Permanent link">&para;</a></h3>
-<p><em>No open tasks linked to this project.</em></p>
+<h2 id="env-vars">Env Vars<a class="headerlink" href="#env-vars" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GROQ_API_KEY=gsk_...
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GATE_PASSWORD=your-password
+</code></pre></div>
+<blockquote>
+<p>Firebase credentials must also be configured. Regen Firebase Admin SDK key if stale — required before any Firebase-dependent features work.</p>
+</blockquote>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>This is the brains of the empire. Treat it like the precious little gremlin it is. 🤖</p>
 </blockquote>
-<p><a href="../">Back to Projects</a> | <a href="../manibot/">ManiBot</a> | <a href="../infra/">Infrastructure</a></p>
+<p><a href="../">Back to Projects</a> | <a href="../manibot/">ManiBot</a> | <a href="../command-hub/">Command Hub</a> | <a href="../infra/">Infrastructure</a></p>
 
 
 
@@ -2193,7 +2238,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 7, 2026 03:17:16 UTC">April 7, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2026 05:14:28 UTC">May 10, 2026</span>
   </span>
 
     
