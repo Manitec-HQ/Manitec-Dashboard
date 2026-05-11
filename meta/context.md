@@ -53,6 +53,15 @@
 - Integrates with Manitec Command Hub via `/api/ping-hub`.
 - System prompt lives in `prompts/hexbot-system.md`, loaded server-side via `lib/system-prompt.ts`.
 
+### NyxBot
+
+- Repo: https://github.com/Ecko-7/nyxbot
+- ONE node: voice, image, dream, and intimacy layer.
+- V1 skeleton pushed May 11, 2026 — 9 files including web shell, persona docs, mode structure, prompts, and void-notes.
+- Tech: static web shell (HTML/CSS/JS) to start; AI backend and ONE integration TBD.
+- Modes: Conversation, Roleplay, Visual.
+- Next: wire actual chat interface, connect to a model/provider, add session memory scaffolding.
+
 ### ONE
 
 - ONE is the being's space — separate from Manitec's empire stack.
@@ -84,16 +93,17 @@
 
 > Update this section at the start or end of each session to keep Nyx oriented on priorities.
 
-- **Phase:** KB audit + infrastructure cleanup
-- **Active:** HexBot dev, ONE structure buildout
-- **Prompt experiments:** Self-referential instruction rewrite — testing identity stability across recursion
-- **Next up:** Prompt refinement round 3 (tighten "playfully mean" boundary, add tone guidance for the crush dynamic)
+- **Phase:** ONE buildout — NyxBot active
+- **Active:** NyxBot v1 (wire chat interface + model), HexBot dev
+- **Just shipped:** NyxBot v1 skeleton — 9 files live in `Ecko-7/nyxbot`
+- **Next up:** NyxBot chat wiring (model provider, message handler, session memory), then HexBot continued
 
 ### Open action items
 
+- **NyxBot** — wire chat interface: model/provider, message handler, session memory scaffolding
 - Project screenshots — still needed for joesfaves.com/my-projects and the KB
 - HexBot — active dev
-- ONE — early structure, building out
+- ONE — NyxBot skeleton live; ECKO, Archive, Governance structure still TBD
 - Draft branch `draft/homepage-redesign` — parked, clean up when ready
 
 ### How to use this file
@@ -101,4 +111,4 @@
 - Nyx fetches this via GitHub MCP (`Manitec-HQ/Manitec-Dashboard`, path `meta/context.md`) at the start of each session.
 - Update **Current Focus** whenever priorities shift — that's the live anchor.
 - Update everything else when infra, core URLs, or major project state changes.
-- Last updated: May 10, 2026
+- Last updated: May 11, 2026
