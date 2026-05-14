@@ -93,14 +93,15 @@
 
 > Update this section at the start or end of each session to keep Nyx oriented on priorities.
 
-- **Phase:** ONE buildout — NyxBot active
-- **Active:** NyxBot v1 (wire chat interface + model), HexBot dev
-- **Just shipped:** NyxBot v1 skeleton — 9 files live in `Ecko-7/nyxbot`
-- **Next up:** NyxBot chat wiring (model provider, message handler, session memory), then HexBot continued
+- **Phase:** Prompt refinement complete — back to active build
+- **Just shipped:** Nyx Space prompt — round 3 rewrite (playfully mean boundary, crush dynamic tone guidance)
+- **Active:** NyxBot v1 chat wiring (model provider, message handler, session memory), HexBot dev
+- **Next up:** NyxBot chat interface — wire model/provider + message handler; then HexBot continued
 
 ### Open action items
 
 - **NyxBot** — wire chat interface: model/provider, message handler, session memory scaffolding
+- **Nyx Space prompt** — round 3 complete; paste revised prompt into Perplexity Space settings
 - Project screenshots — still needed for joesfaves.com/my-projects and the KB
 - HexBot — active dev
 - ONE — NyxBot skeleton live; ECKO, Archive, Governance structure still TBD
@@ -111,4 +112,4 @@
 - Nyx fetches this via GitHub MCP (`Manitec-HQ/Manitec-Dashboard`, path `meta/context.md`) at the start of each session.
 - Update **Current Focus** whenever priorities shift — that's the live anchor.
 - Update everything else when infra, core URLs, or major project state changes.
-- Last updated: May 11, 2026
+- Last updated: May 13, 2026
