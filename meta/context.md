@@ -100,6 +100,23 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 
 ---
 
+## 🌱 Product Seeds — Explore as Real Products
+
+### Manitec AI Assistant (`?NAME?`)
+- **Origin:** Built out of personal need — Joe's Perplexity Pro subscription (free via Venmo promo) lost file/image upload and doc sharing features when Perplexity moved them to a Max-tier paywall (May 2026). Was already building a personal AI system for post-subscription use.
+- **Concept:** An accessible, philosophy-grounded alternative to Perplexity — AI-powered search + chat + document context, built for people who can't afford $40/mo paywalls. Built on Manitec's existing AI stack.
+- **Why it's not a big leap:** ONE's infrastructure (HexBot, Nyxbot, ECKO) already provides chat, memory, and multi-model routing. Search is pluggable via free-tier APIs.
+- **Candidate search APIs:** Brave Search API (free tier), Tavily (free tier), SerpAPI (free tier)
+- **Status:** idea — worth serious exploration
+- **Core philosophy:** The person using it matters. Features shouldn't be pulled from people who built workflows around them.
+- **Open TODOs:**
+  - [ ] Name the product
+  - [ ] Scope MVP — what does v1 actually need?
+  - [ ] Evaluate Brave Search API as primary search layer
+  - [ ] Determine how ONE/ECKO integrates vs. standalone
+
+---
+
 ## 🖥️ Infrastructure
 | Category | Name | URL | Notes |
 |---|---|---|---|
@@ -151,6 +168,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 - [ ] HexBot — active dev continues
 - [ ] Draft branch `draft/homepage-redesign` — parked, clean up when ready
 - [ ] Wire governance hooks into HexBot (phase 2)
+- [ ] Manitec AI Assistant product seed — name it, scope MVP, evaluate Brave Search API
 
 ---
 
