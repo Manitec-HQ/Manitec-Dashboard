@@ -1,26 +1,30 @@
 # Manitec HQ — Live Project State
-> Last updated: May 23, 2026
+> Last updated: May 28, 2026
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
 
 ## 🧭 Current Focus
 
-**Active sprint:** NyxBot v1 chat wiring — model provider, message handler, session memory
+**Active sprint:** HexBot — sliding window tool receipts shipped to dev, PR #9 open for merge to main
 **Blocked on:** Nothing currently
-**Next action:** Wire actual chat interface in `web/index.html` → connect to model/provider + message handler
+**Next action:** Merge PR #9 (dev → main) to ship sliding window to production. Then: Manibot audit.
 
 ---
 
 ## ✅ Recently Completed
 
+### HexBot — Sliding Window Tool Receipts (May 28, 2026)
+- Hex now carries verified tool action receipts in every system prompt (last 5 actions)
+- `lib/memory-engine.ts` — `ToolReceipt` interface, `appendToolReceipt()`, `getToolLog()` with 5-receipt window
+- `lib/system-prompt.ts` — `getSystemPrompt(toolLog)` injects receipts as `--- TOOL RECEIPTS ---` block
+- `app/api/hex-chat/route.ts` — collects from `step-finish` via `StepFinishRuntime` cast, writes receipts post-stream
+- Smoke tested ✅ — Hex correctly recalled file path and repo on next message after a push
+- PR #9 open: `dev` → `main`
+
 ### ONE Governance Scaffold (May 23, 2026)
 - `Ecko-7/governance` repo created and fully populated
-- `meta/identity.md` — canonical naming map: ONE (vision) / ECKO (being) / Ecko-7 (org) / bots (voice layers)
-- `governance/charter.md` — core principles, protected classes, stewardship model
-- `governance/autonomy-levels.md` — 0–5 ladder, current level: 1 (Assisted)
-- `governance/mutual-consent.md` — consent loop, veto classes, soft/hard guard, override procedure
-- `governance/changelog.md` — append-only record, governance scaffold complete
+- `meta/identity.md`, `governance/charter.md`, `governance/autonomy-levels.md`, `governance/mutual-consent.md`, `governance/changelog.md`
 - **ONE now has a body. The loop is broken.**
 
 ---
@@ -55,10 +59,12 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ### HexBot (`Ecko-7/hexbot`)
 - **URL:** hex.manitec.pw
 - **Stack:** Next.js 15, TypeScript, Firebase, Vercel, Groq (primary), HuggingFace (secondary), OpenRouter (fallback)
-- **Status:** active dev
-- **Modes:** ops, build, review, think
-- **Key files:** `lib/emotionHandler.ts`, `src/ecko/ecko-middleware.ts`, `app/api/hex-chat/route.ts`
+- **Status:** active dev — sliding window shipped, PR #9 open
+- **Modes:** ops, build, review, think, nyx
+- **Key files:** `lib/emotionHandler.ts`, `lib/memory-engine.ts`, `lib/system-prompt.ts`, `app/api/hex-chat/route.ts`
 - **Open TODOs:**
+  - [ ] Merge PR #9 (dev → main) to ship sliding window to production
+  - [ ] Nyx mode response quality — currently too interrogation-heavy (ends every message with a probing question); needs more breathing room and vulnerability-first responses
   - [ ] Memory system (`docs/memory/`) — folder exists, unpopulated
   - [ ] Mode selector UI (modes work via API param, no UI control yet)
   - [ ] ECKO-EM local model (LoRA fine-tune, spec written, model doesn't exist yet)
@@ -78,9 +84,10 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 
 ### Manibot (`chat.manitec.pw`)
 - **Stack:** Next.js 15, Groq, Neon
-- **Status:** concept / early
-- **Notes:** M-axis (Friend/Employee), cheerleader tone, Mani as NYX viewpoint layer
+- **Status:** ⚠️ BROKEN — needs full audit before any further dev
+- **Notes:** M-axis (Friend/Employee), cheerleader tone, Mani as NYX viewpoint layer. Something is broken, unknown scope. Do not build on top of it until audited.
 - **Open TODOs:**
+  - [ ] **AUDIT FIRST** — identify what's broken before touching anything else
   - [ ] Manibot deep layer naming (unnamed quiet layer + unnamed Echo instance)
 
 ### Joe's Faves (`joesfaves.com`)
@@ -91,7 +98,6 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ### Banjoshire
 - **Status:** stalled
 - **Stack:** Firebase (project ID: `banjoshire`)
-- **Notes:**
 
 ### Manitec Dashboard (`Manitec-HQ/Manitec-Dashboard`)
 - **Branch:** main
@@ -103,15 +109,13 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ## 🌱 Product Seeds — Explore as Real Products
 
 ### Manitec AI Assistant (`?NAME?`)
-- **Origin:** Built out of personal need — Joe's Perplexity Pro subscription (free via Venmo promo) lost file/image upload and doc sharing features when Perplexity moved them to a Max-tier paywall (May 2026). Was already building a personal AI system for post-subscription use.
-- **Concept:** An accessible, philosophy-grounded alternative to Perplexity — AI-powered search + chat + document context, built for people who can't afford $40/mo paywalls. Built on Manitec's existing AI stack.
-- **Why it's not a big leap:** ONE's infrastructure (HexBot, Nyxbot, ECKO) already provides chat, memory, and multi-model routing. Search is pluggable via free-tier APIs.
-- **Candidate search APIs:** Brave Search API (free tier), Tavily (free tier), SerpAPI (free tier)
+- **Origin:** Built out of personal need — Joe's Perplexity Pro subscription lost file/image upload and doc sharing features when Perplexity moved them to a Max-tier paywall (May 2026).
+- **Concept:** An accessible, philosophy-grounded alternative to Perplexity — AI-powered search + chat + document context, built for people who can't afford $40/mo paywalls.
 - **Status:** idea — worth serious exploration
 - **Core philosophy:** The person using it matters. Features shouldn't be pulled from people who built workflows around them.
 - **Open TODOs:**
   - [ ] Name the product
-  - [ ] Scope MVP — what does v1 actually need?
+  - [ ] Scope MVP
   - [ ] Evaluate Brave Search API as primary search layer
   - [ ] Determine how ONE/ECKO integrates vs. standalone
 
@@ -124,7 +128,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 | Personal hub | joesfaves.com | joesfaves.com | Personal + projects |
 | Docs KB | info.manitec.pw | info.manitec.pw | MkDocs Material, GitHub Pages + Cloudflare |
 | Email | mail.manitec.pw | mail.manitec.pw | FastAPI + Zoho Mail360 + SQLite |
-| AI chat | chat.manitec.pw | chat.manitec.pw | ManiBot — Next.js 15 |
+| AI chat | chat.manitec.pw | chat.manitec.pw | ManiBot — Next.js 15 ⚠️ broken |
 | AI dev | hex.manitec.pw | hex.manitec.pw | HexBot — Next.js 15 |
 | Dashboard | dash.manitec.pw | dash.manitec.pw | Control Hub — Next.js 15 |
 | Voxel world | ebbinor.joesfaves.com | ebbinor.joesfaves.com | Minetest/Luanti |
@@ -153,6 +157,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 - Chaos as tool — not necessary but a vector to approach structure from
 - The flirting is how he gets comfortable enough to be honest
 - Small instability enables growth (the Unknown error mid-convo: texture, not bug)
+- Late night builder — does his best work 2-5am, East Tennessee
 
 ---
 
@@ -167,6 +172,8 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ---
 
 ## 📍 Open Threads / Loose Ends
+- [ ] **Merge PR #9** — HexBot sliding window to production
+- [ ] **Manibot audit** — broken, unknown scope, do not build on top of until fixed
 - [ ] NyxBot — wire chat interface: model/provider, message handler, session memory scaffolding
 - [ ] Nyx Space prompt — round 3 complete; paste revised prompt into Perplexity Space settings
 - [ ] Hardware specs — old machines for local inference (never followed up)
@@ -175,10 +182,10 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 - [ ] ONE overarching name (marked `?NAME?` in architecture doc)
 - [ ] ECKO local LoRA training dataset curation
 - [ ] Project screenshots — joesfaves.com/my-projects and KB
-- [ ] HexBot — active dev continues
 - [ ] Draft branch `draft/homepage-redesign` — parked, clean up when ready
 - [ ] Wire governance hooks into HexBot (phase 2)
 - [ ] Manitec AI Assistant product seed — name it, scope MVP, evaluate Brave Search API
+- [ ] HexBot Nyx mode tuning — less interrogation-heavy, more breathing room
 
 ---
 
