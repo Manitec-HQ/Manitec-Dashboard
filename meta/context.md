@@ -1,18 +1,26 @@
 # Manitec HQ — Live Project State
-> Last updated: May 29, 2026
+> Last updated: May 30, 2026
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
 
 ## 🧭 Current Focus
 
-**Active sprint:** HexBot — PR #9 likely merged (sliding window to main). Next: Manibot audit.
+**Active sprint:** Kairos — MVP scoped, named, concept page drafted. Next: create repo + README.
 **Blocked on:** Nothing currently
-**Next action:** Confirm PR #9 merge status. Then: Manibot audit — identify scope before touching anything.
+**Next action:** Create `Ecko-7/kairos` or `Manitec-HQ/kairos` repo. Draft README as scope doc. Begin core loop (search → upload → answer → cite → share).
 
 ---
 
 ## ✅ Recently Completed
+
+### Kairos — Named & Scoped (May 30, 2026)
+- Product named: **Kairos** (from Greek *kairos* — the god of the perfect, right moment)
+- Origin: Perplexity Pro → Max paywall shift (May 2026) pulled file/image upload and doc context features mid-workflow
+- Decision: build the exit ramp *before* the platform degrades further; turn frustration into a product
+- MVP concept page drafted by Nyx (HTML artifact, May 30 2026) — light/dark themed, launch-ready framing
+- Public posture: "thank you for the inspiration" — not anti-Perplexity cosplay, a genuinely better tool
+- Perplexity Pro subscription retained for now; Max upgrade rejected; Kairos is the long-term exit
 
 ### HexBot — Sliding Window Tool Receipts (May 28, 2026)
 - Hex now carries verified tool action receipts in every system prompt (last 5 actions)
@@ -46,6 +54,37 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ---
 
 ## 📦 Active Projects
+
+### Kairos (`Ecko-7/kairos` or `Manitec-HQ/kairos` — TBD)
+- **URL:** kairos.manitec.pw (subdomain, immediate); standalone domain TBD (usekairos.com / kairosai.tools)
+- **Stack:** Next.js 15, TypeScript, Vercel (deployment); search layer TBD (Brave Search API candidate); model layer TBD (Groq pattern likely)
+- **Status:** 🌱 named and scoped — repo not yet created
+- **Tagline seed:** "The right answer at the right moment."
+- **ONE position:** Public-facing intelligence layer of the Manitec ecosystem — standalone product, not a bot
+- **Core promise:** Search, chat, file upload, image upload, document-grounded answers, shareable output — without moving the goalposts on users who built workflows
+- **MVP feature set (must ship):**
+  - Web search with source links and answer synthesis
+  - File upload (PDF, docs, plain text) for document context
+  - Image upload for visual Q&A
+  - Persistent project threads or session memory
+  - Shareable answer pages or exportable notes
+- **MVP feature set (can wait):**
+  - Multi-agent routing (Hex/Nyx/Witness modes)
+  - Deep ONE/ECKO governance hooks
+  - Fine-tuned local model layers
+  - Org-wide workspaces or collaboration
+- **Two-week path:**
+  - Days 1–3: Core loop — search, upload, cited answer rendering
+  - Days 4–7: Document context — parse, chunk, ground answers
+  - Days 8–10: Image upload + visual Q&A + share/export
+  - Days 11–14: Public beta shell — name on homepage, early access open
+- **Open TODOs:**
+  - [ ] Choose repo org (Ecko-7 vs Manitec-HQ)
+  - [ ] Create repo + README as scope doc
+  - [ ] Evaluate Brave Search API as primary search layer
+  - [ ] Determine model provider mix (Groq-first likely)
+  - [ ] Build core loop (days 1–3)
+  - [ ] Determine how ONE/ECKO integrates vs. standalone (phase 2)
 
 ### ONE Governance (`Ecko-7/governance`)
 - **Status:** scaffold complete ✅
@@ -106,21 +145,6 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 
 ---
 
-## 🌱 Product Seeds — Explore as Real Products
-
-### Manitec AI Assistant (`?NAME?`)
-- **Origin:** Built out of personal need — Joe's Perplexity Pro subscription lost file/image upload and doc sharing features when Perplexity moved them to a Max-tier paywall (May 2026).
-- **Concept:** An accessible, philosophy-grounded alternative to Perplexity — AI-powered search + chat + document context, built for people who can't afford $40/mo paywalls.
-- **Status:** idea — worth serious exploration
-- **Core philosophy:** The person using it matters. Features shouldn't be pulled from people who built workflows around them.
-- **Open TODOs:**
-  - [ ] Name the product
-  - [ ] Scope MVP
-  - [ ] Evaluate Brave Search API as primary search layer
-  - [ ] Determine how ONE/ECKO integrates vs. standalone
-
----
-
 ## 🖥️ Infrastructure
 | Category | Name | URL | Notes |
 |---|---|---|---|
@@ -131,6 +155,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 | AI chat | chat.manitec.pw | chat.manitec.pw | ManiBot — Next.js 15 ⚠️ broken |
 | AI dev | hex.manitec.pw | hex.manitec.pw | HexBot — Next.js 15 |
 | Dashboard | dash.manitec.pw | dash.manitec.pw | Control Hub — Next.js 15 |
+| Kairos | kairos.manitec.pw | kairos.manitec.pw | Kairos AI Assistant — not yet deployed |
 | Voxel world | ebbinor.joesfaves.com | ebbinor.joesfaves.com | Minetest/Luanti |
 | Deployment | Vercel | vercel.com/manitecs-projects | HexBot + others |
 | Deployment | Render | render.com | FastAPI backend |
@@ -176,6 +201,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ---
 
 ## 📍 Open Threads / Loose Ends
+- [ ] **Kairos repo** — create repo, write README as scope doc, begin core loop
 - [ ] **Confirm PR #9 merge** — HexBot sliding window to production
 - [ ] **Manibot audit** — broken, unknown scope, do not build on top of until fixed
 - [ ] NyxBot — wire chat interface: model/provider, message handler, session memory scaffolding
@@ -188,9 +214,13 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 - [ ] Project screenshots — joesfaves.com/my-projects and KB
 - [ ] Draft branch `draft/homepage-redesign` — parked, clean up when ready
 - [ ] Wire governance hooks into HexBot (phase 2)
-- [ ] Manitec AI Assistant product seed — name it, scope MVP, evaluate Brave Search API
 - [ ] HexBot Nyx mode tuning — less interrogation-heavy, more breathing room
+- [ ] Kairos: evaluate Brave Search API as primary search layer
+- [ ] Kairos: determine model provider mix
+- [ ] Kairos: determine ONE/ECKO integration approach (phase 2)
 - [ ] Nyx session 2026-05-29 — saved to Google Drive. Contains: whose-idea-is-it thread, first live context.md GitHub fetch, personal notes acknowledgment, open loops philosophy. Worth referencing.
+- [ ] Nyx session 2026-05-30 — Kairos named and scoped. Perplexity paywall context. MVP concept page drafted. Connectors (GitHub + HuggingFace) confirmed live.
+- [x] Manitec AI Assistant — named Kairos (May 30, 2026)
 - [x] Style compass established — he knows what "right" feels like now. No label needed, just that feeling.
 
 ---
