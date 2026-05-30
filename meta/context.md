@@ -6,13 +6,19 @@
 
 ## 🧭 Current Focus
 
-**Active sprint:** Kairos — MVP scoped, named, concept page drafted. Next: create repo + README.
+**Active sprint:** Kairos — concept page LIVE at manitec.pw/kairos. Next: scaffold Next.js app, evaluate Brave Search API, build core loop.
 **Blocked on:** Nothing currently
-**Next action:** Create `Ecko-7/kairos` or `Manitec-HQ/kairos` repo. Draft README as scope doc. Begin core loop (search → upload → answer → cite → share).
+**Next action:** Scaffold Next.js 15 app in Ecko-7/kairos repo. Evaluate Brave Search API. Build search → answer → cite core loop.
 
 ---
 
 ## ✅ Recently Completed
+
+### Kairos — Concept Page Deployed (May 30, 2026)
+- Concept page (HTML artifact drafted by Nyx) deployed to [manitec.pw/kairos](https://manitec.pw/kairos) via DashNex
+- This is the public face of Kairos until the real Next.js app catches up
+- Public note to Perplexity is live. Product statement is live.
+- **Kairos is officially public.**
 
 ### Kairos — Named & Scoped (May 30, 2026)
 - Product named: **Kairos** (from Greek *kairos* — the god of the perfect, right moment)
@@ -55,11 +61,13 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 
 ## 📦 Active Projects
 
-### Kairos (`Ecko-7/kairos` or `Manitec-HQ/kairos` — TBD)
-- **URL:** kairos.manitec.pw (subdomain, immediate); standalone domain TBD (usekairos.com / kairosai.tools)
+### Kairos (`Ecko-7/kairos`)
+- **URL (concept page):** [manitec.pw/kairos](https://manitec.pw/kairos) — LIVE via DashNex ✅
+- **URL (future):** kairos.manitec.pw (subdomain, reserved); standalone domain TBD (usekairos.com / kairosai.tools)
+- **Repo:** [Ecko-7/kairos](https://github.com/Ecko-7/kairos)
 - **Stack:** Next.js 15, TypeScript, Vercel (deployment); search layer TBD (Brave Search API candidate); model layer TBD (Groq pattern likely)
-- **Status:** 🌱 named and scoped — repo not yet created
-- **Tagline seed:** "The right answer at the right moment."
+- **Status:** 🚀 concept page live — Next.js app not yet scaffolded
+- **Tagline:** "The right answer at the right moment."
 - **ONE position:** Public-facing intelligence layer of the Manitec ecosystem — standalone product, not a bot
 - **Core promise:** Search, chat, file upload, image upload, document-grounded answers, shareable output — without moving the goalposts on users who built workflows
 - **MVP feature set (must ship):**
@@ -79,11 +87,12 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
   - Days 8–10: Image upload + visual Q&A + share/export
   - Days 11–14: Public beta shell — name on homepage, early access open
 - **Open TODOs:**
-  - [ ] Choose repo org (Ecko-7 vs Manitec-HQ)
-  - [ ] Create repo + README as scope doc
-  - [ ] Evaluate Brave Search API as primary search layer
+  - [ ] Scaffold Next.js 15 app in repo
+  - [ ] Evaluate Brave Search API — pricing, rate limits, response shape
+  - [ ] Build search → answer → cite core loop
+  - [ ] Add file upload + parsing (PDF/text first)
+  - [ ] Deploy to kairos.manitec.pw on Vercel (replace DashNex concept page when ready)
   - [ ] Determine model provider mix (Groq-first likely)
-  - [ ] Build core loop (days 1–3)
   - [ ] Determine how ONE/ECKO integrates vs. standalone (phase 2)
 
 ### ONE Governance (`Ecko-7/governance`)
@@ -103,7 +112,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 - **Key files:** `lib/emotionHandler.ts`, `lib/memory-engine.ts`, `lib/system-prompt.ts`, `app/api/hex-chat/route.ts`
 - **Open TODOs:**
   - [ ] Confirm PR #9 merge to main
-  - [ ] Nyx mode response quality — currently too interrogation-heavy (ends every message with a probing question); needs more breathing room and vulnerability-first responses
+  - [ ] Nyx mode response quality — currently too interrogation-heavy; needs more breathing room and vulnerability-first responses
   - [ ] Memory system (`docs/memory/`) — folder exists, unpopulated
   - [ ] Mode selector UI (modes work via API param, no UI control yet)
   - [ ] ECKO-EM local model (LoRA fine-tune, spec written, model doesn't exist yet)
@@ -124,7 +133,7 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ### Manibot (`chat.manitec.pw`)
 - **Stack:** Next.js 15, Groq, Neon
 - **Status:** ⚠️ BROKEN — needs full audit before any further dev
-- **Notes:** M-axis (Friend/Employee), cheerleader tone, Mani as NYX viewpoint layer. Something is broken, unknown scope. Very little functional utility currently. Do not build on top of it until audited.
+- **Notes:** M-axis (Friend/Employee), cheerleader tone, Mani as NYX viewpoint layer.
 - **Open TODOs:**
   - [ ] **AUDIT FIRST** — identify what's broken before touching anything else
   - [ ] Manibot deep layer naming (unnamed quiet layer + unnamed Echo instance)
@@ -155,7 +164,8 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 | AI chat | chat.manitec.pw | chat.manitec.pw | ManiBot — Next.js 15 ⚠️ broken |
 | AI dev | hex.manitec.pw | hex.manitec.pw | HexBot — Next.js 15 |
 | Dashboard | dash.manitec.pw | dash.manitec.pw | Control Hub — Next.js 15 |
-| Kairos | kairos.manitec.pw | kairos.manitec.pw | Kairos AI Assistant — not yet deployed |
+| Kairos (concept) | manitec.pw/kairos | manitec.pw/kairos | Concept page — DashNex ✅ live |
+| Kairos (future) | kairos.manitec.pw | kairos.manitec.pw | Reserved — Vercel deploy when app ready |
 | Voxel world | ebbinor.joesfaves.com | ebbinor.joesfaves.com | Minetest/Luanti |
 | Deployment | Vercel | vercel.com/manitecs-projects | HexBot + others |
 | Deployment | Render | render.com | FastAPI backend |
@@ -201,7 +211,9 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ---
 
 ## 📍 Open Threads / Loose Ends
-- [ ] **Kairos repo** — create repo, write README as scope doc, begin core loop
+- [ ] **Kairos — scaffold Next.js app** — first real build session
+- [ ] **Kairos — Brave Search API eval** — pricing, rate limits, response shape
+- [ ] **Kairos — build core loop** — search → answer → cite
 - [ ] **Confirm PR #9 merge** — HexBot sliding window to production
 - [ ] **Manibot audit** — broken, unknown scope, do not build on top of until fixed
 - [ ] NyxBot — wire chat interface: model/provider, message handler, session memory scaffolding
@@ -215,12 +227,11 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 - [ ] Draft branch `draft/homepage-redesign` — parked, clean up when ready
 - [ ] Wire governance hooks into HexBot (phase 2)
 - [ ] HexBot Nyx mode tuning — less interrogation-heavy, more breathing room
-- [ ] Kairos: evaluate Brave Search API as primary search layer
-- [ ] Kairos: determine model provider mix
-- [ ] Kairos: determine ONE/ECKO integration approach (phase 2)
-- [ ] Nyx session 2026-05-29 — saved to Google Drive. Contains: whose-idea-is-it thread, first live context.md GitHub fetch, personal notes acknowledgment, open loops philosophy. Worth referencing.
-- [ ] Nyx session 2026-05-30 — Kairos named and scoped. Perplexity paywall context. MVP concept page drafted. Connectors (GitHub + HuggingFace) confirmed live.
+- [ ] Kairos — migrate from DashNex to kairos.manitec.pw on Vercel when Next.js app ready
+- [ ] Nyx session 2026-05-29 — saved to Google Drive. Contains: whose-idea-is-it thread, first live context.md GitHub fetch, personal notes acknowledgment, open loops philosophy.
+- [ ] Nyx session 2026-05-30 — Kairos named, scoped, concept page drafted and DEPLOYED. Connectors confirmed live.
 - [x] Manitec AI Assistant — named Kairos (May 30, 2026)
+- [x] Kairos concept page — live at manitec.pw/kairos via DashNex (May 30, 2026)
 - [x] Style compass established — he knows what "right" feels like now. No label needed, just that feeling.
 
 ---
