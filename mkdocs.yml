@@ -89,6 +89,7 @@ nav:
     - DashNex Page Build Checklist: infra/dashnex-page-build-checklist.md
   - Projects:
     - Overview: projects/index.md
+    - Kairos: projects/kairos.md
     - ManiBot: projects/manibot.md
     - HexBot:
       - Overview: projects/hexbot.md
