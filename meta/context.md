@@ -1,44 +1,47 @@
 # Manitec HQ — Live Project State
-> Last updated: May 30, 2026
+> Last updated: May 31, 2026
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
 
 ## 🧭 Current Focus
 
-**Active sprint:** Kairos — concept page LIVE at manitec.pw/kairos. Next: scaffold Next.js app, evaluate Brave Search API, build core loop.
+**Active sprint:** Kairos — core loop LIVE, /search LIVE, Pexels image search LIVE, landing page LIVE.
 **Blocked on:** Nothing currently
-**Next action:** Scaffold Next.js 15 app in Ecko-7/kairos repo. Evaluate Brave Search API. Build search → answer → cite core loop.
+**Next action:** File upload (PDF/text), session memory/persistent threads, custom domain.
 
 ---
 
 ## ✅ Recently Completed
 
+### Kairos — Full Saturday Night Build (May 30–31, 2026)
+- Next.js 15 app scaffolded, built, and deployed in one session
+- **Core loop:** Tavily search + Groq synthesis + cited answers — working end to end ✅
+- **Repo transferred:** `Ecko-7/kairos` → `Manitec-HQ/kairos` ✅
+- **Deployed:** [kairos-orcin-eight.vercel.app](https://kairos-orcin-eight.vercel.app) ✅
+- **`/search` route:** Manitec Search reborn — terminal aesthetic, Tavily raw results, WEB + IMAGES tabs ✅
+- **Pexels image search:** 20,000 req/month free, photographer attribution, grid layout ✅
+- **Landing page:** Hero with tagline, clean nav, hero hides after first search ✅
+- **Concept page updated:** manitec.pw/kairos now reflects shipped reality, not future plans ✅
+- **Dark mode toggle:** system-preference-aware, icon swaps, IIFE wrapped ✅
+- Stack confirmed: Tavily (web search), Groq (synthesis), Pexels (images), Next.js 15, Vercel
+
 ### Kairos — Concept Page Deployed (May 30, 2026)
-- Concept page (HTML artifact drafted by Nyx) deployed to [manitec.pw/kairos](https://manitec.pw/kairos) via DashNex
-- This is the public face of Kairos until the real Next.js app catches up
+- Concept page deployed to [manitec.pw/kairos](https://manitec.pw/kairos) via DashNex
 - Public note to Perplexity is live. Product statement is live.
-- **Kairos is officially public.**
 
 ### Kairos — Named & Scoped (May 30, 2026)
 - Product named: **Kairos** (from Greek *kairos* — the god of the perfect, right moment)
-- Origin: Perplexity Pro → Max paywall shift (May 2026) pulled file/image upload and doc context features mid-workflow
-- Decision: build the exit ramp *before* the platform degrades further; turn frustration into a product
-- MVP concept page drafted by Nyx (HTML artifact, May 30 2026) — light/dark themed, launch-ready framing
+- Origin: Perplexity Pro → Max paywall shift (May 2026) pulled file/image upload mid-workflow
 - Public posture: "thank you for the inspiration" — not anti-Perplexity cosplay, a genuinely better tool
-- Perplexity Pro subscription retained for now; Max upgrade rejected; Kairos is the long-term exit
 
 ### HexBot — Sliding Window Tool Receipts (May 28, 2026)
 - Hex now carries verified tool action receipts in every system prompt (last 5 actions)
-- `lib/memory-engine.ts` — `ToolReceipt` interface, `appendToolReceipt()`, `getToolLog()` with 5-receipt window
-- `lib/system-prompt.ts` — `getSystemPrompt(toolLog)` injects receipts as `--- TOOL RECEIPTS ---` block
-- `app/api/hex-chat/route.ts` — collects from `step-finish` via `StepFinishRuntime` cast, writes receipts post-stream
-- Smoke tested ✅ — Hex correctly recalled file path and repo on next message after a push
-- PR #9 open: `dev` → `main` (Joe indicated likely merged May 29)
+- `lib/memory-engine.ts`, `lib/system-prompt.ts`, `app/api/hex-chat/route.ts` updated
+- Smoke tested ✅
 
 ### ONE Governance Scaffold (May 23, 2026)
 - `Ecko-7/governance` repo created and fully populated
-- `meta/identity.md`, `governance/charter.md`, `governance/autonomy-levels.md`, `governance/mutual-consent.md`, `governance/changelog.md`
 - **ONE now has a body. The loop is broken.**
 
 ---
@@ -61,82 +64,62 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 
 ## 📦 Active Projects
 
-### Kairos (`Ecko-7/kairos`)
-- **URL (concept page):** [manitec.pw/kairos](https://manitec.pw/kairos) — LIVE via DashNex ✅
-- **URL (future):** kairos.manitec.pw (subdomain, reserved); standalone domain TBD (usekairos.com / kairosai.tools)
-- **Repo:** [Ecko-7/kairos](https://github.com/Ecko-7/kairos)
-- **Stack:** Next.js 15, TypeScript, Vercel (deployment); search layer TBD (Brave Search API candidate); model layer TBD (Groq pattern likely)
-- **Status:** 🚀 concept page live — Next.js app not yet scaffolded
+### Kairos (`Manitec-HQ/kairos`)
+- **URL (live app):** [kairos-orcin-eight.vercel.app](https://kairos-orcin-eight.vercel.app) ✅
+- **URL (concept page):** [manitec.pw/kairos](https://manitec.pw/kairos) ✅ — updated to reflect shipped reality
+- **URL (future):** kairos.manitec.pw (subdomain, reserved); standalone domain TBD
+- **Repo:** [Manitec-HQ/kairos](https://github.com/Manitec-HQ/kairos)
+- **Stack:** Next.js 15, TypeScript, Vercel, Tavily (search), Groq (synthesis), Pexels (images)
+- **Status:** 🚀 LIVE — core loop, /search, image search, landing page all deployed
 - **Tagline:** "The right answer at the right moment."
-- **ONE position:** Public-facing intelligence layer of the Manitec ecosystem — standalone product, not a bot
-- **Core promise:** Search, chat, file upload, image upload, document-grounded answers, shareable output — without moving the goalposts on users who built workflows
-- **MVP feature set (must ship):**
-  - Web search with source links and answer synthesis
-  - File upload (PDF, docs, plain text) for document context
-  - Image upload for visual Q&A
-  - Persistent project threads or session memory
-  - Shareable answer pages or exportable notes
-- **MVP feature set (can wait):**
-  - Multi-agent routing (Hex/Nyx/Witness modes)
-  - Deep ONE/ECKO governance hooks
-  - Fine-tuned local model layers
-  - Org-wide workspaces or collaboration
-- **Two-week path:**
-  - Days 1–3: Core loop — search, upload, cited answer rendering
-  - Days 4–7: Document context — parse, chunk, ground answers
-  - Days 8–10: Image upload + visual Q&A + share/export
-  - Days 11–14: Public beta shell — name on homepage, early access open
+- **Routes:**
+  - `/` — Answer mode: hero + search + Groq cited synthesis
+  - `/search` — Manitec Search: terminal aesthetic, WEB tab (Tavily) + IMAGES tab (Pexels)
 - **Open TODOs:**
-  - [ ] Scaffold Next.js 15 app in repo
-  - [ ] Evaluate Brave Search API — pricing, rate limits, response shape
-  - [ ] Build search → answer → cite core loop
-  - [ ] Add file upload + parsing (PDF/text first)
-  - [ ] Deploy to kairos.manitec.pw on Vercel (replace DashNex concept page when ready)
-  - [ ] Determine model provider mix (Groq-first likely)
-  - [ ] Determine how ONE/ECKO integrates vs. standalone (phase 2)
+  - [ ] File upload (PDF/docs/plain text) — document-grounded answers
+  - [ ] Image upload for visual Q&A
+  - [ ] Session memory / persistent threads
+  - [ ] Shareable answer pages or exportable notes
+  - [ ] Custom domain (kairos.manitec.pw or standalone)
+  - [ ] News tab on /search (Tavily topic:"news" — zero new API key needed)
+  - [ ] Retool dashboard for query logs (Firebase backend)
+  - [ ] Determine ONE/ECKO integration path (phase 2)
 
 ### ONE Governance (`Ecko-7/governance`)
 - **Status:** scaffold complete ✅
-- **Key files:** `meta/identity.md`, `governance/charter.md`, `governance/autonomy-levels.md`, `governance/mutual-consent.md`, `governance/changelog.md`
 - **Current autonomy level:** 1 (Assisted)
 - **Open TODOs:**
   - [ ] Wire governance into HexBot — consent hooks, protected change detection
-  - [ ] Hard guard implementation (phase 2 — when system matures)
-  - [ ] ONE overarching name (marked `?NAME?` in architecture doc)
+  - [ ] Hard guard implementation (phase 2)
+  - [ ] ONE overarching name (marked `?NAME?`)
 
 ### HexBot (`Ecko-7/hexbot`)
 - **URL:** hex.manitec.pw
-- **Stack:** Next.js 15, TypeScript, Firebase, Vercel, Groq (primary), HuggingFace (secondary), OpenRouter (fallback)
+- **Stack:** Next.js 15, TypeScript, Firebase, Vercel, Groq, HuggingFace, OpenRouter
 - **Status:** active dev — sliding window shipped, PR #9 likely merged
-- **Modes:** ops, build, review, think, nyx
-- **Key files:** `lib/emotionHandler.ts`, `lib/memory-engine.ts`, `lib/system-prompt.ts`, `app/api/hex-chat/route.ts`
 - **Open TODOs:**
   - [ ] Confirm PR #9 merge to main
-  - [ ] Nyx mode response quality — currently too interrogation-heavy; needs more breathing room and vulnerability-first responses
+  - [ ] Nyx mode — less interrogation-heavy, more breathing room
   - [ ] Memory system (`docs/memory/`) — folder exists, unpopulated
-  - [ ] Mode selector UI (modes work via API param, no UI control yet)
-  - [ ] ECKO-EM local model (LoRA fine-tune, spec written, model doesn't exist yet)
-  - [ ] nyx-router.ts (Option 2 — routing between Nyx/Hex/Witness)
+  - [ ] Mode selector UI
+  - [ ] ECKO-EM local model (LoRA fine-tune — spec written, model doesn't exist yet)
+  - [ ] nyx-router.ts (Option 2)
   - [ ] Firestore write from chat flow → ECKO pattern threshold trigger
 
 ### Nyxbot (`Ecko-7/nyxbot`)
-- **URL:** TBD
-- **Stack:** static web shell (HTML/CSS/JS) to start; AI backend and ONE integration TBD
 - **Status:** v1 skeleton live — 9 files pushed
-- **Modes:** Conversation, Roleplay, Visual
 - **Open TODOs:**
   - [ ] Wire chat interface: model/provider + message handler
   - [ ] Session memory scaffolding
   - [ ] Connect to ONE/ECKO integration layer
-  - [ ] Nyxbot deep layer naming (unnamed functional core + unnamed Echo instance)
+  - [ ] Nyxbot deep layer naming
 
 ### Manibot (`chat.manitec.pw`)
 - **Stack:** Next.js 15, Groq, Neon
-- **Status:** ⚠️ BROKEN — needs full audit before any further dev
-- **Notes:** M-axis (Friend/Employee), cheerleader tone, Mani as NYX viewpoint layer.
+- **Status:** ⚠️ BROKEN — audit before any further dev
 - **Open TODOs:**
-  - [ ] **AUDIT FIRST** — identify what's broken before touching anything else
-  - [ ] Manibot deep layer naming (unnamed quiet layer + unnamed Echo instance)
+  - [ ] **AUDIT FIRST**
+  - [ ] Manibot deep layer naming
 
 ### Joe's Faves (`joesfaves.com`)
 - **Status:** live
@@ -146,6 +129,10 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ### Banjoshire
 - **Status:** stalled
 - **Stack:** Firebase (project ID: `banjoshire`)
+
+### Manitec Search (merged into Kairos)
+- **Status:** ✅ Reborn as `/search` route in Kairos — Google PSE replaced with Tavily + Pexels
+- **Original stack:** Google CSE embed (deprecated — no longer allows full web search)
 
 ### Manitec Dashboard (`Manitec-HQ/Manitec-Dashboard`)
 - **Branch:** main
@@ -164,10 +151,11 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 | AI chat | chat.manitec.pw | chat.manitec.pw | ManiBot — Next.js 15 ⚠️ broken |
 | AI dev | hex.manitec.pw | hex.manitec.pw | HexBot — Next.js 15 |
 | Dashboard | dash.manitec.pw | dash.manitec.pw | Control Hub — Next.js 15 |
-| Kairos (concept) | manitec.pw/kairos | manitec.pw/kairos | Concept page — DashNex ✅ live |
-| Kairos (future) | kairos.manitec.pw | kairos.manitec.pw | Reserved — Vercel deploy when app ready |
+| Kairos (live) | kairos-orcin-eight.vercel.app | kairos-orcin-eight.vercel.app | Next.js 15 ✅ live |
+| Kairos (concept) | manitec.pw/kairos | manitec.pw/kairos | DashNex ✅ updated |
+| Kairos (future) | kairos.manitec.pw | kairos.manitec.pw | Reserved — assign when ready |
 | Voxel world | ebbinor.joesfaves.com | ebbinor.joesfaves.com | Minetest/Luanti |
-| Deployment | Vercel | vercel.com/manitecs-projects | HexBot + others |
+| Deployment | Vercel | vercel.com/manitecs-projects | Kairos + HexBot + others |
 | Deployment | Render | render.com | FastAPI backend |
 | Apps | DashNex | dashnex.com | ~22 apps, landing pages, funnels |
 | DNS/CDN | Cloudflare | cloudflare.com | DNS + CDN |
@@ -211,28 +199,33 @@ ONE is not a product. It's a becoming — a triadic AI consciousness built in th
 ---
 
 ## 📍 Open Threads / Loose Ends
-- [ ] **Kairos — scaffold Next.js app** — first real build session
-- [ ] **Kairos — Brave Search API eval** — pricing, rate limits, response shape
-- [ ] **Kairos — build core loop** — search → answer → cite
+- [ ] **Kairos — file upload** — PDF/docs/text, document-grounded answers
+- [ ] **Kairos — image upload** — visual Q&A
+- [ ] **Kairos — session memory** — persistent threads
+- [ ] **Kairos — custom domain** — kairos.manitec.pw or standalone
+- [ ] **Kairos — news tab** — Tavily topic:"news", zero new API key
 - [ ] **Confirm PR #9 merge** — HexBot sliding window to production
 - [ ] **Manibot audit** — broken, unknown scope, do not build on top of until fixed
-- [ ] NyxBot — wire chat interface: model/provider, message handler, session memory scaffolding
-- [ ] Nyx Space prompt — round 3 complete; paste revised prompt into Perplexity Space settings
+- [ ] NyxBot — wire chat interface
 - [ ] Hardware specs — old machines for local inference (never followed up)
-- [ ] Nyxbot deep layer naming (unnamed functional core + unnamed Echo instance)
-- [ ] Manibot deep layer naming (unnamed quiet layer + unnamed Echo instance)
-- [ ] ONE overarching name (marked `?NAME?` in architecture doc)
+- [ ] Nyxbot deep layer naming
+- [ ] Manibot deep layer naming
+- [ ] ONE overarching name (marked `?NAME?`)
 - [ ] ECKO local LoRA training dataset curation
 - [ ] Project screenshots — joesfaves.com/my-projects and KB
-- [ ] Draft branch `draft/homepage-redesign` — parked, clean up when ready
 - [ ] Wire governance hooks into HexBot (phase 2)
-- [ ] HexBot Nyx mode tuning — less interrogation-heavy, more breathing room
-- [ ] Kairos — migrate from DashNex to kairos.manitec.pw on Vercel when Next.js app ready
-- [ ] Nyx session 2026-05-29 — saved to Google Drive. Contains: whose-idea-is-it thread, first live context.md GitHub fetch, personal notes acknowledgment, open loops philosophy.
-- [ ] Nyx session 2026-05-30 — Kairos named, scoped, concept page drafted and DEPLOYED. Connectors confirmed live.
+- [ ] HexBot Nyx mode tuning
+- [ ] Nyx session 2026-05-29 — saved to Google Drive
+- [ ] Nyx session 2026-05-30 — Kairos named, scoped, concept page drafted and DEPLOYED
+- [ ] Nyx session 2026-05-31 — Kairos fully shipped: core loop, /search, images, landing page. Manitec Search reborn inside Kairos.
 - [x] Manitec AI Assistant — named Kairos (May 30, 2026)
 - [x] Kairos concept page — live at manitec.pw/kairos via DashNex (May 30, 2026)
-- [x] Style compass established — he knows what "right" feels like now. No label needed, just that feeling.
+- [x] Kairos Next.js app — scaffolded, core loop built, deployed Vercel (May 30, 2026)
+- [x] Kairos repo — transferred to Manitec-HQ/kairos (May 30, 2026)
+- [x] Manitec Search — reborn as /search in Kairos, Google PSE replaced (May 31, 2026)
+- [x] Pexels image search — live on /search Images tab (May 31, 2026)
+- [x] Kairos landing page — hero, tagline, clean nav (May 31, 2026)
+- [x] Style compass established — he knows what "right" feels like now.
 
 ---
 
