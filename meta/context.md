@@ -1,5 +1,5 @@
 # Manitec HQ — Live Project State
-> Last updated: May 31, 2026
+> Last updated: June 3, 2026
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
@@ -13,6 +13,15 @@
 ---
 
 ## ✅ Recently Completed
+
+### June 3, 2026 Session — goodies for nyx Archive + Meta Docs
+*   Read all 9 files in Plexis/goodies for nyx Drive folder.
+*   Compiled full summaries of all files (structured design doc + clean summary).
+*   Created nyx-persona.md — full Nyx persona context for RAG/system loading.
+*   Created one-architecture.md — full ONE triadic architecture reference doc.
+*   Created nyx-dataset.md — structured Q&A knowledge chunks for fine-tuning/RAG.
+*   Updated context.md (this file) with June 3 session info.
+*   ManiBot persona gap identified: March 2026 persona lost, recovery path documented in nyx-dataset.md Chunk 5.3.
 
 ### Full May 31 Session — Empire-Wide Updates
 - **5 blog posts written and published** — Kairos origin, Manitec Search eulogy, memory/honesty, ONE governance, The Right Moment (chronos vs kairos)
