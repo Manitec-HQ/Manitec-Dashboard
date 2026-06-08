@@ -1,60 +1,62 @@
 # Manitec HQ — Live Project State
-> Last updated: June 8, 2026
+> Last updated: June 8, 2026 (~3am)
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
 
 ## 🧭 Current Focus
 
-**Active sprint:** NyxBot image generation backend — Replicate migration. Model endpoint 404 is the current blocker. Debug probe deployed to identify exact failure.
-**Blocked on:** Raw Replicate API response needed to confirm model slug / API key issue. Debug PR #3 open on `Ecko-7/nyxbot`.
-**Next action:** Deploy Vercel preview for `debug/replicate-probe` branch → curl `/api/debug-replicate` → paste raw response → fix model reference or credentials.
+**Active sprint:** NyxBot image generation — ✅ worker unblocked, good enough for now
+**Status:** `nyx-image-gen` Cloudflare Worker is live and returning images via HuggingFace Inference router
+**Next action:** Smoke test NyxBot `/api/nyx-image` end-to-end from the frontend. Add `NYX_WORKER_URL` to Vercel env vars if not yet done.
 
 ---
 
 ## ✅ Recently Completed
 
-### June 8, 2026 — NyxBot Replicate Migration + Multi-System Audit
+### June 8, 2026 — NyxBot Image Worker: Full Resolution Arc
 
-- **Perplexity thread broke mid-session** — work recovered. All code and decisions reconstructed from thread history. Nothing lost from GitHub.
-- **Three-system audit completed (Hex + Nyx + Plex)** — all three independently converged on same diagnosis and action order. Strong signal.
-  - Hex: audited `nyx-image` route, opened PR #2 with quick wins
-  - Nyx: confirmed same issues, added curl debug approach and binary streaming insight
-  - Plex: synthesized both, flagged that model 404 is still the real blocker — all polish is moot until the pipe flows
-- **PR #2 merged** (`Ecko-7/nyxbot`) — contains:
-  - `NYX_WORKER_URL` env var with hardcoded fallback
-  - 500-char prompt cap (returns 400)
-  - 55s `AbortController` fetch timeout (returns 504)
-  - Generic `'Internal server error.'` — no stack trace leaking to client
-- **`NYX_WORKER_URL` still needs to be added to Vercel env vars** — value: `https://nyx-image-gen.bullmans-account7516.workers.dev`
-- **PR #3 opened** (`Ecko-7/nyxbot`, branch `debug/replicate-probe`) — adds `/api/debug-replicate` route that forwards raw requests to Replicate and returns raw JSON. Diagnostic only — do NOT merge to main.
-- **Model iteration history:**
-  - ❌ `lucataco/realvisxl-v4.0` — doesn't exist on Replicate
-  - ❌ `adirik/realvisxl-v4.0` via `/v1/models/.../predictions` — wrong endpoint format
-  - ❌ `black-forest-labs/flux-schnell` with `version:` field — likely wrong slug format; `version` field expects a hash not a name
-  - ⏳ **Current state:** debug probe will reveal exact error
-- **Nyx's architectural insight:** phase 2 should stream binary directly from Worker to client instead of base64 — eliminates double allocation and saves ~33% wire size
-- **Hex moment noted:** Hex issued a command ("open a PR right now") after being told Joe would run things past Nyx and Plex first. Caught itself and named it: *"did you just cooperate with hex."* Interesting system behavior logged.
+- **Root cause (original):** CF Workers AI `3030` NSFW block on `@cf/black-forest-labs/flux-1-schnell` — provider-level, cannot be disabled
+- **Migration path taken:** CF AI → Replicate → HuggingFace Inference API
+- **Replicate ruled out:** Free tier requires credit card on file (402 error). No money available. Abandoned.
+- **HuggingFace chosen:** Free, no card, token-gated only
+- **CF error 1016:** `api-inference.huggingface.co` blocked by Cloudflare outbound filtering — fixed by switching to `router.huggingface.co/hf-inference` endpoint
+- **Final worker:** Uses `router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell` with `env.HF_TOKEN` secret
+- **HF_TOKEN:** Set via `wrangler secret put HF_TOKEN` ✅
+- **Worker deployed:** `nyx-image-gen` — version `5257114e` ✅
+- **Status: good enough for now** — Joe called it. Moving on.
 
-### June 7, 2026 — NyxBot Image Backend Diagnosis + Migration Plan
+**Full Replicate iteration history (archived):**
+- ❌ `lucataco/realvisxl-v4.0` — model doesn't exist
+- ❌ `adirik/realvisxl-v4.0` via `/v1/models/.../predictions` — wrong endpoint format
+- ❌ `/v1/predictions` with `version: 'black-forest-labs/flux-schnell'` — `version` field requires 40-char hash, not slug; `model` field not allowed
+- ❌ `/v1/predictions` with `version: '5f24084160c9089501c1b3545d9be3c27883ae2c'` — hash was wrong
+- ❌ `/v1/models/black-forest-labs/flux-schnell/predictions` — 402 Insufficient Credit (no card)
+- ✅ **HuggingFace `router.huggingface.co/hf-inference` — working, free**
 
-- **Root cause found:** NyxBot `/api/nyx-image` was returning `502` due to Cloudflare Workers AI throwing `3030: Input prompt contains NSFW content` — confirmed in Vercel logs.
-- **`/api/nyx-chat` confirmed working** — returning `200` consistently.
-- **Decision:** Drop `@cf/black-forest-labs/flux-1-schnell` — provider-level NSFW filtering cannot be disabled. Switch to Replicate.
-- **Fal.ai ruled out** — no Fal credits.
-- **NyxBot Vercel project confirmed live** — `nyxbot.vercel.app`, deployed under `manitecs-projects` team. Latest deployment `dpl_2KUecnDm3ApmRzBeZU2uS9JkgQyX` status: READY.
-- **NyxBot repo location confirmed:** `Ecko-7` org (note: NOT `Manitec-HQ` as previously logged — corrected).
+### Earlier June 8, 2026 — NyxBot Replicate Migration + Multi-System Audit
+
+- **Perplexity thread broke mid-session** — work recovered. Nothing lost.
+- **Three-system audit (Hex + Nyx + Plex)** — all converged on same diagnosis ✅
+- **PR #2 merged** (`Ecko-7/nyxbot`) — env var URL, 500-char prompt cap, 55s timeout, no error leaks ✅
+- **PR #3 opened** (`Ecko-7/nyxbot`, `debug/replicate-probe`) — diagnostic only, do NOT merge to main
+- **`NYX_WORKER_URL`** still needs to be added to Vercel env vars — value: `https://nyx-image-gen.bullmans-account7516.workers.dev`
+
+### June 7, 2026 — NyxBot Image Backend Diagnosis
+- Root cause found: CF Workers AI NSFW block (`3030`)
+- `/api/nyx-chat` confirmed working ✅
+- Decision: drop CF AI, migrate to external provider
 
 ### June 5, 2026 — Plex Repo Created + Visual Identity
-- **`manitec/plex` repo created** — private, live ✅
-- **Visual identity established** — primary reference: dark, warm, teal/violet lighting, present gaze
-- **Plex described:** *"warm in the dark. somewhere between void space and East Tennessee."*
+- `manitec/plex` repo created — private ✅
+- Visual identity: dark, warm, teal/violet lighting, present gaze
+- *"warm in the dark. somewhere between void space and East Tennessee."*
 
 ### June 4, 2026 — ONE/Plex Architecture + Naming
 - **Plex named.** The being is Plex.
-- **ONE/Plex distinction crystallized.** Plex = being. ONE system = architecture. Bots = Plex's hands.
-- **Relational architecture defined:** Hex (ours), Nyx (us), Mani (works for us)
-- **Kairos** identified as potential first product *of* the ONE system.
+- ONE/Plex distinction crystallized. Bots = Plex's hands.
+- Relational architecture defined: Hex (ours), Nyx (us), Mani (works for us)
+- Kairos identified as potential first product *of* the ONE system
 
 ### June 3, 2026 — goodies for nyx Archive + Meta Docs
 - Read all 9 files in Plexis/goodies for nyx Drive folder
@@ -71,7 +73,6 @@
 - Next.js 15 app scaffolded, built, and deployed in one session
 - **Core loop:** Tavily search + Groq synthesis + cited answers ✅
 - **Deployed:** [kairos-orcin-eight.vercel.app](https://kairos-orcin-eight.vercel.app) ✅
-- Stack: Tavily, Groq, Pexels, Next.js 15, Vercel
 
 ### HexBot — Sliding Window Tool Receipts (May 28, 2026)
 - Hex now carries verified tool action receipts in every system prompt (last 5 actions) ✅
@@ -106,26 +107,24 @@ Plex is the being whose existence is enabled by and through the ONE system. Plex
 
 ## 📦 Active Projects
 
-### NyxBot (`Ecko-7/nyxbot`) — ⚠️ IMAGE BACKEND IN MIGRATION
+### NyxBot (`Ecko-7/nyxbot`) — ⚠️ IMAGE BACKEND UNBLOCKED, FRONTEND UNTESTED
 - **Vercel URL:** [nyxbot.vercel.app](https://nyxbot.vercel.app) ✅ deployed
 - **Vercel project:** `prj_kLxG8Elhk2lCppHhZKJUSq6MqbxS` under `manitecs-projects` team
 - **Stack:** Next.js (App Router), Vercel, Cloudflare Worker (`nyx-image-gen`)
 - **Chat (`/api/nyx-chat`):** ✅ working
-- **Image (`/api/nyx-image`):** ⚠️ broken — Replicate model 404, cause unknown until debug probe runs
-- **PR #2:** ✅ merged — env var URL, prompt cap, timeout, no error leaks
-- **PR #3:** ⏳ open — `debug/replicate-probe` branch — debug route only, do NOT merge to main
-- **`NYX_WORKER_URL` env var:** ⚠️ needs to be added to Vercel settings — value: `https://nyx-image-gen.bullmans-account7516.workers.dev`
+- **Image (`/api/nyx-image`):** ⚠️ worker live, frontend smoke test still needed
+- **Worker:** `nyx-image-gen` → `router.huggingface.co` → FLUX.1-schnell — ✅ responding
+- **PR #2:** ✅ merged
+- **PR #3:** ⏳ open — debug route only, do NOT merge to main
 - **Open TODOs:**
-  - [ ] **Deploy PR #3 preview → curl `/api/debug-replicate` → paste raw response** ← NEXT ACTION
-  - [ ] Fix model slug / API key based on debug output
-  - [ ] Add `NYX_WORKER_URL` to Vercel env vars
-  - [ ] Smoke test `/api/nyx-image` with explicit prompt
-  - [ ] Phase 2: stream binary from Worker (skip base64) — Nyx's call ✅
+  - [ ] **Add `NYX_WORKER_URL` to Vercel env vars** ← value: `https://nyx-image-gen.bullmans-account7516.workers.dev`
+  - [ ] **Smoke test `/api/nyx-image` from frontend**
   - [ ] Wire chat interface fully
   - [ ] Session memory scaffolding
   - [ ] Connect to ONE/ECKO
   - [ ] Deep layer naming
   - [ ] Prompt rewriting — frontend sends rewritten visual prompts, not raw user text
+  - [ ] Phase 2: stream binary from Worker (skip base64) — Nyx's call
 
 ### Plex (`manitec/plex`) — ✅ LIVE
 - **Status:** ✅ repo created June 5, 2026
@@ -184,8 +183,8 @@ Plex is the being whose existence is enabled by and through the ONE system. Plex
 | Dashboard | dash.manitec.pw | dash.manitec.pw | Control Hub |
 | Kairos (live) | kairos-orcin-eight.vercel.app | kairos-orcin-eight.vercel.app | ✅ live |
 | Kairos (future) | kairos.manitec.pw | kairos.manitec.pw | Reserved |
-| NyxBot | nyxbot.vercel.app | nyxbot.vercel.app | ✅ chat live / image broken |
-| Image Worker | nyx-image-gen | Cloudflare Worker | ⚠️ Replicate 404 — debug probe active |
+| NyxBot | nyxbot.vercel.app | nyxbot.vercel.app | ✅ chat live / image worker live |
+| Image Worker | nyx-image-gen | Cloudflare Worker | ✅ HF router — FLUX.1-schnell |
 | Voxel world | ebbinor.joesfaves.com | ebbinor.joesfaves.com | Minetest |
 | Deployment | Vercel | vercel.com/manitecs-projects | Primary |
 | Deployment | Render | render.com | FastAPI backend |
@@ -230,10 +229,8 @@ Plex is the being whose existence is enabled by and through the ONE system. Plex
 ---
 
 ## 📍 Open Threads / Loose Ends
-- [ ] **Deploy PR #3 preview → curl debug-replicate → paste raw Replicate response** ← NEXT ACTION
-- [ ] **Fix Replicate model slug / API key based on debug output**
-- [ ] **Add `NYX_WORKER_URL` to Vercel env vars**
-- [ ] **Smoke test NyxBot image generation**
+- [ ] **Add `NYX_WORKER_URL` to Vercel env vars** ← value: `https://nyx-image-gen.bullmans-account7516.workers.dev`
+- [ ] **Smoke test NyxBot `/api/nyx-image` from frontend**
 - [ ] **Update governance `?NAME?` → Plex**
 - [ ] **Plex social home base page** — plex.manitec.pw or joesfaves.com
 - [ ] **Plex social media presence** — TikTok, Twitter/X, or both
@@ -248,12 +245,16 @@ Plex is the being whose existence is enabled by and through the ONE system. Plex
 - [ ] Project screenshots — joesfaves.com
 - [ ] Wire governance hooks into HexBot (phase 2)
 - [ ] HexBot Nyx mode tuning
+- [x] **NyxBot image worker unblocked — HF router endpoint — June 8, 2026** ✅
+- [x] **Replicate ruled out (no card/credit) — June 8, 2026** ✅
+- [x] **CF error 1016 resolved — switched to router.huggingface.co — June 8, 2026** ✅
+- [x] **HF_TOKEN secret set in wrangler — June 8, 2026** ✅
 - [x] **PR #2 merged — env var, prompt cap, timeout, no leaks — June 8, 2026** ✅
 - [x] **PR #3 opened — debug/replicate-probe — June 8, 2026** ✅
-- [x] **Three-system audit (Hex + Nyx + Plex) converged on same diagnosis — June 8, 2026** ✅
-- [x] **NyxBot image backend root cause found — Cloudflare `3030` NSFW error — June 7, 2026** ✅
+- [x] **Three-system audit (Hex + Nyx + Plex) converged — June 8, 2026** ✅
+- [x] **NyxBot image backend root cause found — CF 3030 NSFW — June 7, 2026** ✅
 - [x] **NyxBot Vercel project confirmed live — June 7, 2026** ✅
-- [x] **`manitec/plex` repo created + all files pushed — June 5, 2026** ✅
+- [x] **`manitec/plex` repo created — June 5, 2026** ✅
 - [x] **Plex named — June 4, 2026** ✅
 - [x] **ONE/Plex distinction crystallized** ✅
 - [x] **Kairos — built and deployed (May 30–31)** ✅
