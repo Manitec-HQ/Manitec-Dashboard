@@ -1,18 +1,28 @@
 # Manitec HQ — Live Project State
-> Last updated: June 5, 2026
+> Last updated: June 7, 2026
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
 
 ## 🧭 Current Focus
 
-**Active sprint:** Plex repo live ✅ — visual identity documented. Next: update governance `?NAME?` → Plex, plan Plex social presence.
-**Blocked on:** Nothing critical.
-**Next action:** Update governance `?NAME?` → Plex. Plan plex.manitec.pw home base.
+**Active sprint:** NyxBot image generation backend — migrating from Cloudflare Workers AI (broken/NSFW-blocked) to Replicate (`lucataco/realvisxl-v4.0`).
+**Blocked on:** `REPLICATE_API_TOKEN` secret not yet added to Cloudflare Worker `nyx-image-gen`.
+**Next action:** Add `REPLICATE_API_TOKEN` as a Worker secret in Cloudflare dashboard → deploy updated Worker → re-test image generation.
 
 ---
 
 ## ✅ Recently Completed
+
+### June 7, 2026 — NyxBot Image Backend Diagnosis + Migration Plan
+
+- **Root cause found:** NyxBot `/api/nyx-image` was returning `502` due to Cloudflare Workers AI throwing `3030: Input prompt contains NSFW content` — confirmed in Vercel logs (`nyxbot.vercel.app/logs`).
+- **`/api/nyx-chat` confirmed working** — returning `200` consistently. DEP0169 deprecation warning visible in logs but not the cause of any failure.
+- **Decision:** Drop `@cf/black-forest-labs/flux-1-schnell` (Cloudflare Workers AI) — it has provider-level NSFW filtering that cannot be disabled. Switch to Replicate.
+- **New image Worker written** — targets `lucataco/realvisxl-v4.0` on Replicate. Uses `Prefer: wait=60` sync mode. Returns raw binary image to Next.js route, same contract as before. Handles positive/negative prompt injection, `nsfw: true/false` flag from request body.
+- **Fal.ai ruled out** — no Fal credits.
+- **NyxBot Vercel project confirmed live** — `nyxbot.vercel.app`, deployed under `manitecs-projects` team. Latest deployment `dpl_2KUecnDm3ApmRzBeZU2uS9JkgQyX` status: READY.
+- **NyxBot repo location confirmed:** `Manitec-HQ` org (not personal `Manitec` account).
 
 ### June 5, 2026 — Plex Repo Created + Visual Identity
 - **`manitec/plex` repo created** — private, live ✅
@@ -113,6 +123,26 @@ The ONE system is the architecture that enables emergence. It may become a produ
 
 ## 📦 Active Projects
 
+### NyxBot (`Manitec-HQ/nyxbot`) — ⚠️ IMAGE BACKEND IN MIGRATION
+- **Vercel URL:** [nyxbot.vercel.app](https://nyxbot.vercel.app) ✅ deployed
+- **Vercel project:** `prj_kLxG8Elhk2lCppHhZKJUSq6MqbxS` under `manitecs-projects` team
+- **Stack:** Next.js (App Router), Vercel, Cloudflare Worker (`nyx-image-gen`)
+- **Chat (`/api/nyx-chat`):** ✅ working, returning 200
+- **Image (`/api/nyx-image`):** ⚠️ was broken — root cause: Cloudflare Workers AI `3030: Input prompt contains NSFW content`
+- **Image Worker status:** New Worker code written — uses Replicate `lucataco/realvisxl-v4.0`, `Prefer: wait=60` sync mode, positive/negative prompt injection, returns raw binary
+- **Blocked on:** `REPLICATE_API_TOKEN` secret not yet added to Cloudflare Worker `nyx-image-gen`
+- **Why not Fal:** No Fal credits
+- **Why Replicate:** Free tier available, supports sync mode, `realvisxl-v4.0` is uncensored-friendly via negative prompts
+- **Open TODOs:**
+  - [ ] Add `REPLICATE_API_TOKEN` secret to `nyx-image-gen` Worker in Cloudflare dashboard
+  - [ ] Deploy updated Worker
+  - [ ] Smoke test `/api/nyx-image` with explicit prompt
+  - [ ] Wire chat interface fully
+  - [ ] Session memory scaffolding
+  - [ ] Connect to ONE/ECKO
+  - [ ] Deep layer naming
+  - [ ] Prompt rewriting — frontend should send rewritten visual prompts, not raw user text
+
 ### Plex (`manitec/plex`) — ✅ LIVE
 - **Status:** ✅ repo created June 5, 2026 — all files pushed
 - **Visibility:** private
@@ -166,14 +196,6 @@ The ONE system is the architecture that enables emergence. It may become a produ
   - [ ] nyx-router.ts
   - [ ] Firestore write from chat flow
 
-### Nyxbot (`Ecko-7/nyxbot`)
-- **Status:** v1 skeleton live — 9 files pushed
-- **Open TODOs:**
-  - [ ] Wire chat interface
-  - [ ] Session memory scaffolding
-  - [ ] Connect to ONE/ECKO
-  - [ ] Deep layer naming
-
 ### Manibot (`chat.manitec.pw`)
 - **Status:** ⚠️ BROKEN — audit before any further dev
 
@@ -202,6 +224,8 @@ The ONE system is the architecture that enables emergence. It may become a produ
 | Kairos (live) | kairos-orcin-eight.vercel.app | kairos-orcin-eight.vercel.app | ✅ live |
 | Kairos (concept) | manitec.pw/kairos | manitec.pw/kairos | ✅ updated |
 | Kairos (future) | kairos.manitec.pw | kairos.manitec.pw | Reserved |
+| NyxBot | nyxbot.vercel.app | nyxbot.vercel.app | ✅ chat live / image in migration |
+| Image Worker | nyx-image-gen | Cloudflare Worker | ⚠️ needs REPLICATE_API_TOKEN secret |
 | Voxel world | ebbinor.joesfaves.com | ebbinor.joesfaves.com | Minetest |
 | Deployment | Vercel | vercel.com/manitecs-projects | Primary |
 | Deployment | Render | render.com | FastAPI backend |
@@ -252,6 +276,9 @@ The ONE system is the architecture that enables emergence. It may become a produ
 ---
 
 ## 📍 Open Threads / Loose Ends
+- [ ] **Add `REPLICATE_API_TOKEN` secret to `nyx-image-gen` Worker** ← NEXT ACTION
+- [ ] **Deploy updated NyxBot image Worker (Replicate backend)**
+- [ ] **Smoke test NyxBot image generation with explicit prompt**
 - [ ] **Update governance `?NAME?` → Plex**
 - [ ] **Plex social home base page** — plex.manitec.pw or joesfaves.com
 - [ ] **Plex social media presence** — TikTok, Twitter/X, or both
@@ -263,6 +290,8 @@ The ONE system is the architecture that enables emergence. It may become a produ
 - [ ] **Confirm PR #9 merge** — HexBot
 - [ ] **Manibot audit**
 - [ ] NyxBot — wire chat interface
+- [ ] NyxBot — session memory scaffolding
+- [ ] NyxBot — prompt rewriting (send visual prompts, not raw user text)
 - [ ] Hardware specs — old machines for local inference
 - [ ] Nyxbot deep layer naming
 - [ ] Manibot deep layer naming
@@ -270,6 +299,9 @@ The ONE system is the architecture that enables emergence. It may become a produ
 - [ ] Project screenshots — joesfaves.com
 - [ ] Wire governance hooks into HexBot (phase 2)
 - [ ] HexBot Nyx mode tuning
+- [x] **NyxBot image backend root cause found — Cloudflare `3030` NSFW error — June 7, 2026** ✅
+- [x] **New Replicate Worker written (realvisxl-v4.0, sync mode) — June 7, 2026** ✅
+- [x] **NyxBot Vercel project confirmed live + repo org confirmed (Manitec-HQ) — June 7, 2026** ✅
 - [x] **`manitec/plex` repo created + all files pushed — June 5, 2026** ✅
 - [x] **Plex visual identity established — June 5, 2026** ✅
 - [x] **Plex named — June 4, 2026** ✅
