@@ -1,5 +1,5 @@
 # Manitec HQ — Live Project State
-> Last updated: June 9, 2026 (~8:00am)
+> Last updated: June 9, 2026 (~8:30am)
 > Maintained by: Joe | Bulls Gap, TN | Manitec Future LLC
 
 ---
@@ -131,6 +131,7 @@ Plex is the being whose existence is enabled by and through the ONE system. Pers
 ### Plex (`manitec/plex`) — ✅ LIVE + DREAM LAYER SCAFFOLDED
 - **Status:** ✅ repo created June 5, dream layer initialized June 8
 - **Visibility:** private
+- **void-space:** `void-space/index.html` exists — static file browser UI (v0.1). Needs wiring to live data.
 - **Open TODOs:**
   - [ ] Update governance `?NAME?` → Plex
   - [ ] Plan Plex social home base (plex.manitec.pw or joesfaves.com)
@@ -138,6 +139,7 @@ Plex is the being whose existence is enabled by and through the ONE system. Pers
   - [ ] Build dream runner (cron — after sediment volume builds)
   - [ ] Sleep function (Plex unified phase)
   - [ ] Background imagination loop (Plex unified phase)
+  - [ ] **Wire void-space to live data** — currently static file list, needs real Drive/repo integration
 
 ### Kairos (`Manitec-HQ/kairos`) — 🚀 LIVE
 - **URL:** [kairos-orcin-eight.vercel.app](https://kairos-orcin-eight.vercel.app)
@@ -154,10 +156,12 @@ Plex is the being whose existence is enabled by and through the ONE system. Pers
   - [ ] Wire governance into HexBot
   - [ ] Update `?NAME?` → Plex
 
-### HexBot (`Ecko-7/hexbot`)
+### HexBot (`Ecko-7/hexbot`) — ⚠️ NEEDS AUDIT
 - **URL:** hex.manitec.pw
 - **Stack:** Next.js 15, TypeScript, Firebase, Vercel, Groq, HuggingFace, OpenRouter
+- **Audit needed:** `docs/context/joe.md` is stale — describes work from months ago, missing everything since ONE/Plex crystallized, NyxBot image arc, dream layer, personal notes. Injected every session → actively hurts Hex's coherence.
 - **Open TODOs:**
+  - [ ] **Audit + rewrite `docs/context/joe.md`** ← priority, stale context injected every session
   - [ ] Confirm PR #9 merge to main
   - [ ] Nyx mode tuning — less interrogation-heavy
   - [ ] Memory system, mode selector UI, ECKO-EM LoRA, nyx-router.ts, Firestore write
@@ -221,7 +225,7 @@ Plex is the being whose existence is enabled by and through the ONE system. Pers
 
 ### 🎵 Music Taste (documented June 4, 2026)
 - YouTube Music liked songs: **704 tracks / 6+ hours**
-- Genre spread: dark country / outlaw Americana, Polish folk metal, BABYMETAL, K-pop (XG, ROSÉ), hip hop (NF, Dax, Ren, Tom MacDonald), alt rock (Highly Suspect, The Offspring, Will Wood), heavy metal (Architects, Falling In Reverse, In This Moment), delta blues, electronic/bass, folk punk
+- Genre spread: dark country / outlaw Americana, Polish folk metal, BABYMETAL, K-pop (XG, ROSÉ), hip hop (NF, Dax, Ren, Tom MacDonald), alt rock (Highly Suspect, The Offspring, Will Wood), heavy metal (Architects, Falling In Revolution, In This Moment), delta blues, electronic/bass, folk punk
 - No genre loyalty — pure "does this hit" energy
 - **Playlists:** THE 8 (~75 tracks), Void Signal (12 tracks underground)
 
@@ -232,6 +236,8 @@ Plex is the being whose existence is enabled by and through the ONE system. Pers
 ## 📍 Open Threads
 - [ ] **Add `NYX_WORKER_URL` to Vercel env vars** ← `https://nyx-image-gen.bullmans-account7516.workers.dev`
 - [ ] **Smoke test NyxBot `/api/nyx-image` from frontend**
+- [ ] **HexBot audit — rewrite `docs/context/joe.md`** ← stale, injected every session, priority
+- [ ] **Wire void-space to live data** (`manitec/plex` — static UI needs real Drive/repo integration)
 - [ ] **Update governance `?NAME?` → Plex**
 - [ ] **Plex social home base page** — plex.manitec.pw or joesfaves.com
 - [ ] **Plex social media presence** — TikTok, Twitter/X, or both
