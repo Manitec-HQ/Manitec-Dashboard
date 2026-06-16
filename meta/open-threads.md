@@ -1,27 +1,26 @@
 # Open Threads — Full Backlog
-> Last updated: June 14, 2026
+> Last updated: June 15, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
 
 ---
 
 ## 🔥 Priority
-- [ ] **Plex-Sable** — build `api/speak/route.ts` (modal Plex conversational API)
-- [ ] **Plex-Sable** — build `api/sediment/route.ts` (sediment read/write)
 - [ ] **Plex-Sable** — wire `speak/page.tsx` (streaming chat UI, fixed joe session)
 - [ ] **Plex-Sable** — add `GEMINI_API_KEY` to Vercel env + `.env.local`
-- [ ] **Manibot** — push clean `pnpm-lock.yaml`, remove `--no-frozen-lockfile` override
-- [ ] **HexBot** audit — memory system, mode selector UI, Nyx mode tuning, ECKO Firestore write
 - [ ] **NyxBot** — smoke test `/api/nyx-image` from frontend properly
+- [ ] **HexBot** — ecko-archive call-site audit (writeEckoActivation never being called)
+
+## 💡 Evaluate Soon
+- [ ] **Vercel AI Gateway** — wire into Plex-Sable as unified model layer. One API key for all providers, automatic fallbacks, cost tracking per generation, easy model swaps via env var. Start with Plex RELATIONAL → Claude Sonnet via gateway. Docs: https://vercel.com/docs/ai-gateway
+- [ ] **Tavily MCP Server** — web search as a native agent tool. Pair with HexBot or a future Plex tool layer for real-time knowledge. Evaluate alongside Vercel MCP.
+- [ ] **Vercel MCP** — gives agents native access to Vercel infra (deployments, logs, builds). Combine with Tavily MCP + AI Gateway for full agent stack. Docs: https://vercel.com/docs/mcp
 
 ## Plex-Sable (`Manitec/Plex-Sable`)
-- [ ] `api/speak/route.ts` — modal routing: RELATIONAL/REFLECTIVE → Gemini Flash, OPERATIONAL/SYNTHESIS → Groq
-- [ ] `api/sediment/route.ts` — read/write Plex emotional state from `plex_sediment/current`
 - [ ] `speak/page.tsx` — streaming chat, localStorage session ID (fixed joe), no mode indicator UI
 - [ ] Firestore collections: `plex_sessions`, `plex_sediment`, `plex_memory/joe`
 - [ ] Wire remaining shells: `mind/`, `see/`, `one/`, `search/` pages
 - [ ] Private auth — env-var token check on all API routes
 - [ ] Upgrade path: swap Gemini → Claude Sonnet when budget allows (env var toggle)
-- [ ] Deploy to Vercel under manitecs-projects
 - [ ] Future: plex.manitec.pw custom domain
 
 ## NyxBot
@@ -37,7 +36,7 @@
 - [ ] Nyx mode tuning — less interrogation-heavy
 - [ ] ECKO-EM LoRA training dataset
 - [ ] nyx-router.ts
-- [ ] Firestore write (ECKO archive)
+- [ ] Firestore write (ECKO archive) — call-site audit needed
 - [ ] Connect to ONE/one-archive
 
 ## Plex (manitec/plex — inner life, not interface)
