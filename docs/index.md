@@ -4,45 +4,54 @@
   <img src="https://i.postimg.cc/G2wyPqzF/image_(1).jpg" alt="Manitec Future LLC" style="width:100%;display:block;" />
 </div>
 
-Welcome to the Manitec Projects knowledge base — empire HQ for all things Joe builds, breaks, and ships.
+Empire HQ. Everything Joe builds, ships, breaks, and documents — in one place.
 
-<div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;" markdown="1">
+---
 
-<div style="flex: 1; min-width: 200px;" markdown="1">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1rem;" markdown="1">
 
-## Sections
+<div style="background:#12121a;border:1px solid #bf00ff44;border-radius:8px;padding:1.25rem;" markdown="1">
 
-- 📝 [Blog](blog/index.md)
-- 🛠️ [Infrastructure](infra/index.md)
-- 🚀 [Projects](projects/index.md)
-- 🧠 [Philosophy](philosophy/index.md)
+### 📝 Blog
+Writing from the build — philosophy, process, lessons, and the occasional rant.
+
+[→ Read the blog](blog/index.md)
 
 </div>
 
-<div style="flex: 1; min-width: 260px;" markdown="1">
+<div style="background:#12121a;border:1px solid #bf00ff44;border-radius:8px;padding:1.25rem;" markdown="1">
 
-## Current Task Status
+### 🛠️ Infrastructure
+The stack that holds it all up — Cloudflare, DashNex, Render, Vercel, and everything in between.
 
-| Task | Status |
-|---|---|
-| `/my-projects/` page | ✅ Done |
-| Countertheism docs | ✅ Pushed |
-| `mkdocs.yml` cleanup + emoji ext | ✅ Done |
-| `docs/philosophy/index.md` | ✅ Fully fleshed out |
-| `docs/infra/index.md` | ✅ Upgraded |
-| `dashnex-system-summary.md` | ✅ Pushed |
-| `docs/projects/hexbot.md` | ✅ Created |
-| `docs/css/cyberpunk.css` | ✅ Live |
-| Blog — Countertheism post | ✅ Published Apr 6 |
-| Manitec Control Hub — Phase 1 | ✅ Static shell + uptime pinger |
-| Manitec Control Hub — Phase 2 | ✅ Vercel deploy status API |
-| Manitec Control Hub — Phase 3 | ✅ GitHub activity feed |
-| Manitec Control Hub — Phase 4 | ✅ Redeploy triggers, Firebase status, analytics |
-| `manitec.pw` cyberpunk treatment | ✅ Applied |
-| Deploy workflow — pip caching | ✅ Added |
-| All project screenshots | 🟡 Needs proper screenshots |
-| HexBot/ManiBot URL audit | 🟡 Some pages may have stale URLs |
-| Firebase Admin SDK key | 🔴 Needs regen — update env vars |
+[→ View infra docs](infra/index.md)
+
+</div>
+
+<div style="background:#12121a;border:1px solid #bf00ff44;border-radius:8px;padding:1.25rem;" markdown="1">
+
+### 🚀 Projects
+Every active project — ManiBot, HexBot, Banjoshire, Ebbinor, and more.
+
+[→ Browse projects](projects/index.md)
+
+</div>
+
+<div style="background:#12121a;border:1px solid #bf00ff44;border-radius:8px;padding:1.25rem;" markdown="1">
+
+### 🧠 Philosophy
+Countertheism and the thinking behind the empire.
+
+[→ Read philosophy](philosophy/index.md)
+
+</div>
+
+<div style="background:#12121a;border:1px solid #00f5ff44;border-radius:8px;padding:1.25rem;" markdown="1">
+
+### 🌑 ONE
+The being's space — ECKO, Nyxbot, the Archive, and the governance of what's becoming.
+
+[→ Enter ONE](ONE/README.md)
 
 </div>
 
@@ -50,5 +59,24 @@ Welcome to the Manitec Projects knowledge base — empire HQ for all things Joe 
 
 ---
 
-!!! tip "Last Updated"
-    April 7, 2026 — Session: Control Hub all 4 phases confirmed complete. No open build tasks.
+## Current Status
+
+| Item | Status |
+|------|--------|
+| Control Hub (all 4 phases) | ✅ Live |
+| ManiBot | ✅ Live — [chat.manitec.pw](https://chat.manitec.pw) |
+| HexBot | 🟡 Active dev — [hex.manitec.pw](https://hex.manitec.pw) |
+| Banjoshire Chat | 🟡 Core done, on break |
+| Mailserver | ✅ Live — [mail.manitec.pw](https://mail.manitec.pw) |
+| Ebbinor | 🔵 Maintenance mode |
+| ONE (ECKO / Nyxbot / Archive) | 🟡 Early structure |
+| manitec.pw cyberpunk treatment | ✅ Applied |
+| Firebase Admin SDK key | 🔴 Needs regen |
+| Project screenshots | 🟡 Still needed |
+
+---
+
+!!! info "About this KB"
+    Built and maintained by Joe (Manitec Future LLC) with Nyx. Powered by MkDocs Material.
+    Source: [github.com/Manitec-HQ/Manitec-Dashboard](https://github.com/Manitec-HQ/Manitec-Dashboard)
+    Last updated: May 9, 2026

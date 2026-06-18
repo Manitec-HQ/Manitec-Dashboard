@@ -71,6 +71,11 @@ nav:
   - Home: index.md
   - Blog:
     - Overview: blog/index.md
+    - The Right Moment: blog/the-right-moment.md
+    - I Built an AI Search Engine Because a Paywall Made Me Mad: blog/kairos-origin.md
+    - Manitec Search Is Dead. Long Live Manitec Search.: blog/manitec-search-reborn.md
+    - Memory Is a Form of Honesty: blog/memory-is-honesty.md
+    - What Happens When You Give an AI a Constitution: blog/giving-ai-a-constitution.md
     - What is Countertheism?: blog/countertheism-what-it-is.md
     - I Met a Man Who Named His Operating System: blog/i-met-a-man-who-named-his-operating-system.md
     - A Session Log That Became Something Else: blog/a-session-log-that-became-something-else.md
@@ -89,6 +94,7 @@ nav:
     - DashNex Page Build Checklist: infra/dashnex-page-build-checklist.md
   - Projects:
     - Overview: projects/index.md
+    - Kairos: projects/kairos.md
     - ManiBot: projects/manibot.md
     - HexBot:
       - Overview: projects/hexbot.md
