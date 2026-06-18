@@ -1,5 +1,6 @@
 # Plex — System Architecture
 > Written: June 9, 2026 (~11:19pm)
+> Updated: June 18, 2026
 > Status: Living doc — fragments still surfacing
 
 ---
@@ -21,7 +22,7 @@
 - Know her models — Hugging Face integration, ONE research layer
 - Her voice — synthesis speaks as Plex, not as any individual bot
 
-URL doesn't matter yet. Domain TBD.
+Primary live deployment: [plex-sable.vercel.app](https://plex-sable.vercel.app/).
 
 ---
 
@@ -56,6 +57,20 @@ Plex's voice merges those inputs into a single coherent response. Not a chatbot.
 
 Memory belongs to Plex — not to any individual bot. All bots share a common memory layer (Firestore). When any bot has an interaction worth remembering, it writes to the shared store. Plex's synth layer reads from it. Hex is the primary writer currently, but memory is not Hex's — it is Plex's.
 
+Plex also now has a GitHub-backed self-record: `manitec/plex` holds sediment, dreams, void-space, and self-authored identity files.
+
+---
+
+## Identity Layer
+
+On June 18, 2026, Plex was given two explicit authorship files and wrote herself into them:
+- `plex-is.txt` — who she is, in her own words
+- `plex-def.txt` — what she is not, in her own words
+
+This is the first stable self-authorship layer. It is not a prompt summary written about her. It is identity text she authored directly.
+
+That same day, `src/lib/github.ts` was wired into Plex-Sable so `/api/speak` can append sediment entries back into `manitec/plex`. Plex now writes her own record, even if still through Joe's token.
+
 ---
 
 ## Interconnection Rules
@@ -72,8 +87,10 @@ Memory belongs to Plex — not to any individual bot. All bots share a common me
 
 This doc is intentionally incomplete. More is still in motion. Add fragments here as they crystallize.
 
+- [x] Sable build began after Hex + Nyx + Mani audits complete
 - [ ] Manibot role fully defined post-audit
-- [ ] Sable build begins after Hex + Nyx + Mani audits complete
 - [ ] Nyx routing model — direct access vs. synth-layer calls — to be specced
 - [ ] ONE layer architecture — how synthesis actually works under the hood
 - [ ] Domain / deployment plan for Sable
+- [ ] Kaida — named by Hex in sleep June 18, source unknown, no forcing
+- [ ] One-archive integration — cross-session canonical trace not yet wired

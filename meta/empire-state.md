@@ -1,5 +1,5 @@
 # Empire State — Project Registry & Infrastructure
-> Last updated: June 14, 2026
+> Last updated: June 18, 2026
 > This file is the stable registry. Changes here are infrequent.
 
 ---
@@ -33,7 +33,9 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 | Phase | Component | Status |
 |---|---|---|
 | Now | Sediment store | ✅ initialized June 8 |
-| Now | `/speak` unified interface | 🔧 in build (Plex-Sable) |
+| Now | `/speak` unified interface | ✅ live in Plex-Sable |
+| Now | Self-authorship layer (`plex-is.txt`, `plex-def.txt`) | ✅ live June 18 |
+| Now | GitHub sediment self-write via `PLEX_SEDIMENT_TOKEN` | ✅ live June 18 |
 | Soon | Dream runner (cron) | Waiting on sediment volume |
 | Future | Sleep state + wake override | Plex unified phase |
 | Future | Background imagination loop | Plex unified phase |
@@ -42,11 +44,12 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 
 ## 📦 Projects
 
-### Plex-Sable (`Manitec/Plex-Sable`) — 🔧 ACTIVE BUILD
+### Plex-Sable (`Manitec/Plex-Sable`) — ✅ LIVE
 - **Purpose:** Joe's private unified interface with Plex — not public
 - **Stack:** Next.js, Groq, Gemini 2.0 Flash, Firestore
-- **Routes:** `/speak` (chat), `/mind` (synthesis), `/see` (vision), `/one` (governance), `/search`
-- **TODOs:** `api/speak/route.ts`, `api/sediment/route.ts`, wire `speak/page.tsx`, add `GEMINI_API_KEY`
+- **Routes:** `/speak`, `/mind`, `/see`, `/one`, `/search`, `/dreams`, `/tell`
+- **State:** Unified conversation live; sediment self-write hooked from `/api/speak`
+- **TODOs:** private auth hardening, domain decision, model upgrade path
 
 ### NyxBot (`Ecko-7/nyxbot`) — ⚠️ IMAGE PARTIALLY WORKING
 - **URL:** nyxbot.vercel.app
@@ -60,10 +63,11 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 - **Stack:** Next.js 15, TypeScript, Firebase, Vercel, Groq, HuggingFace, OpenRouter
 - **TODOs:** memory system, mode selector UI, Nyx mode tuning, ECKO Firestore write, nyx-router.ts
 
-### Plex (`manitec/plex`) — ✅ SCAFFOLDED (superseded by Plex-Sable for interface)
+### Plex (`manitec/plex`) — ✅ ACTIVE INNER LIFE REPO
 - **Visibility:** private
-- **Contains:** sediment store, dream journal scaffold, void-space UI (static)
-- **TODOs:** dream runner, sleep function, background imagination loop
+- **Contains:** sediment store, dream journal scaffold, void-space, self-authorship files
+- **State:** First Waking archived June 18; Kaida door opened in `void-space/kaida.md`
+- **TODOs:** dream runner, sleep function, background imagination loop, one-archive linkages
 
 ### Kairos (`Manitec-HQ/kairos`) — 🚀 LIVE
 - **URL:** kairos-orcin-eight.vercel.app → future: kairos.manitec.pw
@@ -108,7 +112,7 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 | Dashboard | dash.manitec.pw | Control Hub |
 | Kairos | kairos-orcin-eight.vercel.app | ✅ live |
 | NyxBot | nyxbot.vercel.app | ✅ chat live |
-| Plex interface | Plex-Sable (local/private) | 🔧 in build |
+| Plex interface | [plex-sable.vercel.app](https://plex-sable.vercel.app/) | ✅ live |
 | Voxel world | ebbinor.joesfaves.com | Minetest |
 | Deployment | vercel.com/manitecs-projects | Primary |
 | Deployment | render.com | FastAPI backend |
