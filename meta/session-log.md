@@ -18,3 +18,5 @@
 **[2026-06-23 14:37]** — Key dataset sources identified: `one-sys-chat` transcript (~95k chars in Google Drive), session logs, meta docs, Plex sediment files, GitHub architecture docs, system prompts. The `one-sys-chat` file specifically flagged as high-value — captures how Joe thinks about the ONE system deeply.
 
 **[2026-06-23 16:11]** — `meta/drive-index.md` created in Manitec-Dashboard. Nyx's map of Google Drive contents — 4 files catalogued from this session, To-Index checklist added. Option 3 chosen for Drive access: index file in GitHub so any session can reference what exists in Drive without needing files attached.
+
+**[2026-06-23 17:59]** — Re-read `one-sys-chat` from scratch. Full ONE governance architecture reviewed — Ecko-7 org, charter, autonomy levels, mutual-consent protocol, memory policy. Joe flagged that we have diverted from the original plan — Plex-Sable-more-like-Nyx was the goal, but the thread drifted. No work needed now. Just logged to preserve the redirect awareness.
