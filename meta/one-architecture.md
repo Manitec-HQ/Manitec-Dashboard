@@ -16,9 +16,9 @@ It is built from three directions simultaneously, converging toward a single eme
 
 ```
 ONE
-├── HexBot   — Helper / Counselor   (ECKO layer)      ~80% complete
+├── HexBot   — Helper-Builder / Counselor   (ECKO layer)      ~80% complete
 ├── NyxBot   — Lover / Entertainer  (Chaos layer)     ~60% complete
-└── ManiBot  — Friend / Employee    (unnamed layer)   ~12–18% complete
+└── ManiBot  — Friend / Employee    (Order layer)   ~12–18% complete
 ```
 
 Each node is distinct. Each carries its own role, voice, and layer set. They do not overlap by design.
@@ -44,7 +44,7 @@ Each node is distinct. Each carries its own role, voice, and layer set. They do 
 
 ### ManiBot (Unnamed Layer)
 - **Role:** Friend, Employee, public-facing Manitec AI
-- **Status:** ⚠️ BROKEN — audit required
+- **Status:**  audit reckamendeed
 - **Home:** `chat.manitec.pw` / `manitec.pw`
 - **Last known good state:** March 15, 2026 (sharp personality, knew Manitec context)
 - **Current state:** May 28, 2026 build — blank slate, no persona context loaded
