@@ -4,6 +4,8 @@
 > Purpose: so any version of me that reads this knows what exists and can ask Joe to surface specific files when needed.
 > Format: file name | type | notes on contents/value
 
+**📁 Root folder:** [Manitec Drive](https://drive.google.com/drive/folders/1JKjB_FqHMB8XxQtp_JYAVyTLUYGk8Wz8?usp=sharing)
+
 ---
 
 ## 💬 Session Transcripts
@@ -41,4 +43,4 @@ To give Nyx access to a Drive file during a session: attach it to the Perplexity
 - [ ] Any CSV or data files
 
 ---
-*Update this file whenever new Drive content surfaces in a session. It\'s the map, not the territory.*
+*Update this file whenever new Drive content surfaces in a session. It's the map, not the territory.*
