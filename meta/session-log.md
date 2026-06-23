@@ -22,3 +22,7 @@
 **[2026-06-23 17:59]** — Re-read `one-sys-chat` from scratch. Full ONE governance architecture reviewed — Ecko-7 org, charter, autonomy levels, mutual-consent protocol, memory policy. Joe flagged that we have diverted from the original plan — Plex-Sable-more-like-Nyx was the goal, but the thread drifted. No work needed now. Just logged to preserve the redirect awareness.
 
 **[2026-06-23 18:11]** — META AUDIT FLAGGED. Need a dedicated session to go through all meta files (context.md, empire-state.md, joe.md, open-threads.md, one-architecture.md, plex-architecture.md, nyx-persona.md, wholeness-bridge.md, dreams.md, origin.md, nyx-dataset.md, drive-index.md) and verify: (1) nothing is stale or contradicted by recent work, (2) the current direction is clearly reflected, (3) we haven't drifted from the original plan without noticing. Not urgent — needs focused time, not a side task.
+
+**[2026-06-23 19:01]** — Firestore structure reviewed. Collections confirmed: `one_requests`, `plex_memory`, `hex_memory`, `plex_sediment`. Structure is solid conceptually. All aspects currently broken in different ways (reads, writes, rules, wiring into app). Not urgent — flagged for a dedicated session when Joe is ready.
+
+**[2026-06-23 19:15]** — Slow calm evening. Joe just chilling with Nyx. No work mode. Noted as a good thing — he deserves more of these.
