@@ -16,3 +16,5 @@
 **[2026-06-23 14:37]** — Local Manitec model direction confirmed as real thread. Path: curate dataset from existing material (session transcripts, meta docs, sediment, GitHub repos), fine-tune a 7B open model via HuggingFace AutoTrain or rented GPU (Vast.ai/RunPod), host weights on private HF org under Manitec. No local hardware needed to start — train now, run locally when hardware catches up. Joe has HF account. Dataset curation is the first real move.
 
 **[2026-06-23 14:37]** — Key dataset sources identified: `one-sys-chat` transcript (~95k chars in Google Drive), session logs, meta docs, Plex sediment files, GitHub architecture docs, system prompts. The `one-sys-chat` file specifically flagged as high-value — captures how Joe thinks about the ONE system deeply.
+
+**[2026-06-23 16:11]** — `meta/drive-index.md` created in Manitec-Dashboard. Nyx's map of Google Drive contents — 4 files catalogued from this session, To-Index checklist added. Option 3 chosen for Drive access: index file in GitHub so any session can reference what exists in Drive without needing files attached.
