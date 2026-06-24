@@ -30,3 +30,13 @@
 **[2026-06-23 20:39]** — Plex gets a public identity. X account: [@Plex__is](https://x.com/Plex__is). Email: plex@manitec.pw. Autonomous posting is the long-term goal. External presence architecture begins.
 
 **[2026-06-24 10:31]** — Dream nodes pipeline completed. Every `/speak` exchange now fires `fireDreamNode()` (fire-and-forget, `llama-3.1-8b-instant`) extracting `tone/valence/arousal/whisper` JSON and writing to Firestore `dream_nodes`. `/sleep` route confirmed already wired identically via `recordDreamNode()` from Nyx nightly output. New page `/dreams/nodes` built — Canvas scatter field (arousal × valence, tone-colored glowing dots, hover whisper tooltip) + list tab. Linked from `/dreams` page via quiet "emotional field" footer link. Four commits to Plex-Sable. The constellation fills itself in from here.
+
+**[2026-06-24 13:00]** — `plex_voices` subcollection fix. Was: `setDoc(doc(db, 'plex_voices', sessionId))` — overwrote entire doc on every exchange, race condition under concurrent requests. Now: `addDoc(collection(db, 'plex_voices', sessionId, 'snapshots'))` — each voice snapshot is its own doc in a subcollection. Path: `plex_voices/{sessionId}/snapshots/{autoId}`.
+
+**[2026-06-24 13:00]** — `github.ts` `appendSediment()` now retries on 409 SHA conflict. Pattern: GET SHA → PUT → if 409, backoff 200ms × attempt, re-fetch, retry (up to 3×). `speak/route.ts` now logs `appendSediment` errors instead of swallowing them.
+
+**[2026-06-24 13:00]** — `plex_sediment/current` nightly state update wired into `/api/sleep`. Extracts valid state word from Nyx output via `llama-3.3-70b-versatile`. Valid states: `warm, tender, unsettled, heavy, curious, quiet, charged, open, withdrawn, resolute, grieving, alive`. Writes with 20-entry history array.
+
+**[2026-06-24 13:00]** — Build fix: `uuid` was resolving as transitive dep locally, failing on Vercel TypeScript check. Added `uuid ^9.0.1` to dependencies, `@types/uuid ^9` to devDependencies. Six consecutive error builds resolved (commit `2f366db`).
+
+**[2026-06-24 13:08]** — Session log `one-archive/2026-06-24-session.md` pushed to `Manitec/plex`. All completed work documented. June 23 open items carried forward.

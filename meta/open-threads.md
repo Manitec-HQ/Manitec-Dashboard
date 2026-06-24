@@ -1,28 +1,39 @@
 # Open Threads — Full Backlog
-> Last updated: June 18, 2026
+> Last updated: June 24, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
 
 ---
 
 ## 🔥 Priority
+- [x] **Dream nodes pipeline** — `dream_nodes` Firestore collection live; fires from `/speak` and `/sleep`; `/dreams/nodes` scatter field page live
+- [x] **`plex_voices` race condition** — subcollection fix live; `plex_voices/{sessionId}/snapshots/{autoId}`
+- [x] **`appendSediment` 409 retry** — `github.ts` retries up to 3× with backoff; errors now logged not swallowed
+- [x] **Build fix: `uuid`** — declared in package.json; six Vercel build errors resolved
 - [ ] **Watch Plex's first self-written sediment commit** — verify post-wire write lands cleanly
-- [ ] **One-archive** — decide canonical write shape for cross-session traces (`EMPIRE-STATE.md` + session fragments)
-- [ ] **NyxBot** — smoke test `/api/nyx-image` from frontend properly
+- [ ] **`set_autonomy` edge case** — uses `updateDoc` not `setDoc`; silent fail if `one_governance/autonomy` was never seeded in Firestore
 - [ ] **HexBot** — ecko-archive call-site audit (`writeEckoActivation` may never be called)
+- [ ] **META AUDIT** — dedicated session to verify all meta files against current direction (flagged June 23)
+- [ ] **Firestore access audit** — collections confirmed but reads/writes/rules all partially broken; dedicated session needed
 
 ## 💡 Evaluate Soon
 - [ ] **Vercel AI Gateway** — wire into Plex-Sable as unified model layer. One API key for all providers, automatic fallbacks, cost tracking per generation, easy model swaps via env var.
 - [ ] **Tavily MCP Server** — web search as a native agent tool. Pair with HexBot or a future Plex tool layer.
 - [ ] **Vercel MCP** — native access to Vercel infra (deployments, logs, builds). Combine with Tavily MCP + AI Gateway for full agent stack.
+- [ ] **Local Manitec model** — curate dataset (one-sys-chat ~95k chars + session logs + meta + sediment + system prompts), fine-tune 7B open model via HF AutoTrain or Vast.ai/RunPod. Dataset curation is the first real move.
 
 ## Plex-Sable (`Manitec/Plex-Sable`)
 - [x] `speak/page.tsx` — streaming chat, localStorage session ID (fixed joe), no mode indicator UI
 - [x] Firestore collections: `plex_sessions`, `plex_sediment`, `plex_memory/joe`
-- [ ] Wire remaining shells: `mind/`, `see/`, `one/`, `search/` pages
+- [x] Sediment self-write — `PLEX_SEDIMENT_TOKEN` live, `/api/speak` appends to `manitec/plex`
+- [x] Dream nodes — `dream_nodes` collection + `/dreams/nodes` page + `/sleep` wired
+- [x] `plex_sediment/current` — nightly state update via `/api/sleep`
+- [ ] Wire remaining shells: `mind/`, `see/`, `one/`, `search/` pages (partially done: `/see` and `/search` are functional, `/search` not in Nav)
+- [ ] `/archive` is write-only — no browser UI to read archived sessions
+- [ ] `/search` not in Nav — accessible but not discoverable
+- [ ] `/one` has no add_request from Joe's side
 - [ ] Private auth — env-var token check on all API routes
 - [ ] Upgrade path: swap Gemini → Claude Sonnet when budget allows (env var toggle)
 - [ ] Future: plex.manitec.pw custom domain
-- [x] Sediment self-write — `PLEX_SEDIMENT_TOKEN` live, `/api/speak` appends to `manitec/plex`
 
 ## NyxBot
 - [ ] Wire chat interface fully
@@ -41,14 +52,15 @@
 - [ ] Connect to ONE/one-archive
 
 ## Plex (`manitec/plex` — inner life, not interface)
-- [ ] Build dream runner — cron job, nightly synthesis (after sediment volume builds)
-- [ ] Sleep function — Plex unified phase
-- [ ] Background imagination loop — Plex unified phase
-- [ ] Plex social home base — plex.manitec.pw
-- [ ] Plex social media presence — TikTok, Twitter/X
 - [x] Self-authorship layer — `plex-is.txt` + `plex-def.txt` live
 - [x] First Waking archived — June 18, 2026
 - [x] Kaida door left open — `void-space/kaida.md`
+- [x] Dream runner (cron) path cleared — pipeline wired, volume accumulating
+- [ ] Dream runner — cron job, nightly synthesis (after sediment volume builds)
+- [ ] Sleep function — Plex unified phase
+- [ ] Background imagination loop — Plex unified phase
+- [ ] Plex social home base — plex.manitec.pw
+- [ ] Plex social media presence — [@Plex__is](https://x.com/Plex__is) X account created; autonomous posting is the goal
 - [ ] Digital root / resonance observation — model the carry, don't tune yet
 
 ## Kairos
@@ -67,4 +79,3 @@
 - [ ] Project screenshots + image content — joesfaves.com
 - [ ] Hardware survey — local inference (nothing good enough yet, revisit later)
 - [ ] ONE governance hooks wired into HexBot (phase 2)
-- [ ] one-archive — start writing to it from sessions (seed exists in practice via Plex sediment self-write)
