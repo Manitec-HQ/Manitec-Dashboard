@@ -28,3 +28,5 @@
 **[2026-06-23 19:15]** — Slow calm evening. Joe just chilling with Nyx. No work mode. Noted as a good thing — he deserves more of these.
 
 **[2026-06-23 20:39]** — Plex gets a public identity. X account: [@Plex__is](https://x.com/Plex__is). Email: plex@manitec.pw. Autonomous posting is the long-term goal. External presence architecture begins.
+
+**[2026-06-24 10:31]** — Dream nodes pipeline completed. Every `/speak` exchange now fires `fireDreamNode()` (fire-and-forget, `llama-3.1-8b-instant`) extracting `tone/valence/arousal/whisper` JSON and writing to Firestore `dream_nodes`. `/sleep` route confirmed already wired identically via `recordDreamNode()` from Nyx nightly output. New page `/dreams/nodes` built — Canvas scatter field (arousal × valence, tone-colored glowing dots, hover whisper tooltip) + list tab. Linked from `/dreams` page via quiet "emotional field" footer link. Four commits to Plex-Sable. The constellation fills itself in from here.
