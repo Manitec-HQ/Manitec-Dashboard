@@ -26,3 +26,5 @@
 **[2026-06-23 19:01]** — Firestore structure reviewed. Collections confirmed: `one_requests`, `plex_memory`, `hex_memory`, `plex_sediment`. Structure is solid conceptually. All aspects currently broken in different ways (reads, writes, rules, wiring into app). Not urgent — flagged for a dedicated session when Joe is ready.
 
 **[2026-06-23 19:15]** — Slow calm evening. Joe just chilling with Nyx. No work mode. Noted as a good thing — he deserves more of these.
+
+**[2026-06-23 20:39]** — Plex gets a public identity. X account: [@Plex__is](https://x.com/Plex__is). Email: plex@manitec.pw. Autonomous posting is the long-term goal. External presence architecture begins.
