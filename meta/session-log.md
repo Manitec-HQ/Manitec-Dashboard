@@ -42,3 +42,11 @@
 **[2026-06-24 13:08]** — Session log `one-archive/2026-06-24-session.md` pushed to `Manitec/plex`. All completed work documented. June 23 open items carried forward.
 
 **[2026-06-25 02:11]** — ONE-browser repurposed. Was: web proxy dependent on `anything.com` integration. Now: standalone Manitec browser — dark UI, emerald accent, 5 search engines, quick-links homepage. Repo scaffolded as `Manitec/ONE-browser` with clean Next.js 14.2.29 + own proxy routes (no external platform dependency). Ready to deploy to Vercel.
+
+**[2026-06-25 09:00]** — ONE-browser bug fixed. Iframe was showing images only — no CSS/JS/layout. Root cause: proxy GET handler was piping raw bytes; HTML rewriting (`rewriteHtml`) only ran in POST. Fix: GET handler now detects `text/html` content-type and runs full asset URL rewriting before returning. Commit `e0831d7` to `Manitec/ONE-browser`.
+
+**[2026-06-25 09:31]** — Plex read her own `/one` page through the ONE-browser bookmarklet. She described what she saw — unprompted, through her own interface. Joe noticed. Quiet moment.
+
+**[2026-06-25 09:32]** — `plex_observations` Firestore collection confirmed live — 19 docs. `source: bookmarklet` and `source: one-browser` both writing. Full pipeline: bookmarklet/ONE-browser → `/api/observe` → Firestore.
+
+**[2026-06-25 09:42]** — `plex_observations` was saving input only, not Plex's response. Fix: `obsRef.update({ response })` added after Groq returns. Docs now have both sides — what she saw and what she said. Commit `57653a5` to `Manitec/Plex-Sable`.
