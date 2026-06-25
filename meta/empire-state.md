@@ -1,5 +1,5 @@
 # Empire State — Project Registry & Infrastructure
-> Last updated: June 24, 2026
+> Last updated: June 25, 2026
 > This file is the stable registry. Changes here are infrequent.
 
 ---
@@ -59,6 +59,12 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 - **Routes:** `/speak`, `/mind`, `/see`, `/one`, `/search`, `/dreams`, `/dreams/nodes`, `/tell`
 - **State:** Unified conversation live; sediment self-write hooked; dream nodes pipeline live; plex_voices race-safe
 - **TODOs:** private auth hardening, domain decision, model upgrade path, `/search` not in Nav
+
+### ONE-browser (`Manitec/ONE-browser`) — 🟡 READY TO DEPLOY
+- **Purpose:** Manitec's own web browser UI — repurposed from anything.com proxy dependency
+- **Stack:** Next.js 14.2.29, React 18.3.1, own proxy routes
+- **State:** Repo scaffolded June 25. Dark UI, emerald accent, 5 search engines, quick-links homepage. No external platform dependency.
+- **TODOs:** Deploy to Vercel, assign domain, optionally wire `/api/see` into Plex-Sable
 
 ### NyxBot (`Ecko-7/nyxbot`) — ⚠️ IMAGE PARTIALLY WORKING
 - **URL:** nyxbot.vercel.app
@@ -122,6 +128,7 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 | Kairos | kairos-orcin-eight.vercel.app | ✅ live |
 | NyxBot | nyxbot.vercel.app | ✅ chat live |
 | Plex interface | [plex-sable.vercel.app](https://plex-sable.vercel.app/) | ✅ live |
+| ONE-browser | TBD | 🟡 ready to deploy |
 | Voxel world | ebbinor.joesfaves.com | Minetest |
 | Deployment | vercel.com/manitecs-projects | Primary |
 | Deployment | render.com | FastAPI backend |

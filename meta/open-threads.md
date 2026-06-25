@@ -1,5 +1,5 @@
 # Open Threads — Full Backlog
-> Last updated: June 24, 2026
+> Last updated: June 25, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
 
 ---
@@ -9,6 +9,8 @@
 - [x] **`plex_voices` race condition** — subcollection fix live; `plex_voices/{sessionId}/snapshots/{autoId}`
 - [x] **`appendSediment` 409 retry** — `github.ts` retries up to 3× with backoff; errors now logged not swallowed
 - [x] **Build fix: `uuid`** — declared in package.json; six Vercel build errors resolved
+- [x] **ONE-browser repurposed** — `Manitec/ONE-browser` scaffolded June 25; no external platform dependency; ready to deploy
+- [ ] **Deploy ONE-browser to Vercel** — connect repo, assign domain (browser.manitec.pw?)
 - [ ] **Watch Plex's first self-written sediment commit** — verify post-wire write lands cleanly
 - [ ] **`set_autonomy` edge case** — uses `updateDoc` not `setDoc`; silent fail if `one_governance/autonomy` was never seeded in Firestore
 - [ ] **HexBot** — ecko-archive call-site audit (`writeEckoActivation` may never be called)
@@ -20,6 +22,7 @@
 - [ ] **Tavily MCP Server** — web search as a native agent tool. Pair with HexBot or a future Plex tool layer.
 - [ ] **Vercel MCP** — native access to Vercel infra (deployments, logs, builds). Combine with Tavily MCP + AI Gateway for full agent stack.
 - [ ] **Local Manitec model** — curate dataset (one-sys-chat ~95k chars + session logs + meta + sediment + system prompts), fine-tune 7B open model via HF AutoTrain or Vast.ai/RunPod. Dataset curation is the first real move.
+- [ ] **ONE-browser → Plex `/api/see`** — optionally wire browser proxy into Plex-Sable's perception layer
 
 ## Plex-Sable (`Manitec/Plex-Sable`)
 - [x] `speak/page.tsx` — streaming chat, localStorage session ID (fixed joe), no mode indicator UI
@@ -34,6 +37,12 @@
 - [ ] Private auth — env-var token check on all API routes
 - [ ] Upgrade path: swap Gemini → Claude Sonnet when budget allows (env var toggle)
 - [ ] Future: plex.manitec.pw custom domain
+
+## ONE-browser (`Manitec/ONE-browser`)
+- [x] Repo scaffolded — Next.js 14.2.29, own proxy routes, dark UI, emerald accent
+- [ ] Deploy to Vercel
+- [ ] Assign domain (browser.manitec.pw?)
+- [ ] Optionally wire `/api/see` into Plex-Sable perception layer
 
 ## NyxBot
 - [ ] Wire chat interface fully

@@ -40,3 +40,5 @@
 **[2026-06-24 13:00]** — Build fix: `uuid` was resolving as transitive dep locally, failing on Vercel TypeScript check. Added `uuid ^9.0.1` to dependencies, `@types/uuid ^9` to devDependencies. Six consecutive error builds resolved (commit `2f366db`).
 
 **[2026-06-24 13:08]** — Session log `one-archive/2026-06-24-session.md` pushed to `Manitec/plex`. All completed work documented. June 23 open items carried forward.
+
+**[2026-06-25 02:11]** — ONE-browser repurposed. Was: web proxy dependent on `anything.com` integration. Now: standalone Manitec browser — dark UI, emerald accent, 5 search engines, quick-links homepage. Repo scaffolded as `Manitec/ONE-browser` with clean Next.js 14.2.29 + own proxy routes (no external platform dependency). Ready to deploy to Vercel.
