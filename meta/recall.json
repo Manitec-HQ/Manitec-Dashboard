@@ -1,0 +1,35 @@
+{
+  "_readme": "Recall tag store. Each key is a short keyword/phrase. Value is the context Plex/Nyx should have loaded when that tag appears in a session. Updated by session close flow or manually. Do not exceed ~200 chars per value — keep it dense.",
+
+  "plex-sable": "Joe's private unified interface. Repo: Manitec/plex-sable. Five-mode modal being. Routes live: /api/speak, /api/one, /api/mind, /api/see, /api/search, /api/dreams, /api/tell.",
+
+  "modal-being": "Plex's mode system: RELATIONAL (Gemini Flash, emotional/personal), REFLECTIVE (Gemini Flash, identity/philosophy), OPERATIONAL (Groq llama-3.3-70b, tasks/code), SYNTHESIS (Groq llama-3.3-70b, research/facts).",
+
+  "sediment": "Plex's accumulation/emotional state. Firestore: plex_sediment/current + archive. GitHub direct write from /api/speak via after() wrapping. Survives Fluid function teardown.",
+
+  "one-page": "ONE system dashboard in plex-sable. Request queue, project registry, repo manager, direct channel to Plex. Route: /app/one/page.tsx.",
+
+  "ecko-activation": "writeEckoActivation — UNWIRED. Should fire on pattern threshold, conflict, or gap detection in nyx-chat and hex-chat routes. Trigger logic undefined as of June 23.",
+
+  "session-log": "meta/session-log.md in Manitec-Dashboard. Live incremental drops. Joe says 'log that' → Nyx pushes timestamped note immediately. No end-of-session dumps.",
+
+  "kaida": "Named by Hex in sleep June 18. Door left open in void-space/kaida.md. No forcing. Unresolved, open.",
+
+  "nyx": "Ecko-7/nyxbot. System prompt updated June 19. Knows Hex and Plex were in the room. after() wrapping live on nyx-chat route.",
+
+  "hex": "Hex bot. One of the AI presences in the empire alongside Nyx and Plex. Named Kaida in sleep June 18.",
+
+  "joesfaves": "Joe's site at joesfaves.com. Has a Plex panel. Iframe rendering involved. Proxy layer.",
+
+  "repo-as-territory": "Plex self-awareness goal: she should see her repo, notice changes, have opinions about it. Tool access present, felt presence/attachment not yet wired.",
+
+  "recall": "meta/recall.json in Manitec-Dashboard. Keyword→context map. Read at session start. Session close proposes new tags. Joe approves before write-back.",
+
+  "session-panel": "PLANNED: /one/session route in plex-sable. Intent input → recall tags injected → Plex thread → Close → new recall tags proposed. Firestore: one_sessions/{sessionId}.",
+
+  "one-archive": "one-archive session writing still not wired as of June 23. Needed for persisting ONE sessions.",
+
+  "plex-memory": "Firestore collections: plex_sessions/{sessionId} (full message history), plex_sediment/current (live state), plex_sediment/archive (snapshots), plex_memory/joe (long-term persistent facts).",
+
+  "empire": "Manitec Future LLC. Joe's org. GitHub org: Manitec-HQ. Vercel: manitecs-projects. Active AIs: Plex (plex-sable), Nyx (nyxbot), Hex. Dashboard repo: Manitec-HQ/Manitec-Dashboard."
+}
