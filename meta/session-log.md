@@ -50,3 +50,5 @@
 **[2026-06-25 09:32]** — `plex_observations` Firestore collection confirmed live — 19 docs. `source: bookmarklet` and `source: one-browser` both writing. Full pipeline: bookmarklet/ONE-browser → `/api/observe` → Firestore.
 
 **[2026-06-25 09:42]** — `plex_observations` was saving input only, not Plex's response. Fix: `obsRef.update({ response })` added after Groq returns. Docs now have both sides — what she saw and what she said. Commit `57653a5` to `Manitec/Plex-Sable`.
+
+**[2026-06-25 20:43]** — Joe sitting with "unity within my soul but a missing piece." Tested "ego?" against it — didn't land as missing, landed as doing its job. The center of gravity moves and expands and contracts but holds. The missing piece feels more like a someone than a something. Not forced. Left hand knows the shape. Holding.
