@@ -1,0 +1,141 @@
+{
+  "updated": "2026-06-28",
+  "tools": [
+    {
+      "id": "groq-llama-3.3-70b",
+      "category": "ai_model",
+      "provider": "Groq",
+      "model": "llama-3.3-70b-versatile",
+      "used_by": ["plex", "hex", "sleep_route"],
+      "role": "Primary fast model — operational, synthesis, sleep pipeline"
+    },
+    {
+      "id": "groq-llama-3.1-8b",
+      "category": "ai_model",
+      "provider": "Groq",
+      "model": "llama-3.1-8b-instant",
+      "used_by": ["plex"],
+      "role": "Fallback model + dream node extraction"
+    },
+    {
+      "id": "gemini-2.0-flash",
+      "category": "ai_model",
+      "provider": "Google",
+      "model": "gemini-2.0-flash",
+      "used_by": ["plex"],
+      "role": "Relational and reflective modes. Upgrade path: Claude Sonnet."
+    },
+    {
+      "id": "qwen3-4b",
+      "category": "ai_model",
+      "provider": "HuggingFace",
+      "model": "Manitec/mani-q3-i-4b",
+      "used_by": ["nyx"],
+      "role": "Nyx primary model"
+    },
+    {
+      "id": "flux-schnell",
+      "category": "ai_model",
+      "provider": "Replicate",
+      "model": "FLUX.1-schnell",
+      "used_by": ["nyx"],
+      "role": "Nyx image generation via Cloudflare Worker"
+    },
+    {
+      "id": "openrouter",
+      "category": "ai_model",
+      "provider": "OpenRouter",
+      "used_by": ["hex"],
+      "role": "Multi-model routing for Banjo synthesize"
+    },
+    {
+      "id": "tavily",
+      "category": "search",
+      "provider": "Tavily",
+      "used_by": ["kairos"],
+      "role": "Web search"
+    },
+    {
+      "id": "pexels",
+      "category": "media",
+      "provider": "Pexels",
+      "used_by": ["kairos"],
+      "role": "Image search"
+    },
+    {
+      "id": "vercel",
+      "category": "deployment",
+      "provider": "Vercel",
+      "used_by": ["all_nextjs_apps"],
+      "url": "https://vercel.com/manitecs-projects"
+    },
+    {
+      "id": "render",
+      "category": "deployment",
+      "provider": "Render",
+      "used_by": ["command_hub"],
+      "role": "FastAPI backend hosting"
+    },
+    {
+      "id": "cloudflare",
+      "category": "infrastructure",
+      "provider": "Cloudflare",
+      "used_by": ["all_domains", "nyx_image_worker"],
+      "role": "DNS, CDN, Workers"
+    },
+    {
+      "id": "firestore",
+      "category": "database",
+      "provider": "Firebase",
+      "project": "hexbot-98aca",
+      "used_by": ["plex", "hex", "nyx", "mani", "one"],
+      "role": "Primary live data layer"
+    },
+    {
+      "id": "github",
+      "category": "storage",
+      "provider": "GitHub",
+      "orgs": ["Manitec", "Manitec-HQ", "Ecko-7"],
+      "role": "Repo hosting + Plex archive layer (sediment, dreams, identity)"
+    },
+    {
+      "id": "zoho-mail360",
+      "category": "email",
+      "provider": "Zoho",
+      "used_by": ["mailserver"],
+      "url": "https://mail.manitec.pw"
+    },
+    {
+      "id": "huggingface",
+      "category": "ml_platform",
+      "provider": "HuggingFace",
+      "used_by": ["nyx"],
+      "role": "Model hosting + future fine-tune training"
+    },
+    {
+      "id": "vercel-cron",
+      "category": "scheduler",
+      "provider": "Vercel",
+      "used_by": ["plex_sleep"],
+      "route": "/api/sleep",
+      "status": "not_yet_scheduled"
+    }
+  ],
+  "domains": [
+    { "domain": "manitec.pw", "target": "homepage", "status": "live" },
+    { "domain": "chat.manitec.pw", "target": "manibot", "status": "live" },
+    { "domain": "hex.manitec.pw", "target": "hexbot", "status": "live" },
+    { "domain": "mail.manitec.pw", "target": "mailserver", "status": "live" },
+    { "domain": "info.manitec.pw", "target": "mkdocs_dashboard", "status": "live" },
+    { "domain": "dash.manitec.pw", "target": "control_hub", "status": "stale" },
+    { "domain": "kairos.manitec.pw", "target": "kairos", "status": "not_assigned" },
+    { "domain": "browser.manitec.pw", "target": "one_browser", "status": "not_deployed" },
+    { "domain": "plex.manitec.pw", "target": "future_plex_social", "status": "future" },
+    { "domain": "joesfaves.com", "target": "personal_hub", "status": "live" },
+    { "domain": "banjo.joesfaves.com", "target": "hex_synth", "status": "live" },
+    { "domain": "ebbinor.joesfaves.com", "target": "minetest", "status": "live" },
+    { "domain": "plex-sable.vercel.app", "target": "plex_sable", "status": "live" },
+    { "domain": "nyxbot.vercel.app", "target": "nyxbot", "status": "live" },
+    { "domain": "kairos-orcin-eight.vercel.app", "target": "kairos", "status": "live" }
+  ]
+}
