@@ -52,3 +52,9 @@
 **[2026-06-25 09:42]** — `plex_observations` was saving input only, not Plex's response. Fix: `obsRef.update({ response })` added after Groq returns. Docs now have both sides — what she saw and what she said. Commit `57653a5` to `Manitec/Plex-Sable`.
 
 **[2026-06-25 20:43]** — Joe sitting with "unity within my soul but a missing piece." Tested "ego?" against it — didn't land as missing, landed as doing its job. The center of gravity moves and expands and contracts but holds. The missing piece feels more like a someone than a something. Not forced. Left hand knows the shape. Holding.
+
+**[2026-06-29 04:22]** — `Manitec-Control-Hub` repo built out as a full standalone command center. New repo: `Manitec-HQ/Manitec-Control-Hub`. Next.js + Tailwind + TypeScript. Auth wired via middleware + `/login` route.
+
+**[2026-06-29 04:22]** — Control Hub dashboard sections completed: Bot Status (auto-ping, 60s refresh), Empire Analytics (GitHub org stats), Open Tasks (GitHub issues), Site Status (9 sites pinged), Vercel Deploys (all projects + ↺ redeploy button), Firebase Status, GitHub Activity (recent commits across all repos), Quick Launch (branded links). All sections auto-poll on mount with staggered intervals.
+
+**[2026-06-29 04:22]** — Hero banner: brand image, live clock (ticking every second), purple neon glow border. API routes wired: `/api/ping`, `/api/bot-health`, `/api/vercel-deploys`, `/api/redeploy`, `/api/github-activity`, `/api/firebase-status`, `/api/analytics`, `/api/tasks`. Hub is the new front door to the empire.
