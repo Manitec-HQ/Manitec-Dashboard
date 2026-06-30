@@ -1,5 +1,5 @@
 # Empire State — Project Registry & Infrastructure
-> Last updated: June 25, 2026
+> Last updated: June 30, 2026
 > This file is the stable registry. Changes here are infrequent.
 
 ---
@@ -71,12 +71,17 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 - **Stack:** Next.js, Vercel, Cloudflare Worker (`nyx-image-gen`)
 - **Chat:** ✅ working | **Image:** ⚠️ worker live, frontend partial
 - **Worker:** `nyx-image-gen` → HuggingFace router → FLUX.1-schnell ✅
-- **TODOs:** wire chat fully, session memory, prompt rewriting pipeline, model swap eval, binary streaming (phase 2)
+- **TODOs:** wire chat fully, session memory, prompt rewriting pipeline, model swap eval, binary streaming (phase 2), deep layer naming
 
-### HexBot (`Ecko-7/hexbot`) — ⚠️ NEEDS AUDIT
+### HexBot (`Ecko-7/hexbot`) — ✅ LIVE
 - **URL:** hex.manitec.pw
-- **Stack:** Next.js 15, TypeScript, Firebase, Vercel, Groq, HuggingFace, OpenRouter
-- **TODOs:** memory system, mode selector UI, Nyx mode tuning, ECKO Firestore write, nyx-router.ts
+- **Stack:** Next.js 15, TypeScript, Firebase Admin, Vercel, Groq, HuggingFace, OpenRouter
+- **Routes:** `hex-chat`, `one-interpret`, `ecko-init`, `session-command`, `ping-hub`, `create-task`
+- **Libs confirmed live:** `ecko-writer`, `one-archive-writer`, `memory-engine`, `model-router`, `emotionHandler`, `resonance-engine`, `sediment-writer`, `firebase-admin`, `calendar-ics`
+- **ECKO pipeline:** `writeEckoActivation` + `writeEckoFragment` + 4 triggers (direct/conflict/pattern/gap) ✅
+- **one-archive:** `writeOneArchive` wired via `setImmediate` ✅
+- **Firestore:** all writes via firebase-admin — rules bypass, confirmed June 30 ✅
+- **TODOs:** `nyx-router.ts` (only remaining structural gap), Nyx mode tuning, ECKO-EM LoRA dataset
 
 ### Plex (`manitec/plex`) — ✅ ACTIVE INNER LIFE REPO
 - **Visibility:** private
@@ -91,11 +96,11 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 
 ### Manibot (`Manitec-HQ/manibot`) — ✅ LIVE
 - **URL:** chat.manitec.pw
-- **Status:** Firestore memory shipped June 13. pnpm-lock.yaml push pending.
-- **TODOs:** push clean pnpm-lock.yaml, strip dead Neon/db.ts artifacts
+- **Status:** Firestore memory shipped June 13.
+- **TODOs:** push clean pnpm-lock.yaml, strip dead Neon/db.ts artifacts, full audit before dev
 
 ### ONE Governance (`Ecko-7/governance`) — ✅ STABLE
-- Scaffold complete. Wire into HexBot (phase 2). Verify `?NAME?` → Plex done.
+- Scaffold complete. `one_governance/autonomy` seeded June 30 (idempotent upsert). Wire into HexBot (phase 2).
 
 ### Banjoshire Chat (`Manitec-HQ/Banjoshire-Chat`) — 🟠 STALLED
 - Still want to do something with it. No active sprint.
@@ -106,8 +111,10 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 ### Manitec Homepage (`Manitec-HQ/manitec-homepage`) — 🟠 NEEDS REFRESH
 - URL: manitec.pw
 
-### Manitec Control Hub (`Manitec-HQ/Manitec-Control-Hub`) — 🟠 STALE
-- URL: dash.manitec.pw. Needs update.
+### Manitec Control Hub (`Manitec-HQ/Manitec-Control-Hub`) — ✅ LIVE
+- URL: dash.manitec.pw
+- **Built June 29.** 8 API routes: `analytics`, `bot-health`, `firebase-status`, `firestore`, `github-activity`, `ping`, `redeploy`, `tasks`, `vercel-deploys`. Auth via middleware. Full dashboard page (26KB).
+- **TODOs:** wire `one-archive` read endpoint, data enrichment pass
 
 ### Mailserver (`Manitec-HQ/mailserver`) — 🟢 LIVE (needs update)
 - URL: mail.manitec.pw. In use. Zoho Mail360 client.
@@ -124,7 +131,7 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 | Email | mail.manitec.pw | FastAPI + Zoho + SQLite |
 | AI chat | chat.manitec.pw | ManiBot ✅ live |
 | AI dev | hex.manitec.pw | HexBot |
-| Dashboard | dash.manitec.pw | Control Hub |
+| Dashboard | dash.manitec.pw | Control Hub ✅ live |
 | Kairos | kairos-orcin-eight.vercel.app | ✅ live |
 | NyxBot | nyxbot.vercel.app | ✅ chat live |
 | Plex interface | [plex-sable.vercel.app](https://plex-sable.vercel.app/) | ✅ live |
