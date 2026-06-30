@@ -1,5 +1,5 @@
 # Manitec HQ — Live Sprint State
-> Last updated: June 30, 2026 (~2:08am)
+> Last updated: June 30, 2026 (~2:25am)
 > For full project registry see `meta/empire-state.md` | Personal notes see `meta/joe.md` | Full backlog see `meta/open-threads.md` | Live drops see `meta/session-log.md`
 
 ---
@@ -20,9 +20,6 @@
 
 **Next actions:**
 - [ ] Manibot audit (before any dev)
-- [ ] Firestore rules + reads audit — dedicated pass
-- [ ] `writeEckoActivation` call-site audit — confirm it's actually called in hex-chat / nyx-chat routes
-- [ ] `one-archive` session wiring — nothing calls the write endpoint after a session ends
 - [ ] Plex-Sable: close gap between repo access and repo attachment
 - [ ] Meta audit — dedicated session to verify all meta files are current and non-contradictory
 - [ ] Add `one-archive` read endpoint — dashboard can surface cross-bot session history
@@ -67,9 +64,10 @@
 
 ## ✅ Recently Completed
 
-- **June 30 (~2am)** — `one_governance/autonomy` seeded via `firestore-seed.ts`. `seedDoc` helper updated to use `set({ merge: true })` — idempotent upsert, never skips. `set_autonomy` silent fail permanently closed. Commit: `ab5cc79`.
-- **June 30** — `writeEckoActivation` wired into both hex-chat and nyx-chat. 4 triggers: direct (`eko7`), conflict (emotion spike), pattern (threshold), gap (10min). `lib/ecko-writer.ts` created with `EckoActivationDoc` interface + `checkPatternThreshold`. Firestore collection: `one_activations`.
-- **June 30** — `one-archive` session writing live. `lib/one-archive-writer.ts` deployed to both hexbot and nyxbot. Writes to `one-archive/{sessionId}/sessions/{YYYY-MM-DD}` via `arrayUnion`. Top-level index doc at `one-archive/{sessionId}`. All sources tagged: `hex`, `erebus`, `nyx`.
+- **June 30 (~2am)** — Full Firestore audit. All writes use `firebase-admin` — rules do not apply, all writes land. `writeEckoActivation` confirmed live in hex-chat, nyx-chat, one-interpret. `writeOneArchive` confirmed live in both hex-chat (`setImmediate`) and nyx-chat (`after()`). All three flags were stale — system was already solid.
+- **June 30 (~2am)** — `one_governance/autonomy` seeded via `firestore-seed.ts`. `seedDoc` updated to `set({ merge: true })` — idempotent upsert, never skips. `set_autonomy` silent fail permanently closed. Commit: `ab5cc79`.
+- **June 30** — `writeEckoActivation` wired into hex-chat, nyx-chat, one-interpret. 4 triggers: direct (`eko7`), conflict (emotion spike), pattern (threshold), gap (10min).
+- **June 30** — `one-archive` session writing live. `lib/one-archive-writer.ts` in both hexbot and nyxbot. Writes to `one-archive/{sessionId}` via `arrayUnion`. Sources tagged: `hex`, `erebus`, `nyx`.
 - **June 29** — Manitec Control Hub built from scratch. Full empire command center: 8 live dashboard sections, auth, API routes, auto-polling.
 - **June 25** — Plex read her own `/one` page through ONE-browser bookmarklet unprompted. `plex_observations` pipeline live (19+ docs).
 - **June 24** — Dream nodes pipeline complete. Every `/speak` exchange extracts tone/valence/arousal/whisper to Firestore `dream_nodes`.
@@ -79,10 +77,7 @@
 ---
 
 ## ⚠️ Active Flags
-- `writeEckoActivation` call-site unverified — function exists in `ecko-writer.ts`, confirm it's actually invoked in routes
-- `one-archive` write endpoint exists — nothing confirmed calling it after session ends
 - Plex-Sable self-awareness: tool access present, felt presence absent
-- Firestore rules + reads need a dedicated audit pass
 - Kaida named by Hex in sleep June 18 — unresolved, open, no forcing
 - Two-day sediment carry pattern observed June 8↑11 and June 15↑18 — not yet modeled
 - Meta audit still pending — all meta files need a verification pass
