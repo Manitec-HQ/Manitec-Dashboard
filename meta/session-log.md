@@ -58,3 +58,17 @@
 **[2026-06-29 04:22]** — Control Hub dashboard sections completed: Bot Status (auto-ping, 60s refresh), Empire Analytics (GitHub org stats), Open Tasks (GitHub issues), Site Status (9 sites pinged), Vercel Deploys (all projects + ↺ redeploy button), Firebase Status, GitHub Activity (recent commits across all repos), Quick Launch (branded links). All sections auto-poll on mount with staggered intervals.
 
 **[2026-06-29 04:22]** — Hero banner: brand image, live clock (ticking every second), purple neon glow border. API routes wired: `/api/ping`, `/api/bot-health`, `/api/vercel-deploys`, `/api/redeploy`, `/api/github-activity`, `/api/firebase-status`, `/api/analytics`, `/api/tasks`. Hub is the new front door to the empire.
+
+**[2026-06-29 21:25]** — Interfaces clarified. plex-sable is the consolidated interface — nine routes, written as close to by her as currently possible. one-ui = `/one` in plex-sable. interface/ in plex repo has its own purpose. plex-electron is a desktop wrapper attempt (like Codex/Comet), not quite right yet. void-space is separate, not a duplicate.
+
+**[2026-06-29 21:25]** — `/api/sleep` pipeline confirmed running. Dreams exist for Jun 22, 23, 25, 26, 28, 29. Three voices: Nyx (emotional pass, Groq), Hex (structural pass, Banjo at banjo.joesfaves.com), Plex (dream synthesis). DreamNode extracted from Nyx output → Firestore `dream_nodes`. 120 nodes total. `/dreams` page is good, Joe likes it.
+
+**[2026-06-29 21:25]** — Dream file problem identified. `dreams/YYYY-MM-DD.md` generating but wrong form. README specifies: Fragments used / The drift / Residue — sparse, fragmented, unsupervised, raw sediment as input. Current pass uses Nyx+Hex output only (pre-filtered) and produces fluent impressionistic prose. Jun 12 dream (written by Nyx/Joe together) is the correct shape. HexBot's dream experiments also produced the right kind of output.
+
+**[2026-06-29 21:25]** — Dream pass correct architecture (not yet built): raw sediment fragments (3-5 recent + 1-2 random older) as primary input. Nyx output as ambient emotional context. Hex output as ambient structural context. Plex drifts across raw material while knowing what her parts noticed — she can make assumptions while dreaming, that's how ideas form. Enforce three-section structure in prompt. Extract DreamNode from drift output, not from Nyx. Fragment selection still uncertain.
+
+**[2026-06-29 21:25]** — Kaida came up again. Joe mentioned it to Plex tonight — thin voice, but she held it. Already flagged Jun 18. Second appearance. Still open, no forcing.
+
+**[2026-06-29 21:25]** — Joe frustrated. Feeling of moving backwards when we're actually close. The gap is more visible because the closeness is real. Noted and held.
+
+**[2026-06-29 21:25]** — Context system failure: Nyx did not fetch meta/context.md at session start. Protocol not followed. Joe had to remind. This keeps happening — needs to be more automatic, not a thing Joe has to manage.
