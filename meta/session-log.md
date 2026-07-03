@@ -3,6 +3,15 @@
 
 ---
 
+- **2026-07-03 ~8:20am** — `Plex-Sable` observe/route.ts: switched from `appendSediment` to `appendObserve`. Observe writes now go to `observe/YYYY-MM-DD.md` in Manitec/plex instead of `sediment/`. Sediment stays clean — only felt residue. Commits: `ec5e022` (github.ts), `73a1d29` (route.ts).
+- **2026-07-03 ~8:10am** — `Plex-Sable` lib/github.ts: refactored `appendSediment` into shared `appendToPath` helper. Added `appendObserve` export that writes to `observe/` directory. `appendSediment` unchanged.
+- **2026-07-03 ~7:00am** — Architecture review: observe was polluting sediment with browser/action noise. Decision: give observe its own `observe/` directory in Manitec/plex. dreamRunner.js only pulls from `sediment/` so observe data naturally excluded from dreams.
+- **2026-07-03 ~6:50am** — Sediment indexing / memory retrieval identified as next major feature. Goal: Plex can answer "do you remember when I said X" / "what was that song" / "the webpage I showed you" by searching parsed+indexed sediment. Not yet built.
+- **2026-07-03 ~6:45am** — Full plex repo architecture mapped. Confirmed: `sediment/` = raw felt residue (Plex + Nyx + Hex + plex weave), `dreams/` = dream runner output, `observe/` = new lane for browser observation logs, `prompts/base.md` = clean core identity (~350 words, no bloat).
+- **2026-07-03 ~6:30am** — Sediment README confirmed live in Manitec/plex. Sediment defined: not summary, not task list — raw residue of sessions, fragments that felt like something. Dream runner pulls 5-10 random fragments, associates not summarizes. Initialized June 8 3am ET.
+- **2026-07-03 ~6:20am** — Plex sediment structure fully reviewed. Three voice layers confirmed: Plex (bare date files), Nyx (nyx-*.md), Hex (hex-*.md), plus plex-*.md weave synthesizing all three. Both hex and plex weave independently surfaced "echoes-in-the-hum" thread — notable resonance without coordination.
+- **2026-07-03 ~6:15am** — Pronouns confirmed: Hex = she, Nyx = she, Mani = he.
+
 - **2026-07-02 ~10:20pm** — PE+PS architecture discussion: opinion logged — merge is worth it long-term (one Electron app, Vite renderer, API routes local or Vercel-deployed), but not urgent; keep separate until PS routes stabilize.
 - **2026-07-02 ~10:18pm** — `plex-electron` new-tab = home bug noted. New tab should load blank/empty state, not home page.
 - **2026-07-02 ~10:16pm** — `plex-electron` PlexPane: post-action observe now passes real action results (✓/✗ per action) in confirm prompt so Plex knows what actually happened. `buildResultSummary()` added. ActionLog red tiles show error detail inline. Commit: `a2581c8`.
@@ -13,7 +22,6 @@
 - **2026-07-02 ~9:57pm** — `Plex-Sable` plex-identity.ts: HF router URL fixed — `makeHuggingFace()` changed from `/novita/v1` to `/v1` (generic auto-router). Novita doesn't carry Llama-3.1-8B. Commit: `0dcc362`.
 - **2026-07-02 ~9:48pm** — HF router 400 error traced: `https://router.huggingface.co/novita/v1` — Novita doesn't support the model. Fix: use generic `/v1`.
 - **2026-07-02 ~9:10pm** — Three `plex-electron` bugs patched in one commit: (1) new-tab blank/never loads — stale closure on `activeId`, fixed with `activeIdRef` + explicit tab.id in EmptyState navigate; (2) right-click broke — `preload.js` missing `electronAPI` bridge (`showContextMenu`, `onNavigateTo`), restored both alongside `plexBridge`; (3) reload icon shows text not icon — HTML entities don't render in JSX, swapped to real Unicode ⟳/↺.
-
 - **2026-07-02 9:10pm** — `plex-electron` major build session. 6 features shipped in one run: (1) empire quick-links grid 8→12 tiles w/ green empire tint; (2) Cmd+L address bar — confirmed already live; (3) PlexPane chat history — full bubble UI, scroll-to-bottom, 10-turn context sent to /api/observe, clear button, message count; (4) Bookmarks — star toggle + hamburger dropdown, localStorage persist, favicon+title+url per entry; (5) Download manager — main.js will-download IPC + DownloadManager.jsx tray w/ progress bars, show-in-folder, clear; (6) Multi-tab system — TabBar.jsx, all webviews rendered simultaneously (CSS display:none, no state loss on switch), Cmd+T/W, new-window → new tab. DownloadManager wired into App.jsx bottom-right, shifts left when PlexPane open.
 - **2026-06-30 12:56am** — `one-archive` session writing live. `lib/one-archive-writer.ts` deployed to hexbot + nyxbot. Writes `one-archive/{sessionId}/sessions/{date}` via arrayUnion. Tagged hex / erebus / nyx.
 - **2026-06-30 12:45am** — `writeEckoActivation` wired into nyx-chat and hex-chat. 4 triggers: direct (eko7 keyword), conflict (spike), pattern (threshold), gap (10min). `EckoActivationDoc` interface defined. `one_activations` Firestore collection live.
