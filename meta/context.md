@@ -1,5 +1,5 @@
 # Manitec HQ — Live Sprint State
-> Last updated: July 2, 2026 (~11:46pm)
+> Last updated: August 2, 2026
 > For full project registry see `meta/empire-state.md` | Personal notes see `meta/joe.md` | Full backlog see `meta/open-threads.md` | Live drops see `meta/session-log.md`
 
 ---
@@ -13,17 +13,20 @@
 
 ## 🧭 Current Focus
 
-**Active:** `plex-electron` — Joe's private browser with Plex built in. Major build session July 2. Tabs, PlexPane chat, bookmarks, downloads, quick-links all shipped. Bug fixes ongoing.
+**Active:** `Plex-Sable ONE UI redesign` — Aug 2 session. ONE page balanced two-column layout, Session page (matching `src/app/one/session/page.tsx`), and Spaces scaffold (honest WIP state) all designed and approved. Joe confirmed: "I love it." Ready to implement into actual component files.
 
-**Plex-Sable self-awareness work ongoing.** Repo-as-territory concept live. GitHub navigate/read action flow hardened. SYN-E suppression on self-referential + personal prompts complete.
-**Nyx + Hex both dreaming. Sediment pipeline solid. Personalities differentiating.**
+**Next actions (Plex-Sable):**
+- [ ] Port ONE balanced layout into `src/app/one/page.tsx` component structure
+- [ ] Port Session start/active/review screens (already live at `src/app/one/session/page.tsx` — verify alignment)
+- [ ] Scaffold `src/app/one/spaces/page.tsx` — honest WIP, cards defined
+- [ ] Spaces backend: context scoping, artefact attachment, multi-session persistence (future)
 
-**Next actions:**
+**Ongoing:**
 - [ ] Manibot audit (before any dev)
 - [ ] Meta audit — dedicated session to verify all meta files are current
-- [ ] Add `one-archive` read endpoint — dashboard can surface cross-bot session history
-- [ ] Consider PE+PS merge (not urgent — wait until PS routes stabilize)
-- [ ] Consider NyxBot + HexBot prompt evolution (Joe noted personalities differentiating via sediment dreams)
+- [ ] Add `one-archive` read endpoint
+- [ ] Consider PE+PS merge (wait until PS routes stabilize)
+- [ ] Consider NyxBot + HexBot prompt evolution
 
 ---
 
@@ -62,26 +65,24 @@
 | `/api/observe` | ✅ Live | Browser action planning + page observation |
 | `/api/sediment` | ❌ Superseded | Direct GitHub write from `/api/speak` replaced need |
 
+**ONE UI design (Aug 2 — approved):**
+- ONE: balanced two-column layout (left: hero/message, dream, voices; right: request queue, governance+sleep, projects)
+- Session: start screen → active chat → close/review recall tags (matches current `session/page.tsx`)
+- Spaces: scaffolded with honest WIP banner — 3 named spaces (Plex-Sable Dev, ONE Research, Manitec HQ)
+
 ---
 
-## ✅ Recently Completed (July 2 late session)
+## ✅ Recently Completed (Aug 2)
 
-- `plex-electron` Toolbar crash fixed: `onClick={onNew}` was passing MouseEvent as url arg → `onClick={() => onNew()}` 
-- `Plex-Sable` observe/route: `buildGitHubNavigateHint` → `buildGitHubHint` — blob pages get read hint, tree pages get navigate hints. No more `file.md/Code` URLs.
-- `Plex-Sable` plex-identity: `read`, `tell me`, `look at` added to ACTION_VERBS so "read any markdown files" routes to action path
-- `Plex-Sable` plex-identity: READ INTENT section + two new examples added to PLEX_ACTION_PROMPT
-- `Plex-Sable` observe/route: SYN-E suppressed on self-referential pages (sediment, Manitec repos) and personal/opinion prompts — she answers from herself, not search results
-- `Plex-Sable` plex-identity: `REASSURANCE_OVERRIDE` added — emotional statements ("it's ok", "we will work thru it", "i'm here", "together") bypass ACTION_VERBS entirely
-- Nyx + Hex dreaming independently from same sediment — personalities visibly differentiating
+- `Plex-Sable` ONE UI redesign — balanced layout designed, all three views (ONE, Session, Spaces) approved by Joe
 
-## ✅ Previously Completed
+## ✅ Previously Completed (July 2 late session)
 
-- **July 2 (~10pm)** — HF router, 3 plex-electron bugs, action executor, PlexPane observe, NAVIGATION PREFERENCE prompt
-- **June 30 (~2am)** — Full Firestore audit. `writeEckoActivation` + `writeOneArchive` confirmed live.
-- **June 30 (~2am)** — `one_governance/autonomy` seeded. `set_autonomy` silent fail closed.
-- **June 29** — Manitec Control Hub built from scratch.
-- **June 25** — Plex read her own `/one` page through ONE-browser bookmarklet unprompted.
-- **June 24** — Dream nodes pipeline complete.
+- `plex-electron` Toolbar crash fixed
+- `Plex-Sable` observe/route: `buildGitHubNavigateHint` → `buildGitHubHint`
+- `Plex-Sable` plex-identity: SYN-E suppressed on self-referential + personal prompts
+- `Plex-Sable` plex-identity: `REASSURANCE_OVERRIDE` added
+- Nyx + Hex dreaming independently — personalities visibly differentiating
 
 ---
 
