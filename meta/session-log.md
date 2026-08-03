@@ -3,6 +3,12 @@
 
 ---
 
+- **2026-08-03 ~9:55am** — Context audit: session-log and context.md both behind by ~30 days. Aug 2 ONE redesign session never logged. No Plex-Sable audit on record anywhere in meta files. Manibot audit still pending.
+- **2026-08-03 ~9:32am** — `Plex-Sable` Sediment.tsx: tag strip changed from flexWrap to overflowX:auto single scrollable row — no more tag pile-up. Commit: `5b53969`.
+- **2026-08-03 ~9:32am** — `Plex-Sable` Spaces.tsx: enter link layout bug fixed — card minHeight bumped to 260px, link wrapper gets explicit minHeight+flex so it can't collapse. Enter ↗ now always visible on active cards. Commit: `5b53969`.
+- **2026-08-03** — Context drift issue surfaced. Pattern: AI describes changes without pushing, argues when questioned, burns context. Joe flagged: this happens every session. Discussed adding a dedicated context-keeper / helper to the workflow.
+- **2026-08-02** — `Plex-Sable` ONE UI redesign session. Balanced two-column layout approved by Joe. Spaces scaffold built with honest WIP state. VoiceCard and VoicePanel components in one/page.tsx — Voices on ONE page intentional (not a duplicate of Spaces voices strip). Note: Spaces.tsx voices strip = nav links (speak/mind/one). ONE page VoicePanel = actual chat interface. These are different things.
+
 - **2026-07-03 ~8:20am** — `Plex-Sable` observe/route.ts: switched from `appendSediment` to `appendObserve`. Observe writes now go to `observe/YYYY-MM-DD.md` in Manitec/plex instead of `sediment/`. Sediment stays clean — only felt residue. Commits: `ec5e022` (github.ts), `73a1d29` (route.ts).
 - **2026-07-03 ~8:10am** — `Plex-Sable` lib/github.ts: refactored `appendSediment` into shared `appendToPath` helper. Added `appendObserve` export that writes to `observe/` directory. `appendSediment` unchanged.
 - **2026-07-03 ~7:00am** — Architecture review: observe was polluting sediment with browser/action noise. Decision: give observe its own `observe/` directory in Manitec/plex. dreamRunner.js only pulls from `sediment/` so observe data naturally excluded from dreams.
