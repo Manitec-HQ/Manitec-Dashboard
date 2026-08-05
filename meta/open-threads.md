@@ -1,5 +1,5 @@
 # Open Threads — Full Backlog
-> Last updated: June 30, 2026
+> Last updated: August 5, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
 
 ---
@@ -23,6 +23,8 @@
 - [ ] **Vercel MCP** — native access to Vercel infra (deployments, logs, builds). Combine with Tavily MCP + AI Gateway for full agent stack.
 - [ ] **Local Manitec model** — curate dataset (one-sys-chat ~95k chars + session logs + meta + sediment + system prompts), fine-tune 7B open model via HF AutoTrain or Vast.ai/RunPod. Dataset curation is the first real move.
 - [ ] **ONE-browser → Plex `/api/see`** — optionally wire browser proxy into Plex-Sable's perception layer
+- [ ] **Hugging Face as Firestore memory replacement** *(Aug 5)* — HF Datasets (private repo) as a low-cost, portable, versionable alternative to Firestore for Plex's memory layer (`plex_memory`, `plex_sediment`, dream nodes). No vendor lock-in, git-native history, queryable via datasets library. Evaluate: HF Dataset Hub API vs. current GitHub flat-file sediment + Firestore hybrid. Decision gated on LM Studio / local model session.
+- [ ] **LM Studio — local model integration** *(Aug 5, parked)* — mid-session thread paused. Resume: evaluate running a local 7B-13B model via LM Studio as Plex's `/api/mind` backend (replacing or complementing Groq). Topics in queue: model selection, context window for sediment retrieval, HF as memory store pairing with local inference, latency vs. cloud tradeoff. **Return here next session.**
 
 ## Plex-Sable (`Manitec/Plex-Sable`)
 - [x] `speak/page.tsx` — streaming chat, localStorage session ID (fixed joe), no mode indicator UI
