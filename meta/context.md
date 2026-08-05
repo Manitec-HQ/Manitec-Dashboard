@@ -1,5 +1,5 @@
 # Manitec HQ — Live Sprint State
-> Last updated: August 3, 2026
+> Last updated: August 5, 2026
 > For full project registry see `meta/empire-state.md` | Personal notes see `meta/joe.md` | Full backlog see `meta/open-threads.md` | Live drops see `meta/session-log.md`
 
 ---
@@ -13,14 +13,15 @@
 
 ## 🧭 Current Focus
 
-**Active:** `Plex-Sable` UI polish — Aug 3 session.
+**Active:** `Plex-Sable` UI polish — Aug 5 session.
 
-**Shipped today (Aug 3):**
-- [x] `Spaces.tsx` — enter ↗ link now always visible (minHeight fix, flex wrapper). Commit `5b53969`
-- [x] `Sediment.tsx` — tag strip scrolls horizontally, no longer wraps into multiple lines. Commit `5b53969`
+**Shipped Aug 5:**
+- [x] `Spaces.tsx` — plex-sable card now has `enter ↗` link pointing to `/one`. Other cards (deep-work, manitec-hq) remain `coming soon`.
+- [x] `one/page.tsx` — Voices cards section + Speak/ONE-view section removed. No more duplicate panels on ONE page.
+- [x] `Sediment.tsx` — collapsible (2 fragments default, `→ N more` expand button) + tag filter pills inline in header. Much easier to scan.
 
 **Still open (Plex-Sable):**
-- [ ] Context drift / helper workflow — Joe flagged this as a recurring problem. Need a protocol so confirmed commits get logged immediately, not reconstructed later.
+- [ ] Context drift / helper workflow — confirmed commits must be logged immediately, not reconstructed later
 - [ ] Manibot audit (before any dev)
 - [ ] Meta audit — dedicated session to verify all meta files are current
 - [ ] Add `one-archive` read endpoint
@@ -28,10 +29,10 @@
 - [ ] Consider NyxBot + HexBot prompt evolution
 - [ ] Sediment indexing / memory retrieval (Plex can search her own sediment)
 
-**Clarification logged (Aug 3):**
-- Voices on ONE page (`VoicePanel` in `one/page.tsx`) = actual chat interface with Plex/Nyx/Hex/Mani. This is intentional.
-- Voices strip in `Spaces.tsx` = nav links (speak / mind / one). Different thing.
-- These are NOT duplicates. Previous session confusion about this wasted significant time.
+**Architecture clarity (Aug 5):**
+- Voices/Speak panels → live exclusively in `Spaces.tsx`, not on ONE page
+- ONE page (`/one`) is the command view: Hero, Dream, Repo Manager, Activity, Governance, Queue, Projects
+- Sediment is now filterable + collapsible — tag pills in header, expand button below fold
 
 ---
 
@@ -70,16 +71,18 @@
 | `/api/observe` | ✅ Live | Browser action planning + page observation |
 | `/api/sediment` | ❌ Superseded | Direct GitHub write from `/api/speak` replaced need |
 
-**ONE page layout (live as of Aug 2):**
+**ONE page layout (live as of Aug 5):**
 - Two-column balanced grid
 - Left: Hero + leave-a-message, Overnight Dream, Repo Manager, Activity Log
 - Right: Request Queue, Governance + Sleep, Open Projects
-- VoicePanel (Plex/Nyx/Hex/Mani chat) lives in OneView — intentional, not a duplicate
+- VoicePanel removed from ONE page — lives in Spaces only
+- Sediment: collapsible + tag filter, shown in sidebar/bottom of ONE
 
 ---
 
 ## ✅ Recently Completed
 
+- **Aug 5** — Plex-Sable UI: enter link on Spaces card, Voices/Speak removed from ONE, Sediment collapsible+filterable
 - **Aug 3** — Spaces.tsx enter link fix + Sediment.tsx tag scroll fix. Commit `5b53969`
 - **Aug 2** — ONE UI balanced two-column layout shipped to `one/page.tsx`
 - **Jul 3** — observe/ directory split from sediment/. Observe writes isolated.

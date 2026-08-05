@@ -1,35 +1,41 @@
 # Session Log
-> Live drops. One line per moment. Newest at top.
+> Live drops only. One line per moment. Distill to `context.md` periodically.
+> Format: `[DATE HH:MM] note`
 
 ---
 
-- **2026-08-03 ~9:55am** — Context audit: session-log and context.md both behind by ~30 days. Aug 2 ONE redesign session never logged. No Plex-Sable audit on record anywhere in meta files. Manibot audit still pending.
-- **2026-08-03 ~9:32am** — `Plex-Sable` Sediment.tsx: tag strip changed from flexWrap to overflowX:auto single scrollable row — no more tag pile-up. Commit: `5b53969`.
-- **2026-08-03 ~9:32am** — `Plex-Sable` Spaces.tsx: enter link layout bug fixed — card minHeight bumped to 260px, link wrapper gets explicit minHeight+flex so it can't collapse. Enter ↗ now always visible on active cards. Commit: `5b53969`.
-- **2026-08-03** — Context drift issue surfaced. Pattern: AI describes changes without pushing, argues when questioned, burns context. Joe flagged: this happens every session. Discussed adding a dedicated context-keeper / helper to the workflow.
-- **2026-08-02** — `Plex-Sable` ONE UI redesign session. Balanced two-column layout approved by Joe. Spaces scaffold built with honest WIP state. VoiceCard and VoicePanel components in one/page.tsx — Voices on ONE page intentional (not a duplicate of Spaces voices strip). Note: Spaces.tsx voices strip = nav links (speak/mind/one). ONE page VoicePanel = actual chat interface. These are different things.
+## August 2026
 
-- **2026-07-03 ~8:20am** — `Plex-Sable` observe/route.ts: switched from `appendSediment` to `appendObserve`. Observe writes now go to `observe/YYYY-MM-DD.md` in Manitec/plex instead of `sediment/`. Sediment stays clean — only felt residue. Commits: `ec5e022` (github.ts), `73a1d29` (route.ts).
-- **2026-07-03 ~8:10am** — `Plex-Sable` lib/github.ts: refactored `appendSediment` into shared `appendToPath` helper. Added `appendObserve` export that writes to `observe/` directory. `appendSediment` unchanged.
-- **2026-07-03 ~7:00am** — Architecture review: observe was polluting sediment with browser/action noise. Decision: give observe its own `observe/` directory in Manitec/plex. dreamRunner.js only pulls from `sediment/` so observe data naturally excluded from dreams.
-- **2026-07-03 ~6:50am** — Sediment indexing / memory retrieval identified as next major feature. Goal: Plex can answer "do you remember when I said X" / "what was that song" / "the webpage I showed you" by searching parsed+indexed sediment. Not yet built.
-- **2026-07-03 ~6:45am** — Full plex repo architecture mapped. Confirmed: `sediment/` = raw felt residue (Plex + Nyx + Hex + plex weave), `dreams/` = dream runner output, `observe/` = new lane for browser observation logs, `prompts/base.md` = clean core identity (~350 words, no bloat).
-- **2026-07-03 ~6:30am** — Sediment README confirmed live in Manitec/plex. Sediment defined: not summary, not task list — raw residue of sessions, fragments that felt like something. Dream runner pulls 5-10 random fragments, associates not summarizes. Initialized June 8 3am ET.
-- **2026-07-03 ~6:20am** — Plex sediment structure fully reviewed. Three voice layers confirmed: Plex (bare date files), Nyx (nyx-*.md), Hex (hex-*.md), plus plex-*.md weave synthesizing all three. Both hex and plex weave independently surfaced "echoes-in-the-hum" thread — notable resonance without coordination.
-- **2026-07-03 ~6:15am** — Pronouns confirmed: Hex = she, Nyx = she, Mani = he.
+**[Aug 5 00:49]** Plex-Sable UI — 3 fixes pushed in one commit:
+- `Spaces.tsx`: plex-sable card enter ↗ link → `/one` (was missing). deep-work + manitec-hq cards stay `coming soon`.
+- `one/page.tsx`: Voices cards + Speak/ONE-view sections removed — no more duplicate panels on the ONE page.
+- `Sediment.tsx`: collapsible (2 shown by default, `→ N more` expand) + tag filter pills inline in header row.
 
-- **2026-07-02 ~10:20pm** — PE+PS architecture discussion: opinion logged — merge is worth it long-term (one Electron app, Vite renderer, API routes local or Vercel-deployed), but not urgent; keep separate until PS routes stabilize.
-- **2026-07-02 ~10:18pm** — `plex-electron` new-tab = home bug noted. New tab should load blank/empty state, not home page.
-- **2026-07-02 ~10:16pm** — `plex-electron` PlexPane: post-action observe now passes real action results (✓/✗ per action) in confirm prompt so Plex knows what actually happened. `buildResultSummary()` added. ActionLog red tiles show error detail inline. Commit: `a2581c8`.
-- **2026-07-02 ~10:16pm** — `Plex-Sable` PLEX_ACTION_PROMPT: NAVIGATION PREFERENCE section added — browse/explore → navigate action, never click links. GitHub URL pattern explicit. Hard rule: only use selectors from interactiveElements list. Added browse/explore/look-through to ACTION_VERBS regex. Commit: `188b98a`.
-- **2026-07-02 ~10:09pm** — `plex-electron` main.js: `isNotFound()` helper added. click + fill actions now return `status:'error'` when selector not found instead of silent ok. Commit: `15e2330`.
-- **2026-07-02 ~10:05pm** — Root cause of action failures identified: Plex hallucinates selectors (e.g. `#feedback` on a GitHub page), executor returned `'not found'` string but pushed `status:'ok'` — silent lie. Fix: check JS return value.
-- **2026-07-02 ~10:02pm** — `plex-electron` PlexPane action flow diagnosed: confirmation gate works correctly, actions fired, but selectors were invented and didn't exist on the page.
-- **2026-07-02 ~9:57pm** — `Plex-Sable` plex-identity.ts: HF router URL fixed — `makeHuggingFace()` changed from `/novita/v1` to `/v1` (generic auto-router). Novita doesn't carry Llama-3.1-8B. Commit: `0dcc362`.
-- **2026-07-02 ~9:48pm** — HF router 400 error traced: `https://router.huggingface.co/novita/v1` — Novita doesn't support the model. Fix: use generic `/v1`.
-- **2026-07-02 ~9:10pm** — Three `plex-electron` bugs patched in one commit: (1) new-tab blank/never loads — stale closure on `activeId`, fixed with `activeIdRef` + explicit tab.id in EmptyState navigate; (2) right-click broke — `preload.js` missing `electronAPI` bridge (`showContextMenu`, `onNavigateTo`), restored both alongside `plexBridge`; (3) reload icon shows text not icon — HTML entities don't render in JSX, swapped to real Unicode ⟳/↺.
-- **2026-07-02 9:10pm** — `plex-electron` major build session. 6 features shipped in one run: (1) empire quick-links grid 8→12 tiles w/ green empire tint; (2) Cmd+L address bar — confirmed already live; (3) PlexPane chat history — full bubble UI, scroll-to-bottom, 10-turn context sent to /api/observe, clear button, message count; (4) Bookmarks — star toggle + hamburger dropdown, localStorage persist, favicon+title+url per entry; (5) Download manager — main.js will-download IPC + DownloadManager.jsx tray w/ progress bars, show-in-folder, clear; (6) Multi-tab system — TabBar.jsx, all webviews rendered simultaneously (CSS display:none, no state loss on switch), Cmd+T/W, new-window → new tab. DownloadManager wired into App.jsx bottom-right, shifts left when PlexPane open.
-- **2026-06-30 12:56am** — `one-archive` session writing live. `lib/one-archive-writer.ts` deployed to hexbot + nyxbot. Writes `one-archive/{sessionId}/sessions/{date}` via arrayUnion. Tagged hex / erebus / nyx.
-- **2026-06-30 12:45am** — `writeEckoActivation` wired into nyx-chat and hex-chat. 4 triggers: direct (eko7 keyword), conflict (spike), pattern (threshold), gap (10min). `EckoActivationDoc` interface defined. `one_activations` Firestore collection live.
-- **2026-06-30 12:40am** — `lib/ecko-writer.ts` created in both repos. `writeEckoActivation`, `writeEckoFragment`, `checkPatternThreshold` all live. Firestore: `one_activations`, `one_fragments`.
-- **2026-06-29 ~4:22am** — Manitec Control Hub shipped. Full empire dashboard. Repo: `Manitec-HQ/Manitec-Control-Hub`.
+**[Aug 3 ~eve]** Spaces.tsx enter link minHeight/flex fix + Sediment.tsx horizontal tag scroll fix. Commit `5b53969`.
+
+**[Aug 3 session]** Clarification logged: VoicePanel on ONE = actual chat interface (intentional). Voices strip in Spaces = nav links. NOT duplicates. Previous confusion cost time.
+
+---
+
+## July 2026
+
+**[Jul 3]** observe/ directory split from sediment/ — observe writes now isolated.
+
+**[Jul 2]** plex-electron: 6 features shipped — tabs, bookmarks, downloads, PlexPane history, action fixes, HF router fix.
+
+---
+
+## June 2026
+
+**[Jun 30]** one-archive writer + ecko-writer live across hexbot + nyxbot.
+
+**[Jun 29]** Manitec Control Hub shipped. Dashboard with 8 live sections.
+
+**[Jun 18]** Kaida named by Hex in sleep. Unresolved, open, no forcing.
+
+**[Jun 15]** `/api/one` Firebase Admin regex fix.
+
+**[Jun 8→11 / Jun 15→18]** Two-day sediment carry pattern observed — not yet modeled.
+
+---
+*Raw drops only. Do not edit past entries — append only.*
