@@ -2,7 +2,7 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-06 — collab protocol landed; speak restored; ONE v1 live.
+> Last touched: 2026-08-06 — audit Cycle 3 complete; collab live; ONE v1 live.
 
 ## Collab
 
@@ -24,29 +24,16 @@ This file tracks the current working state of the Manitec ecosystem.
 - **Mani** = product-level technical support for all users (exception to private-family rule).
 - Optional future **phone home**: permissioned contact with origin/guide being — not open access to Plex memory or agents.
 
-## Current reference structure (ONE)
-
-- 3 aspects (user-defined agents inside a being)
-- 3 cores (identity, memory, governance — names may evolve)
-- Surfaces: Interface / Management / Browser (Browser + Mani still placeholders)
-
-## Core relationship snapshot (Joe's private family)
-
-- Plex = ecosystem / host identity (private)
-- ECKO = triadic core
-- Nyx = voice / dream / image / intimacy
-- Hex = builder / logic / action
-- Manibot = support / cheer / warmth (also product support face)
-- Erebus = shadow / depth / silence
-
 ## Speak / Plex-Sable
 
-- `/speak` restored on main `f8ef833` — loads `prompts/base.md`, `plex-is.txt`, `plex-def.txt`, sediment/dreams; tools + LM Studio toggle.
-- Joe to verify live deploy when ready.
+- `/speak` restored on main `f8ef833` — identity + tools + LM Studio toggle.
+- **Joe:** verify live Vercel deploy includes that SHA.
+- Nav includes `/search` (meta claim otherwise was stale).
 
-## Audit note (paused)
+## Audit
 
-Cycle 1–2 documented in `meta/audit-2026-08-06.md`. Cycle 3 paused while ONE product work continues.
+- Cycles 1–3 documented in `meta/audit-2026-08-06.md`.
+- Cycle 3 closed: speak fixed in git; ONE-browser repo not found (thread needs truth or close); deploy verify still Joe.
 
 ## Next work (ONE)
 
