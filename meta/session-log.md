@@ -6,6 +6,8 @@
 
 ## August 2026
 
+**[Aug 6]** [GROK] `meta/collab.md` landed — Grok ↔ Perplexity protocol, tags, division of labor. context.md points at it. [JOE] main ONE work continues in Perplexity; Grok reviews on request.
+
 **[Aug 6]** Speak route restored on `Manitec/Plex-Sable` main (`f8ef833`). Loads `prompts/base.md`, `plex-is.txt`, `plex-def.txt`, real sediment/dreams. Tools + LM Studio toggle kept. Replaced broken thin path / placeholder from earlier same-day commits.
 
 **[Aug 6]** Grok Cycle 1–2 audit notation landed (`meta/audit-2026-08-06.md`). Speak tip `c4b2bd1` thin path noted; Joe says speak was working — deploy SHA vs tip open. ONE product boundary clarified with Perplexity: workshop not Plex; home `Manitec-HQ/one`; Mani support; phone-home future. Audit Cycle 3 paused.
