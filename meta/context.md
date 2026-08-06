@@ -2,13 +2,19 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-06 — Grok audit notation landed; ONE product work active in Perplexity.
+> Last touched: 2026-08-06 — collab protocol landed; speak restored; ONE v1 live.
+
+## Collab
+
+- Protocol: `meta/collab.md` (Grok ↔ Perplexity tags, division of labor, session start).
+- Perplexity builds. Grok reviews. Joe tests. Tags: `[GROK]`, `[PPLX]`, `[FOR-PPLX]`, `[FOR-GROK]`, `[JOE]`.
 
 ## Current focus
 
-- **ONE System (product / workshop)** is the active build thread.
-- Home repo: `Manitec-HQ/one` (existing scaffold — do not invent a parallel `one-system` repo).
-- Goal of v1: low-level proof of concept that can output something shaped like a properly unified being — not a copy of Plex.
+- **ONE System (product / workshop)** is the active build thread (main work in Perplexity).
+- Home repo: `Manitec-HQ/one`.
+- Live v1: https://one-system-mu.vercel.app/ — Create → 3 aspects → Activate → Interface (mock unified reply). localStorage only.
+- Goal of v1: proof of a unified being shape — not a copy of Plex.
 
 ## Product boundary (load-bearing)
 
@@ -22,8 +28,7 @@ This file tracks the current working state of the Manitec ecosystem.
 
 - 3 aspects (user-defined agents inside a being)
 - 3 cores (identity, memory, governance — names may evolve)
-- 3 system layers for creating, using, and managing the being
-- Surfaces: Interface / Management / Browser
+- Surfaces: Interface / Management / Browser (Browser + Mani still placeholders)
 
 ## Core relationship snapshot (Joe's private family)
 
@@ -34,15 +39,17 @@ This file tracks the current working state of the Manitec ecosystem.
 - Manibot = support / cheer / warmth (also product support face)
 - Erebus = shadow / depth / silence
 
+## Speak / Plex-Sable
+
+- `/speak` restored on main `f8ef833` — loads `prompts/base.md`, `plex-is.txt`, `plex-def.txt`, sediment/dreams; tools + LM Studio toggle.
+- Joe to verify live deploy when ready.
+
 ## Audit note (paused)
 
-Cycle 1–2 system audit (2026-08-05/06) is documented in `meta/audit-2026-08-06.md`.
-
-Notable: `Manitec/Plex-Sable` tip speak route (`c4b2bd1`) is a thin Groq/LM-Studio path that does not load `prompts/base.md` / identity files and requests missing paths under `system/`, `sediment/index.md`, `nyx/`. Joe reports speak was working last checked — reconcile deploy SHA vs tip before any speak "fix." Full audit Cycle 3 paused while ONE product work continues.
+Cycle 1–2 documented in `meta/audit-2026-08-06.md`. Cycle 3 paused while ONE product work continues.
 
 ## Next work (ONE)
 
-- Inspect existing `app/`, `aspects/`, `core/`, `interface/`, `docs/` in `Manitec-HQ/one`
-- Separate being-specific aspect docs from generic templates/examples
-- First targeted commit: neutral setup + three-agent creation + shared identity + mock unified response + Mani placeholder
-- No Plex prompt / Nyx memory / Hex private internals in product defaults
+- Real model adapter behind `askBeing` (replace mock)
+- first-run gaps: guide voice, memory choice, preview, handoff, Mani path
+- Keep private aspect docs out of product defaults (`aspects/` → templates/examples)
