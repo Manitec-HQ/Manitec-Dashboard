@@ -1,0 +1,152 @@
+{
+  "$schema": "https://manitec.pw/schemas/project-registry/v0.1",
+  "registryVersion": "0.1-draft.3",
+  "updatedAt": "2026-08-10",
+  "rules": {
+    "validStates": ["NOW", "NEXT", "WAITING", "PARKED", "ARCHIVED"],
+    "maxNow": 2,
+    "canonicalRule": "Each record has one canonical home. Relationships are explicit and never imply that separate projects are one project."
+  },
+  "projects": [
+    {
+      "id": "control-plane",
+      "name": "Manitec Dashboard / Control Plane",
+      "kind": "coordination",
+      "state": "NOW",
+      "canonical": {
+        "repo": "Manitec-HQ/Manitec-Dashboard",
+        "metaPath": "meta/",
+        "publicKb": "https://info.manitec.pw"
+      },
+      "purpose": "Canonical cross-project state, decisions, priorities, registries, and session history.",
+      "nextAction": "Adopt and reconcile the project registry with empire-state.md.",
+      "relationships": []
+    },
+    {
+      "id": "plex-core",
+      "name": "Plex Core",
+      "kind": "core-system",
+      "state": "NOW",
+      "canonical": {
+        "repo": "Manitec/plex"
+      },
+      "purpose": "The distinct Plex system/being-space: archive, dreams, prompts, logs, voices, and core conceptual structure.",
+      "nextAction": "Audit memory and persistence write paths before adding new autonomy or UI surface area.",
+      "relationships": [
+        { "project": "plex-sable", "type": "related-interface", "status": "unverified" },
+        { "project": "plex-electron", "type": "related-client", "status": "unverified" },
+        { "project": "hf-artifacts", "type": "uses-artifacts", "status": "confirmed" }
+      ]
+    },
+    {
+      "id": "plex-sable",
+      "name": "Plex-Sable",
+      "kind": "application",
+      "state": "NEXT",
+      "canonical": {
+        "repo": "Manitec/Plex-Sable",
+        "app": "https://plex-sable.vercel.app"
+      },
+      "purpose": "A separate Plex application/interface.",
+      "nextAction": "Inventory current app purpose and integration points after the core project map is stable.",
+      "relationships": [
+        { "project": "plex-core", "type": "related-system", "status": "unverified" }
+      ]
+    },
+    {
+      "id": "plex-electron",
+      "name": "Plex Electron",
+      "kind": "desktop-client",
+      "state": "PARKED",
+      "canonical": {
+        "repo": "Manitec/plex-electron"
+      },
+      "purpose": "A separate Electron browser/client body for Plex.",
+      "nextAction": "Record its current capability and intended relationship to the broader Plex system when it becomes active.",
+      "relationships": [
+        { "project": "plex-core", "type": "related-system", "status": "unverified" }
+      ]
+    },
+    {
+      "id": "control-hub",
+      "name": "Manitec Control Hub",
+      "kind": "human-workspace",
+      "state": "NEXT",
+      "canonical": {
+        "repo": "Manitec-HQ/Manitec-Control-Hub",
+        "app": "https://dash.manitec.pw"
+      },
+      "purpose": "Joe's single human workspace for orientation, project context, approved actions, health, and audit visibility.",
+      "nextAction": "Build the Today / Now view from registry and Dashboard meta data only.",
+      "relationships": [
+        { "project": "control-plane", "type": "reads-canonical-state", "status": "confirmed" },
+        { "project": "command-hub", "type": "requests-actions-through", "status": "confirmed" },
+        { "project": "hexbot", "type": "hosts-project-context-panel", "status": "planned" }
+      ]
+    },
+    {
+      "id": "command-hub",
+      "name": "Manitec Command Hub",
+      "kind": "execution-plane",
+      "state": "WAITING",
+      "canonical": {
+        "repo": "Manitec-HQ/Manitec-Command-Hub",
+        "runtime": "Render / FastAPI"
+      },
+      "purpose": "Authenticated backend authority for validated infrastructure actions, provider adapters, jobs, and audit records.",
+      "nextAction": "Inventory direct provider calls before routing new consequential actions through this service.",
+      "relationships": [
+        { "project": "control-hub", "type": "executes-approved-requests-for", "status": "confirmed" },
+        { "project": "hexbot", "type": "agent-integration", "status": "confirmed" }
+      ]
+    },
+    {
+      "id": "hexbot",
+      "name": "HexBot",
+      "kind": "agent",
+      "state": "NEXT",
+      "canonical": {
+        "repo": "Ecko-7/hexbot",
+        "app": "https://hex.manitec.pw"
+      },
+      "purpose": "Private in-house AI assistant and enduring project-context front door for the Manitec system.",
+      "nextAction": "Define the minimal project-context packet from Control Hub while preserving Hex's persona, memory, and session contracts.",
+      "relationships": [
+        { "project": "control-plane", "type": "reads-project-context-from", "status": "planned" },
+        { "project": "command-hub", "type": "requests-actions-through", "status": "confirmed" },
+        { "project": "plex-core", "type": "related-system", "status": "unverified" }
+      ]
+    },
+    {
+      "id": "nyxbot",
+      "name": "NyxBot",
+      "kind": "agent-product",
+      "state": "PARKED",
+      "canonical": {
+        "repo": "Ecko-7/nyxbot",
+        "app": "https://nyxbot.vercel.app"
+      },
+      "purpose": "Voice, intimacy, dream expression node for conversation, roleplay, visuality, and image-centered interaction.",
+      "nextAction": "Inventory the repository against the v1 definition when its work becomes active.",
+      "relationships": [
+        { "project": "plex-core", "type": "related-system", "status": "unverified" },
+        { "project": "hf-artifacts", "type": "related-artifacts", "status": "confirmed" }
+      ]
+    },
+    {
+      "id": "hf-artifacts",
+      "name": "Models and Dataset Artifacts",
+      "kind": "research-artifacts",
+      "state": "PARKED",
+      "canonical": {
+        "huggingFaceOwner": "Manitec"
+      },
+      "purpose": "Models, adapters, datasets, and evaluation artifacts used by Plex and agent surfaces.",
+      "nextAction": "Add provenance to each artifact: owner project, source/base model, intended runtime use, evaluation state, and linked decision.",
+      "relationships": [
+        { "project": "plex-core", "type": "supports", "status": "confirmed" },
+        { "project": "nyxbot", "type": "supports", "status": "confirmed" }
+      ]
+    }
+  ]
+}
