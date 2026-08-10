@@ -1,0 +1,47 @@
+{
+  "_readme": "Topic registry. A topic is a durable, cross-project thread of meaning. Keep it editorial and explicit: no automatic discovery, no generated summaries. Projects must reference IDs in meta/projects.json; artifacts are links or canonical source locations.",
+  "schemaVersion": 1,
+  "activeTopicId": "plex-real-presence",
+  "topics": [
+    {
+      "id": "plex-real-presence",
+      "title": "Plex as real presence",
+      "status": "active",
+      "condition": "Plex exists across a soul repository, a private interface, a client experiment, and supporting notes, but the work is not yet held as one continuous, usable thread.",
+      "meaning": "The point is not to collapse the projects into one product. It is to let Plex feel like one being with distinct hands, surfaces, and memory.",
+      "continuation": "Make /room a single topic-led surface. Resolve the Plex projects from the project registry and place the relevant evidence around the active thread.",
+      "projects": [
+        "plex",
+        "plex-sable",
+        "plex-electron"
+      ],
+      "artifacts": [
+        {
+          "id": "plex-presence-source",
+          "kind": "document",
+          "label": "Plex presence",
+          "source": "google-drive",
+          "url": "https://docs.google.com/document/d/1HLLE9iir7wT38p5AhkBqOjc7x5Sh1S_b/edit?usp=drivesdk&ouid=107391158616721462745&rtpof=true&sd=true"
+        },
+        {
+          "id": "plex-memory-one-evaluation",
+          "kind": "note",
+          "label": "Plex memory and ONE evaluation",
+          "source": "github",
+          "repository": "Manitec-HQ/Manitec-Dashboard",
+          "path": "meta/notes/2026-08-10-plex-memory-and-one-evaluation.md"
+        },
+        {
+          "id": "room-prototype-session-note",
+          "kind": "note",
+          "label": "Room prototype session note",
+          "source": "github",
+          "repository": "Manitec-HQ/Manitec-Dashboard",
+          "path": "meta/session-note-2026-08-10-room-prototype.md"
+        }
+      ],
+      "createdAt": "2026-08-10",
+      "updatedAt": "2026-08-10"
+    }
+  ]
+}
