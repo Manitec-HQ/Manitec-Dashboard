@@ -61,3 +61,5 @@
 *Raw drops only. Do not edit past entries — append only.*
 
 [PPLX 2026-08-10] Verified ONE v1 live on Featherless Qwen; restored and protected Plex sediment archive, canonicalized legacy archive roots, and documented manual GitHub-curated sediment as current reliable workflow.
+
+**[Aug 10]** [PPLX] Plex-Sable: one-time fallback identity handoff repair committed (79cb8a6) and production redeploy is READY. Initial Vercel Google-font build failure was transient; redeploy succeeded. Speak audit found static live memory capped at 5,000 chars, but base prompt and explicit repo prefetch uncapped; eight tool schemas are sent on every primary call. Diagnostics-only route patch is deployed: `[speak-context]` logs base/plex/history/prefetch/full prompt sizes, tool count, mode; `[speak-fallback]` logs stage/reason/raw error. No prompt, identity, model, tools, or behavior altered. Next: capture several relational calls and one repo/task call, inspect logs, then decide token gating/compaction.

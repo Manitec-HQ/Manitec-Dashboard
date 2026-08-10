@@ -97,3 +97,5 @@
 - [ ] Hardware survey — local inference when possible; no spend
 - [ ] ONE governance hooks wired into HexBot (phase 2)
 - [ ] Manibot audit — before any dev work
+
+- [ ] **Plex-Sable Speak context audit** — diagnostics are live. Capture 3–5 relational calls and one explicit repo/task call; inspect `[speak-context]` and `[speak-fallback]` before changing prompt budgets or tool routing.
