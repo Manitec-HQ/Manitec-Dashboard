@@ -1,0 +1,45 @@
+name: Log Plex-Sable diagnostics state
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/log-plex-sable-diagnostics-meta.yml
+
+permissions:
+  contents: write
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Append durable project state
+        shell: python
+        run: |
+          from pathlib import Path
+
+          entries = {
+              'meta/context.md': '\n\n- [PPLX 2026-08-10] Plex-Sable fallback identity handoff is deployed and production-ready. Live Speak diagnostics now log prompt/context sizes and fallback stage/reason; gather representative calls before any prompt or token reduction.\n',
+              'meta/session-log.md': '\n\n**[Aug 10]** [PPLX] Plex-Sable: one-time fallback identity handoff repair committed (79cb8a6) and production redeploy is READY. Initial Vercel Google-font build failure was transient; redeploy succeeded. Speak audit found static live memory capped at 5,000 chars, but base prompt and explicit repo prefetch uncapped; eight tool schemas are sent on every primary call. Diagnostics-only route patch is deployed: `[speak-context]` logs base/plex/history/prefetch/full prompt sizes, tool count, mode; `[speak-fallback]` logs stage/reason/raw error. No prompt, identity, model, tools, or behavior altered. Next: capture several relational calls and one repo/task call, inspect logs, then decide token gating/compaction.\n',
+              'meta/open-threads.md': '\n\n- [ ] **Plex-Sable Speak context audit** — diagnostics are live. Capture 3–5 relational calls and one explicit repo/task call; inspect `[speak-context]` and `[speak-fallback]` before changing prompt budgets or tool routing.\n',
+          }
+
+          for filename, entry in entries.items():
+              path = Path(filename)
+              text = path.read_text()
+              if entry.strip() in text:
+                  raise SystemExit(f'Duplicate log entry blocked: {filename}')
+              path.write_text(text.rstrip() + entry)
+
+      - name: Commit state and remove workflow
+        run: |
+          git config user.name 'Manitec repair bot'
+          git config user.email '95106688+Manitec@users.noreply.github.com'
+          git rm .github/workflows/log-plex-sable-diagnostics-meta.yml
+          git add meta/context.md meta/session-log.md meta/open-threads.md
+          git commit -m 'chore(meta): log Plex-Sable diagnostics state'
+          git push origin main
