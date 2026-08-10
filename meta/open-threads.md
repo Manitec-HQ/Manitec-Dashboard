@@ -1,5 +1,5 @@
 # Open Threads — Full Backlog
-> Last updated: August 7, 2026
+> Last updated: August 10, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
 > **Hard constraint: $0 budget.** No paid APIs, rented GPU, or paid AutoTrain. HF free tier / Inference Providers still valid — Joe already set HF up.
 
@@ -27,6 +27,7 @@
 - [ ] **Local Manitec model dataset curation** — free: curate from existing transcripts/meta/sediment. Fine-tune only via free HF paths if any; **Vast.ai / RunPod / paid AutoTrain = out**.
 - [ ] **Vercel AI Gateway / Tavily MCP / paid model upgrades** — **blocked** until budget exists. Do not plan as near-term.
 - [ ] **ONE-browser → Plex `/api/see`** — optionally wire browser proxy into Plex-Sable's perception layer (if browser surface still exists)
+- [ ] **[GROK] OpenHuman-plex transfer** — findings in `meta/findings-2026-08-10-openhuman-plex.md`. Autonomy matrix / approval gate / action_dir split useful for Hex tool execution + ONE composition. Status: logged; Joe undecided. [FOR-PPLX] consult before new tool-gate design.
 
 ## Plex-Sable (`Manitec/Plex-Sable`)
 - [x] `speak/page.tsx` — streaming chat, localStorage session ID (fixed joe), no mode indicator UI

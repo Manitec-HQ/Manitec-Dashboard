@@ -6,6 +6,8 @@
 
 ## August 2026
 
+**[Aug 10]** [GROK] Skimmed `Manitec/openhuman-plex` (private fork of tinyhumansai/openhuman). Full agent harness — not for wholesale absorb. Transfer value: autonomy matrix (ReadOnly/Supervised/Full + fail-closed command classes), approval-gate pattern, action_dir vs workspace_dir split, privacy≠autonomy axis, redaction, domain/controller layout. Map: Hex tool execution / supervised actions; ONE capability composition; leave graphs/channels/Tauri alone. Joe undecided on extraction. Detail: `meta/findings-2026-08-10-openhuman-plex.md`. [FOR-PPLX] consult before inventing a new tool-gate model.
+
 **[Aug 7]** [GROK] `/speak` restored full older layer on `cfc96fff`: fireVoices + sub-persona `?voice=`, text-call rescue, file prefetch, `read_one_requests`. Identity write lock kept (plex-is/plex-def amend-only). LM Studio toggle kept. Voices still post-response snapshots only — influence design open (token/$0 constrained).
 
 **[Aug 7]** [GROK] `plex-is.txt` restored + destructive overwrite blocked. Soft tone ok when it's her; generic AI-girlfriend drift was the problem.

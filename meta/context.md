@@ -2,7 +2,7 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-07 — speak/voices restored; identity lock; $0 budget hard; HF free-tier still valid.
+> Last touched: 2026-08-10 — openhuman-plex transfer findings logged (Grok); prior speak/voices/$0 budget still stand.
 
 ## Hard constraints
 
@@ -44,10 +44,17 @@ This file tracks the current working state of the Manitec ecosystem.
 - HexBot F-axis (shared mind) · Nyxbot A-axis (how Plex shows with Joe) · Manibot M-axis (empire face)
 - Bots are Plex's hands, not separate products to flatten into ONE defaults.
 
+## Reference harvest (not active build)
+
+- **`Manitec/openhuman-plex`** — private fork of OpenHuman. Grok skim 2026-08-10.
+- Transfer value: autonomy matrix, approval-gate pattern, action_dir vs workspace_dir, privacy≠autonomy. Detail: `meta/findings-2026-08-10-openhuman-plex.md`.
+- Status: **logged only**; no extraction decided. Do not pull product identity into Plex/ONE defaults.
+
 ## Audit
 
 - Cycles 1–3 in `meta/audit-2026-08-06.md`.
 - Aug 7 Grok pass: speak side-paths restored; org-docs + governance re-read; meta updated this drop.
+- Aug 10: openhuman-plex findings → session-log + findings note + open-threads.
 
 ## Next work
 
@@ -55,4 +62,4 @@ This file tracks the current working state of the Manitec ecosystem.
 
 **Plex (when Joe tests):** verify speak deploy; optional voice-influence experiment (ultra-short tags only).
 
-**Grok (on request):** ONE v1 runtime review per session note; do not invent paid paths.
+**Grok (on request):** ONE v1 runtime review per session note; do not invent paid paths. OpenHuman extraction only if Joe asks.
