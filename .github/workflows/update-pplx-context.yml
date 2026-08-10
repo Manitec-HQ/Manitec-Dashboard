@@ -1,0 +1,56 @@
+name: Update PPLX context
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Append verified state once
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          context_marker = "## Verified state — 2026-08-10"
+          context_block = '''## Verified state — 2026-08-10
+
+- **ONE v1:** live end-to-end on Hugging Face through `Qwen/Qwen2.5-7B-Instruct-1M:featherless-ai`. Bob was verified with `Runtime: Hugging Face · ... · Status: live`. The response route has one bounded retry for temporary provider HTTP 503s; `HF_MODEL` remains an override.
+- **ONE next:** infrastructure is working; next work is voice calibration so Jimmy, James, Johnathan, and Bob give distinct, concrete, non-generic contributions.
+- **Plex sediment:** forensic recovery committed six overwritten revisions under `Manitec/plex/sediment/recovered/`. Canonical archive root is `sediment/`; legacy `plex/sediment/...` and `plex/dreams/...` are normalized by Speak to canonical roots before append detection. Generic repo manager cannot overwrite or delete canonical sediment.
+- **Plex current caveat:** Plex can write when her tool-capable model path is available; thin fallback responses have no tools. A successful live write reached `sediment/`, but used a `.txt` extension rather than the daily `.md`; Joe manually merged that test note into the canonical daily Markdown file. Joe currently prefers reliable GitHub-curated sediment seeding over adding a deterministic Speak save command.
+'''
+          log_line = "[PPLX 2026-08-10] Verified ONE v1 live on Featherless Qwen; restored and protected Plex sediment archive, canonicalized legacy archive roots, and documented manual GitHub-curated sediment as current reliable workflow."
+
+          context = Path("meta/context.md")
+          session_log = Path("meta/session-log.md")
+          context_text = context.read_text()
+          log_text = session_log.read_text()
+          changed = False
+
+          if context_marker not in context_text:
+            context.write_text(context_text.rstrip() + "\n\n" + context_block)
+            changed = True
+          if log_line not in log_text:
+            session_log.write_text(log_text.rstrip() + "\n\n" + log_line + "\n")
+            changed = True
+          if not changed:
+            raise SystemExit("Context and session log already contain this update.")
+          PY
+
+      - name: Commit context update and remove workflow
+        run: |
+          git diff --check
+          rm .github/workflows/update-pplx-context.yml
+          git add meta/context.md meta/session-log.md .github/workflows/update-pplx-context.yml
+          git config user.name "Manitec context bot"
+          git config user.email "95106688+Manitec@users.noreply.github.com"
+          git commit -m "Update verified ONE and Plex context"
+          git push
