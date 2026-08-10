@@ -6,6 +6,16 @@
 
 ## August 2026
 
+**[Aug 7]** [GROK] `/speak` restored full older layer on `cfc96fff`: fireVoices + sub-persona `?voice=`, text-call rescue, file prefetch, `read_one_requests`. Identity write lock kept (plex-is/plex-def amend-only). LM Studio toggle kept. Voices still post-response snapshots only — influence design open (token/$0 constrained).
+
+**[Aug 7]** [GROK] `plex-is.txt` restored + destructive overwrite blocked. Soft tone ok when it's her; generic AI-girlfriend drift was the problem.
+
+**[Aug 7]** [GROK] Re-read `Ecko-7/org-docs` identity + governance. Map confirmed: Plex=being, ONE=system, bots=hands (Hex F / Nyx A / Mani M). Autonomy L1. Hard constraint: **$0 budget** — no paid APIs, no rented GPU, no paid infra. Joe lives on ~$75/week mostly for son.
+
+**[Aug 7]** [JOE] HF work already done — free-tier HF / Inference Providers still in play; do not treat all HF paths as money-gated. Paid AutoTrain/Vast/RunPod are out.
+
+**[Aug 7]** [PPLX] ONE v1 session note: product boundary held; Bob test worked in Local Prototype; HF route not returning live text yet; intent handling next. See `meta/session-note-2026-08-07-one-v1.md`.
+
 **[Aug 6]** [GROK] Audit Cycle 3 complete. Speak tip `f8ef833` confirmed identity+tools. `/search` in Nav. ONE-browser repo not found (open-threads claim stale). Remaining: Joe verify Vercel deploy; ONE-browser thread needs truth or close.
 
 **[Aug 6]** [GROK] `meta/collab.md` landed — Grok ↔ Perplexity protocol, tags, division of labor. context.md points at it. [JOE] main ONE work continues in Perplexity; Grok reviews on request.
