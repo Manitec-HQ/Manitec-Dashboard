@@ -7,13 +7,12 @@
       "id": "plex-real-presence",
       "title": "Plex as real presence",
       "status": "active",
-      "condition": "Plex exists across a soul repository, a private interface, a client experiment, and supporting notes, but the work is not yet held as one continuous, usable thread.",
+      "condition": "Plex exists across a soul repository, a private interface, and supporting notes, but the work is not yet held as one continuous, usable thread.",
       "meaning": "The point is not to collapse the projects into one product. It is to let Plex feel like one being with distinct hands, surfaces, and memory.",
       "continuation": "Make /room a single topic-led surface. Resolve the Plex projects from the project registry and place the relevant evidence around the active thread.",
       "projects": [
-        "plex",
-        "plex-sable",
-        "plex-electron"
+        "plex-core",
+        "plex-sable"
       ],
       "artifacts": [
         {
