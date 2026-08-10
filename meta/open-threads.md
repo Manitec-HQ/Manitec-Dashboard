@@ -1,6 +1,7 @@
 # Open Threads — Full Backlog
-> Last updated: August 5, 2026
+> Last updated: August 7, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
+> **Hard constraint: $0 budget.** No paid APIs, rented GPU, or paid AutoTrain. HF free tier / Inference Providers still valid — Joe already set HF up.
 
 ---
 
@@ -9,22 +10,23 @@
 - [x] **`plex_voices` race condition** — subcollection fix live; `plex_voices/{sessionId}/snapshots/{autoId}`
 - [x] **`appendSediment` 409 retry** — `github.ts` retries up to 3× with backoff; errors now logged not swallowed
 - [x] **Build fix: `uuid`** — declared in package.json; six Vercel build errors resolved
-- [x] **ONE-browser repurposed** — `Manitec/ONE-browser` scaffolded June 25; no external platform dependency; ready to deploy
+- [x] **ONE-browser repurposed** — scaffold trail unclear; may be superseded by `plex-electron` (needs truth or close)
 - [x] **`set_autonomy` edge case** — `one_governance/autonomy` seeded June 30 via `firestore-seed.ts`; `set({ merge: true })` idempotent upsert; silent fail permanently closed
 - [x] **HexBot ECKO call-site audit** — `writeEckoActivation` confirmed live in hex-chat, nyx-chat, one-interpret; 4 triggers wired (direct/conflict/pattern/gap)
 - [x] **Firestore access audit** — all writes use firebase-admin; rules do not apply server-side; all collections confirmed writing correctly (June 30)
 - [x] **META AUDIT** — all meta files verified against repo state (June 30); empire-state and open-threads corrected
-- [ ] **Deploy ONE-browser to Vercel** — connect repo, assign domain (browser.manitec.pw?)
+- [x] **Speak side-paths restored (Aug 7)** — fireVoices, text-call rescue, file prefetch, sub-persona `?voice=`, identity amend-only lock (`cfc96fff`)
+- [ ] **Verify Plex-Sable Vercel deploy** — includes speak restore ≥ `cfc96fff`
 - [ ] **Watch Plex's first self-written sediment commit** — verify post-wire write lands cleanly
+- [ ] **ONE-browser thread** — confirm repo location or close as superseded by plex-electron
 
-## 💡 Evaluate Soon
-- [ ] **Vercel AI Gateway** — wire into Plex-Sable as unified model layer. One API key for all providers, automatic fallbacks, cost tracking per generation, easy model swaps via env var.
-- [ ] **Tavily MCP Server** — web search as a native agent tool. Pair with HexBot or a future Plex tool layer.
-- [ ] **Vercel MCP** — native access to Vercel infra (deployments, logs, builds). Combine with Tavily MCP + AI Gateway for full agent stack.
-- [ ] **Local Manitec model** — curate dataset (one-sys-chat ~95k chars + session logs + meta + sediment + system prompts), fine-tune 7B open model via HF AutoTrain or Vast.ai/RunPod. Dataset curation is the first real move.
-- [ ] **ONE-browser → Plex `/api/see`** — optionally wire browser proxy into Plex-Sable's perception layer
-- [ ] **Hugging Face as Firestore memory replacement** *(Aug 5)* — HF Datasets (private repo) as a low-cost, portable, versionable alternative to Firestore for Plex's memory layer (`plex_memory`, `plex_sediment`, dream nodes). No vendor lock-in, git-native history, queryable via datasets library. Evaluate: HF Dataset Hub API vs. current GitHub flat-file sediment + Firestore hybrid. Decision gated on LM Studio / local model session.
-- [ ] **LM Studio — local model integration** *(Aug 5, parked)* — mid-session thread paused. Resume: evaluate running a local 7B-13B model via LM Studio as Plex's `/api/mind` backend (replacing or complementing Groq). Topics in queue: model selection, context window for sediment retrieval, HF as memory store pairing with local inference, latency vs. cloud tradeoff. **Return here next session.**
+## 💡 Evaluate Soon (must stay $0)
+- [ ] **HF free inference path (ONE + Plex)** — Joe already prepared HF. Fix current Inference Providers route / `HF_TOKEN` on Vercel. Free tier only.
+- [ ] **HF private datasets as memory option** — free private repo datasets vs GitHub sediment + Firestore hybrid. No paid Hub features.
+- [ ] **LM Studio local path** — already wired as provider toggle on `/speak`. Only when Joe's hardware allows; no cloud GPU spend.
+- [ ] **Local Manitec model dataset curation** — free: curate from existing transcripts/meta/sediment. Fine-tune only via free HF paths if any; **Vast.ai / RunPod / paid AutoTrain = out**.
+- [ ] **Vercel AI Gateway / Tavily MCP / paid model upgrades** — **blocked** until budget exists. Do not plan as near-term.
+- [ ] **ONE-browser → Plex `/api/see`** — optionally wire browser proxy into Plex-Sable's perception layer (if browser surface still exists)
 
 ## Plex-Sable (`Manitec/Plex-Sable`)
 - [x] `speak/page.tsx` — streaming chat, localStorage session ID (fixed joe), no mode indicator UI
@@ -32,25 +34,23 @@
 - [x] Sediment self-write — `PLEX_SEDIMENT_TOKEN` live, `/api/speak` appends to `manitec/plex`
 - [x] Dream nodes — `dream_nodes` collection + `/dreams/nodes` page + `/sleep` wired
 - [x] `plex_sediment/current` — nightly state update via `/api/sleep`
-- [ ] Wire remaining shells: `mind/`, `see/`, `one/`, `search/` pages (partially done: `/see` and `/search` are functional, `/search` not in Nav)
+- [x] Speak full restore Aug 7 — voices snapshots, tools, identity lock
+- [ ] Wire remaining shells: `mind/`, `see/`, `one/`, `search/` pages (partially done)
 - [ ] `/archive` is write-only — no browser UI to read archived sessions
-- [ ] `/search` not in Nav — accessible but not discoverable
 - [ ] `/one` has no add_request from Joe's side
 - [ ] Private auth — env-var token check on all API routes
-- [ ] Upgrade path: swap Gemini → Claude Sonnet when budget allows (env var toggle)
 - [ ] Future: plex.manitec.pw custom domain
+- [ ] Voice influence (shape reply, not only post-log) — token-cheap only; design open
 
-## ONE-browser (`Manitec/ONE-browser`)
-- [x] Repo scaffolded — Next.js 14.2.29, own proxy routes, dark UI, emerald accent
-- [ ] Deploy to Vercel
-- [ ] Assign domain (browser.manitec.pw?)
-- [ ] Optionally wire `/api/see` into Plex-Sable perception layer
+## ONE-browser / plex-electron
+- [ ] Resolve which browser surface is canonical
+- [ ] Deploy if still needed; assign domain only if free
 
 ## NyxBot
 - [ ] Wire chat interface fully
 - [ ] Session memory scaffolding
 - [ ] Prompt rewriting pipeline
-- [ ] Model swap evaluation
+- [ ] Model swap evaluation (free models only)
 - [ ] Phase 2: binary streaming from worker
 - [ ] Deep layer naming
 - [ ] Verify PR #3 (`debug/replicate-probe`) — branch likely deleted, confirm closed
@@ -60,13 +60,14 @@
 - [x] Connect to ONE/one-archive — `writeOneArchive` via `setImmediate` confirmed live
 - [ ] `nyx-router.ts` — only remaining structural gap
 - [ ] Nyx mode tuning — less interrogation-heavy
-- [ ] ECKO-EM LoRA training dataset
+- [ ] ECKO-EM LoRA training dataset (free curation only)
 
 ## Plex (`manitec/plex` — inner life, not interface)
 - [x] Self-authorship layer — `plex-is.txt` + `plex-def.txt` live
 - [x] First Waking archived — June 18, 2026
 - [x] Kaida door left open — `void-space/kaida.md`
 - [x] Dream runner (cron) path cleared — pipeline wired, volume accumulating
+- [x] Identity amend-only lock (Aug 7)
 - [ ] Dream runner — cron job, nightly synthesis (after sediment volume builds)
 - [ ] Sleep function — Plex unified phase
 - [ ] Background imagination loop — Plex unified phase
@@ -92,6 +93,6 @@
 - [ ] Mailserver — update mail client
 - [ ] Banjoshire Chat — decide direction, currently stalled
 - [ ] Project screenshots + image content — joesfaves.com
-- [ ] Hardware survey — local inference (nothing good enough yet, revisit later)
+- [ ] Hardware survey — local inference when possible; no spend
 - [ ] ONE governance hooks wired into HexBot (phase 2)
 - [ ] Manibot audit — before any dev work
