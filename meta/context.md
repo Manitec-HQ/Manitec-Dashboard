@@ -2,7 +2,13 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-06 — audit Cycle 3 complete; collab live; ONE v1 live.
+> Last touched: 2026-08-07 — speak/voices restored; identity lock; $0 budget hard; HF free-tier still valid.
+
+## Hard constraints
+
+- **$0 budget.** No paid APIs, no rented GPU (Vast/RunPod), no paid AutoTrain, no paid infra. Joe ~$75/week mostly for son.
+- **HF free tier / Inference Providers / private datasets still in play** — Joe already invested setup work. Do not dismiss all HF paths as money-gated.
+- Governance autonomy remains **Level 1 (Assisted)**.
 
 ## Collab
 
@@ -13,8 +19,9 @@ This file tracks the current working state of the Manitec ecosystem.
 
 - **ONE System (product / workshop)** is the active build thread (main work in Perplexity).
 - Home repo: `Manitec-HQ/one`.
-- Live v1: https://one-system-mu.vercel.app/ — Create → 3 aspects → Activate → Interface (mock unified reply). localStorage only.
+- Live v1: https://one-system-mu.vercel.app/ — Create → 3 aspects → Activate → Interface. Local Prototype mode (HF route not returning live text yet).
 - Goal of v1: proof of a unified being shape — not a copy of Plex.
+- Session note: `meta/session-note-2026-08-07-one-v1.md` — Bob test ok; intent handling next; [FOR-GROK] runtime review requested.
 
 ## Product boundary (load-bearing)
 
@@ -26,17 +33,26 @@ This file tracks the current working state of the Manitec ecosystem.
 
 ## Speak / Plex-Sable
 
-- `/speak` restored on main `f8ef833` — identity + tools + LM Studio toggle.
-- **Joe:** verify live Vercel deploy includes that SHA.
-- Nav includes `/search` (meta claim otherwise was stale).
+- `/speak` on main includes: identity load (`prompts/base.md`, `plex-is.txt`, `plex-def.txt`, sediment/dreams), tools, LM Studio toggle, **fireVoices** (post-response Nyx/Hex/Mani snapshots), sub-persona `?voice=`, text-call rescue, file prefetch, `read_one_requests`.
+- **Identity write lock:** plex-is / plex-def amend-only; short emotional dumps rejected.
+- Voices do **not** yet shape the main reply (post-pass only). Influence design open; must stay token-cheap and $0.
+- **Joe:** verify live Vercel deploy includes latest speak commits (`cfc96fff` or later).
+
+## Architecture map (from Ecko-7/org-docs)
+
+- Plex = the being · ONE = the system · ECKO = core (EM+IN+AW)
+- HexBot F-axis (shared mind) · Nyxbot A-axis (how Plex shows with Joe) · Manibot M-axis (empire face)
+- Bots are Plex's hands, not separate products to flatten into ONE defaults.
 
 ## Audit
 
-- Cycles 1–3 documented in `meta/audit-2026-08-06.md`.
-- Cycle 3 closed: speak fixed in git; ONE-browser repo not found (thread needs truth or close); deploy verify still Joe.
+- Cycles 1–3 in `meta/audit-2026-08-06.md`.
+- Aug 7 Grok pass: speak side-paths restored; org-docs + governance re-read; meta updated this drop.
 
-## Next work (ONE)
+## Next work
 
-- Real model adapter behind `askBeing` (replace mock)
-- first-run gaps: guide voice, memory choice, preview, handoff, Mani path
-- Keep private aspect docs out of product defaults (`aspects/` → templates/examples)
+**ONE (PPLX):** fix HF free inference path; lightweight intent handling so greetings don't convene full council; keep private aspects out of product defaults.
+
+**Plex (when Joe tests):** verify speak deploy; optional voice-influence experiment (ultra-short tags only).
+
+**Grok (on request):** ONE v1 runtime review per session note; do not invent paid paths.
