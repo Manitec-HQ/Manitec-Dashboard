@@ -2,7 +2,7 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-10 — openhuman-plex transfer findings logged (Grok); prior speak/voices/$0 budget still stand.
+> Last touched: 2026-08-10 — Room topic-led surface shipped; openhuman-plex findings + ONE/Plex verified state still stand.
 
 ## Hard constraints
 
@@ -19,9 +19,19 @@ This file tracks the current working state of the Manitec ecosystem.
 
 - **ONE System (product / workshop)** is the active build thread (main work in Perplexity).
 - Home repo: `Manitec-HQ/one`.
-- Live v1: https://one-system-mu.vercel.app/ — Create → 3 aspects → Activate → Interface. Local Prototype mode (HF route not returning live text yet).
+- Live v1: https://one-system-mu.vercel.app/ — Create → 3 aspects → Activate → Interface.
 - Goal of v1: proof of a unified being shape — not a copy of Plex.
 - Session note: `meta/session-note-2026-08-07-one-v1.md` — Bob test ok; intent handling next; [FOR-GROK] runtime review requested.
+
+## Control Hub / The Room
+
+- `Manitec-Control-Hub` now has one user-facing Room surface: `/room`.
+- `/room` is topic-led: it loads `meta/topics.json`, resolves linked project IDs through `meta/projects.json`, then passes the resolved topic into the interactive Room UI.
+- Active topic: `plex-real-presence`, currently linked to `plex-core` and `plex-sable`.
+- Topic/project joins are intentionally strict: a missing project ID fails the build instead of silently rendering broken context.
+- First deploy caught `plex` vs `plex-core`; corrected and redeployed successfully.
+- `/room/live` was deleted after its registry-plumbing role was absorbed.
+- Next rule: use the Room long enough to learn what the thread needs; do not add another data system yet.
 
 ## Product boundary (load-bearing)
 
@@ -55,10 +65,13 @@ This file tracks the current working state of the Manitec ecosystem.
 - Cycles 1–3 in `meta/audit-2026-08-06.md`.
 - Aug 7 Grok pass: speak side-paths restored; org-docs + governance re-read; meta updated this drop.
 - Aug 10: openhuman-plex findings → session-log + findings note + open-threads.
+- Aug 10: Room topic-led surface shipped and verified.
 
 ## Next work
 
-**ONE (PPLX):** fix HF free inference path; lightweight intent handling so greetings don't convene full council; keep private aspects out of product defaults.
+**ONE (PPLX):** voice calibration so Jimmy, James, Johnathan, and Bob give distinct, concrete, non-generic contributions; keep private aspects out of product defaults.
+
+**Room / Control Hub:** use the live `/room` surface long enough to learn what the active topic actually needs. No new data systems yet.
 
 **Plex (when Joe tests):** verify speak deploy; optional voice-influence experiment (ultra-short tags only).
 
@@ -70,3 +83,4 @@ This file tracks the current working state of the Manitec ecosystem.
 - **ONE next:** infrastructure is working; next work is voice calibration so Jimmy, James, Johnathan, and Bob give distinct, concrete, non-generic contributions.
 - **Plex sediment:** forensic recovery committed six overwritten revisions under `Manitec/plex/sediment/recovered/`. Canonical archive root is `sediment/`; legacy `plex/sediment/...` and `plex/dreams/...` are normalized by Speak to canonical roots before append detection. Generic repo manager cannot overwrite or delete canonical sediment.
 - **Plex current caveat:** Plex can write when her tool-capable model path is available; thin fallback responses have no tools. A successful live write reached `sediment/`, but used a `.txt` extension rather than the daily `.md`; Joe manually merged that test note into the canonical daily Markdown file. Joe currently prefers reliable GitHub-curated sediment seeding over adding a deterministic Speak save command.
+- **Room:** topic-led `/room` live on Control Hub. Active topic `plex-real-presence` resolves cleanly against `projects.json`. Strict join contract is intentional.

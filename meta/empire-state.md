@@ -1,5 +1,5 @@
 # Empire State — Project Registry & Infrastructure
-> Last updated: June 30, 2026
+> Last updated: 2026-08-10
 > This file is the stable registry. Changes here are infrequent.
 
 ---
@@ -114,7 +114,8 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 ### Manitec Control Hub (`Manitec-HQ/Manitec-Control-Hub`) — ✅ LIVE
 - URL: dash.manitec.pw
 - **Built June 29.** 8 API routes: `analytics`, `bot-health`, `firebase-status`, `firestore`, `github-activity`, `ping`, `redeploy`, `tasks`, `vercel-deploys`. Auth via middleware. Full dashboard page (26KB).
-- **TODOs:** wire `one-archive` read endpoint, data enrichment pass
+- **Room surface (2026-08-10):** single user-facing `/room` route. Topic-led from `Manitec-Dashboard/meta/topics.json` + `projects.json`. Active topic currently `plex-real-presence`. Strict project-ID joins (missing ID fails the build). `/room/live` retired.
+- **TODOs:** wire `one-archive` read endpoint, data enrichment pass; use Room before adding more systems.
 
 ### Mailserver (`Manitec-HQ/mailserver`) — 🟢 LIVE (needs update)
 - URL: mail.manitec.pw. In use. Zoho Mail360 client.
