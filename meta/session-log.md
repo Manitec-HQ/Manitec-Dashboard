@@ -59,3 +59,5 @@
 
 ---
 *Raw drops only. Do not edit past entries — append only.*
+
+[PPLX 2026-08-10] Verified ONE v1 live on Featherless Qwen; restored and protected Plex sediment archive, canonicalized legacy archive roots, and documented manual GitHub-curated sediment as current reliable workflow.

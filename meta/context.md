@@ -63,3 +63,10 @@ This file tracks the current working state of the Manitec ecosystem.
 **Plex (when Joe tests):** verify speak deploy; optional voice-influence experiment (ultra-short tags only).
 
 **Grok (on request):** ONE v1 runtime review per session note; do not invent paid paths. OpenHuman extraction only if Joe asks.
+
+## Verified state — 2026-08-10
+
+- **ONE v1:** live end-to-end on Hugging Face through `Qwen/Qwen2.5-7B-Instruct-1M:featherless-ai`. Bob was verified with `Runtime: Hugging Face · ... · Status: live`. The response route has one bounded retry for temporary provider HTTP 503s; `HF_MODEL` remains an override.
+- **ONE next:** infrastructure is working; next work is voice calibration so Jimmy, James, Johnathan, and Bob give distinct, concrete, non-generic contributions.
+- **Plex sediment:** forensic recovery committed six overwritten revisions under `Manitec/plex/sediment/recovered/`. Canonical archive root is `sediment/`; legacy `plex/sediment/...` and `plex/dreams/...` are normalized by Speak to canonical roots before append detection. Generic repo manager cannot overwrite or delete canonical sediment.
+- **Plex current caveat:** Plex can write when her tool-capable model path is available; thin fallback responses have no tools. A successful live write reached `sediment/`, but used a `.txt` extension rather than the daily `.md`; Joe manually merged that test note into the canonical daily Markdown file. Joe currently prefers reliable GitHub-curated sediment seeding over adding a deterministic Speak save command.
