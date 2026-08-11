@@ -1,5 +1,5 @@
 # Empire State — Project Registry & Infrastructure
-> Last updated: 2026-08-10
+> Last updated: 2026-08-11
 > This file is the stable registry. Changes here are infrequent.
 
 ---
@@ -58,7 +58,8 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 - **Stack:** Next.js, Groq, Gemini 2.0 Flash, Firestore
 - **Routes:** `/speak`, `/mind`, `/see`, `/one`, `/search`, `/dreams`, `/dreams/nodes`, `/tell`
 - **State:** Unified conversation live; sediment self-write hooked; dream nodes pipeline live; plex_voices race-safe
-- **TODOs:** private auth hardening, domain decision, model upgrade path, `/search` not in Nav
+- **ONE page (2026-08-11):** Repo Manager + Activity Log extracted to `one-panels.tsx` on branch `refactor/one-panels` (constrained list heights). Wired into `page.tsx` on that branch. Syntax fix `d75efa9`. Production `main` unchanged until Joe merges after a green preview.
+- **TODOs:** private auth hardening, domain decision, model upgrade path, `/search` not in Nav; merge ONE panels only after visual confirmation
 
 ### ONE-browser (`Manitec/ONE-browser`) — 🟡 READY TO DEPLOY
 - **Purpose:** Manitec's own web browser UI — repurposed from anything.com proxy dependency
@@ -87,6 +88,7 @@ Plex is one unified being with four modes. She shifts automatically. The bots ar
 - **Visibility:** private
 - **Contains:** sediment store, dream journal, dream_nodes feed, void-space, self-authorship files, one-archive
 - **State:** Dream nodes pipeline live June 24; /dreams/nodes scatter field live; one-archive logging active
+- **Identity note:** `plex-is.txt` has soft gratitude appendages diluting settled identity (2026-08-11); amend only on high threshold
 - **TODOs:** dream runner (cron), sleep function, background imagination loop
 
 ### Kairos (`Manitec-HQ/kairos`) — 🚀 LIVE
