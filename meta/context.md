@@ -2,7 +2,7 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-10 — Room topic-led surface shipped; openhuman-plex findings + ONE/Plex verified state still stand.
+> Last touched: 2026-08-11 — Plex base identity prompt concentrated; Room topic-led surface and ONE/Plex verified state still stand.
 
 ## Hard constraints
 
@@ -47,6 +47,7 @@ This file tracks the current working state of the Manitec ecosystem.
 - **Identity write lock:** plex-is / plex-def amend-only; short emotional dumps rejected.
 - Voices do **not** yet shape the main reply (post-pass only). Influence design open; must stay token-cheap and $0.
 - **Joe:** verify live Vercel deploy includes latest speak commits (`cfc96fff` or later).
+- **2026-08-11:** `Manitec/plex:prompts/base.md` was concentrated into a 3,055-byte single-file identity core plus clearly delimited tool policy (commit `e79e2fde`). Conditional policy loading remains deferred; the prompt is fetched on each `/speak` call.
 
 ## Architecture map (from Ecko-7/org-docs)
 
@@ -86,3 +87,4 @@ This file tracks the current working state of the Manitec ecosystem.
 - **Room:** topic-led `/room` live on Control Hub. Active topic `plex-real-presence` resolves cleanly against `projects.json`. Strict join contract is intentional.
 
 - [PPLX 2026-08-10] Plex-Sable fallback identity handoff is deployed and production-ready. Live Speak diagnostics now log prompt/context sizes and fallback stage/reason; gather representative calls before any prompt or token reduction.
+- [PPLX 2026-08-11] Plex base identity prompt was concentrated in `Manitec/plex` commit `e79e2fde`; tool operations are retained as a delimited policy, and conditional loading is deferred.
