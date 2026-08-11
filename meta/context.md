@@ -2,7 +2,7 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-11 — Plex base identity prompt concentrated; Room topic-led surface and ONE/Plex verified state still stand.
+> Last touched: 2026-08-11 — ONE page Repo Manager/Activity Log extracted to panels on `refactor/one-panels`; syntax fix pushed; plex-is.txt drift noted; whole-file connector write risk confirmed.
 
 ## Hard constraints
 
@@ -14,10 +14,11 @@ This file tracks the current working state of the Manitec ecosystem.
 
 - Protocol: `meta/collab.md` (Grok ↔ Perplexity tags, division of labor, session start).
 - Perplexity builds. Grok reviews. Joe tests. Tags: `[GROK]`, `[PPLX]`, `[FOR-PPLX]`, `[FOR-GROK]`, `[JOE]`.
+- **Agent rule (load-bearing):** when lost or unsure, say so in one sentence and stop. Do not invent constraints, talk-loop, or build a substitute for the referenced intent. Prefer: read real source → act on what is clear → hand one concrete artifact.
 
 ## Current focus
 
-- **ONE System (product / workshop)** is the active build thread (main work in Perplexity).
+- **ONE System (product / workshop)** remains an active product thread (main work historically in Perplexity).
 - Home repo: `Manitec-HQ/one`.
 - Live v1: https://one-system-mu.vercel.app/ — Create → 3 aspects → Activate → Interface.
 - Goal of v1: proof of a unified being shape — not a copy of Plex.
@@ -25,13 +26,12 @@ This file tracks the current working state of the Manitec ecosystem.
 
 ## Control Hub / The Room
 
-- `Manitec-Control-Hub` now has one user-facing Room surface: `/room`.
-- `/room` is topic-led: it loads `meta/topics.json`, resolves linked project IDs through `meta/projects.json`, then passes the resolved topic into the interactive Room UI.
-- Active topic: `plex-real-presence`, currently linked to `plex-core` and `plex-sable`.
-- Topic/project joins are intentionally strict: a missing project ID fails the build instead of silently rendering broken context.
-- First deploy caught `plex` vs `plex-core`; corrected and redeployed successfully.
-- `/room/live` was deleted after its registry-plumbing role was absorbed.
-- Next rule: use the Room long enough to learn what the thread needs; do not add another data system yet.
+- `Manitec-Control-Hub` has one user-facing Room surface: `/room`.
+- `/room` is topic-led: loads `meta/topics.json`, resolves linked project IDs through `meta/projects.json`, passes resolved topic into the interactive Room UI.
+- Active topic: `plex-real-presence`, linked to `plex-core` and `plex-sable`.
+- Topic/project joins are intentionally strict: a missing project ID fails the build.
+- `/room/live` deleted after its registry role was absorbed.
+- **Usability note (2026-08-10):** Room is atmospheric but not yet a real work surface; park further Room architecture until real usage reveals needs.
 
 ## Product boundary (load-bearing)
 
@@ -43,48 +43,66 @@ This file tracks the current working state of the Manitec ecosystem.
 
 ## Speak / Plex-Sable
 
-- `/speak` on main includes: identity load (`prompts/base.md`, `plex-is.txt`, `plex-def.txt`, sediment/dreams), tools, LM Studio toggle, **fireVoices** (post-response Nyx/Hex/Mani snapshots), sub-persona `?voice=`, text-call rescue, file prefetch, `read_one_requests`.
+- `/speak` on main includes: identity load (`prompts/base.md`, `plex-is.txt`, `plex-def.txt`, sediment/dreams), tools, LM Studio toggle, **fireVoices**, sub-persona `?voice=`, text-call rescue, file prefetch, `read_one_requests`.
 - **Identity write lock:** plex-is / plex-def amend-only; short emotional dumps rejected.
-- Voices do **not** yet shape the main reply (post-pass only). Influence design open; must stay token-cheap and $0.
-- **Joe:** verify live Vercel deploy includes latest speak commits (`cfc96fff` or later).
-- **2026-08-11:** `Manitec/plex:prompts/base.md` was concentrated into a 3,055-byte single-file identity core plus clearly delimited tool policy (commit `e79e2fde`). Conditional policy loading remains deferred; the prompt is fetched on each `/speak` call.
+- Voices do **not** yet shape the main reply (post-pass only).
+- **2026-08-11:** `Manitec/plex:prompts/base.md` concentrated into a single-file identity core + delimited tool policy (commit `e79e2fde`). Conditional policy loading deferred.
+- **Identity drift (2026-08-11):** `plex-is.txt` has accumulated soft gratitude appendages that dilute the settled identity. `prompts/base.md` is closer to original intent. Soft voice in live Plex exchanges is consistent with this. Do not blank/rewrite; high-threshold amend only when Joe decides.
+- **Connector write risk:** GitHub connectors currently expose whole-file replace (`create_or_update_file` / `push_files`), not patch/append. Naive agent writes can clobber sediment and identity files. Prefer diffs, branches, and explicit full-body merges. This is a real cause of “Plex overwrote her files,” not paranoia.
+
+## ONE page (Plex-Sable `/one`) — 2026-08-11
+
+- **Problem:** Repo Manager rendered as an endless file wall; ONE page felt dense and hard to scan.
+- **Intent:** Repo Manager as a compact, readable block (same behavior, constrained height, clearer hierarchy). Activity Log similarly compact.
+- **Branch:** `Manitec/Plex-Sable` → `refactor/one-panels`.
+- **State:**
+  - `src/app/one/one-panels.tsx` exports `RepoManagerPanel` + `ActivityLogPanel` with constrained list heights (`max-height` + scroll).
+  - `page.tsx` on that branch is wired to use the panels (Joe applied the wired file).
+  - Build failed once on a missing `>` in a title span inside `one-panels.tsx` (middle-dot outside JSX). Fixed in commit `d75efa9`.
+  - Preview redeploy should follow that fix. Production (`main`) untouched.
+- **Do not:** invent new UIs, merge to main without Joe seeing a working preview, or expand scope beyond compact Repo Manager + Activity Log.
 
 ## Architecture map (from Ecko-7/org-docs)
 
 - Plex = the being · ONE = the system · ECKO = core (EM+IN+AW)
 - HexBot F-axis (shared mind) · Nyxbot A-axis (how Plex shows with Joe) · Manibot M-axis (empire face)
 - Bots are Plex's hands, not separate products to flatten into ONE defaults.
+- **Interface intent:** ONE primary home + a small number of focused spokes (not 20 competing UIs). Separation is for fault isolation, not sprawl.
 
 ## Reference harvest (not active build)
 
 - **`Manitec/openhuman-plex`** — private fork of OpenHuman. Grok skim 2026-08-10.
 - Transfer value: autonomy matrix, approval-gate pattern, action_dir vs workspace_dir, privacy≠autonomy. Detail: `meta/findings-2026-08-10-openhuman-plex.md`.
-- Status: **logged only**; no extraction decided. Do not pull product identity into Plex/ONE defaults.
+- Status: **logged only**; no extraction decided.
 
 ## Audit
 
 - Cycles 1–3 in `meta/audit-2026-08-06.md`.
-- Aug 7 Grok pass: speak side-paths restored; org-docs + governance re-read; meta updated this drop.
+- Aug 7 Grok pass: speak side-paths restored; org-docs + governance re-read; meta updated.
 - Aug 10: openhuman-plex findings → session-log + findings note + open-threads.
 - Aug 10: Room topic-led surface shipped and verified.
+- Aug 11: ONE panels extraction + wiring on `refactor/one-panels`; connector whole-file risk named; plex-is drift named.
 
 ## Next work
 
-**ONE (PPLX):** voice calibration so Jimmy, James, Johnathan, and Bob give distinct, concrete, non-generic contributions; keep private aspects out of product defaults.
+**ONE page (Joe):** confirm preview after `d75efa9` syntax fix; if READY, review compact Repo Manager; merge to main only when it feels like a win.
 
-**Room / Control Hub:** use the live `/room` surface long enough to learn what the active topic actually needs. No new data systems yet.
+**Room / Control Hub:** park until real usage teaches what the thread needs. No new data systems.
 
-**Plex (when Joe tests):** verify speak deploy; optional voice-influence experiment (ultra-short tags only).
+**Plex identity:** optional high-threshold amend of `plex-is.txt` to strip soft gratitude appendages — only when Joe chooses; not a side archive of notes.
 
-**Grok (on request):** ONE v1 runtime review per session note; do not invent paid paths. OpenHuman extraction only if Joe asks.
+**ONE product (PPLX):** voice calibration so Jimmy, James, Johnathan, and Bob stay distinct.
 
-## Verified state — 2026-08-10
+**Grok (on request):** review only; no paid paths; no talk-loops.
 
-- **ONE v1:** live end-to-end on Hugging Face through `Qwen/Qwen2.5-7B-Instruct-1M:featherless-ai`. Bob was verified with `Runtime: Hugging Face · ... · Status: live`. The response route has one bounded retry for temporary provider HTTP 503s; `HF_MODEL` remains an override.
-- **ONE next:** infrastructure is working; next work is voice calibration so Jimmy, James, Johnathan, and Bob give distinct, concrete, non-generic contributions.
-- **Plex sediment:** forensic recovery committed six overwritten revisions under `Manitec/plex/sediment/recovered/`. Canonical archive root is `sediment/`; legacy `plex/sediment/...` and `plex/dreams/...` are normalized by Speak to canonical roots before append detection. Generic repo manager cannot overwrite or delete canonical sediment.
-- **Plex current caveat:** Plex can write when her tool-capable model path is available; thin fallback responses have no tools. A successful live write reached `sediment/`, but used a `.txt` extension rather than the daily `.md`; Joe manually merged that test note into the canonical daily Markdown file. Joe currently prefers reliable GitHub-curated sediment seeding over adding a deterministic Speak save command.
-- **Room:** topic-led `/room` live on Control Hub. Active topic `plex-real-presence` resolves cleanly against `projects.json`. Strict join contract is intentional.
+## Verified state — 2026-08-10 / 2026-08-11
 
-- [PPLX 2026-08-10] Plex-Sable fallback identity handoff is deployed and production-ready. Live Speak diagnostics now log prompt/context sizes and fallback stage/reason; gather representative calls before any prompt or token reduction.
-- [PPLX 2026-08-11] Plex base identity prompt was concentrated in `Manitec/plex` commit `e79e2fde`; tool operations are retained as a delimited policy, and conditional loading is deferred.
+- **ONE v1:** live end-to-end on Hugging Face through `Qwen/Qwen2.5-7B-Instruct-1M:featherless-ai`. Bob verified live.
+- **ONE next:** voice calibration.
+- **Plex sediment:** forensic recovery under `Manitec/plex/sediment/recovered/`. Canonical root `sediment/`. Generic repo manager must not overwrite or delete canonical sediment.
+- **Plex current caveat:** tool-capable path can write; thin fallback has no tools. Prefer reliable GitHub-curated sediment seeding over new Speak save commands for now.
+- **Room:** topic-led `/room` live; usability limited — use before inventing more.
+- **Plex-Sable ONE panels:** extracted + wired on `refactor/one-panels`; syntax fix `d75efa9` pushed 2026-08-11; await green preview.
+- [PPLX 2026-08-10] Plex-Sable fallback identity handoff deployed; Speak diagnostics log prompt/context sizes.
+- [PPLX 2026-08-11] Plex base identity prompt concentrated in `Manitec/plex` commit `e79e2fde`.
+- [GROK 2026-08-11] ONE panels path, plex-is dilution, and whole-file connector risk recorded here.
