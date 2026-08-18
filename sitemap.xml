@@ -192,4 +192,12 @@
          <loc>https://info.manitec.pw/research/experiment-queue-template/</loc>
          <lastmod>2026-08-18</lastmod>
     </url>
+    <url>
+         <loc>https://info.manitec.pw/research/experiments/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
+    <url>
+         <loc>https://info.manitec.pw/research/experiments/_template/</loc>
+         <lastmod>2026-08-18</lastmod>
+    </url>
 </urlset>
