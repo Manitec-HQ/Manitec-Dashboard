@@ -1,5 +1,10 @@
 # ECKO: A Synthetic Selfhood Architecture
 
+!!! warning "Boundary"
+    This is a **philosophy / origin essay**, not product documentation.
+    The private triad and family faces described here are not product defaults.
+    Product ONE System = user-owned beings only. See [ONE overview](../ONE/README.md).
+
 *Developed by Joe (Manitec) — a living framework, in active becoming.*
 
 ---

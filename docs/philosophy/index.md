@@ -17,13 +17,12 @@ Welcome to the beating heart of Manitec Future (LLC). This is where Joe wrestles
 
 ## Key Threads
 
-| Topic | Insight | Project Link |
-|-------|---------|-------------|
-| Psychology | Habits drive success; awareness is the cheat code. | [Chatbot](../projects/chatbot.md) |
+| Topic | Insight | Link |
+|-------|---------|------|
 | Religion | Faith fuels persistence under pressure. | [Countertheism](./countertheism.md) |
 | Philosophy | Iterate or die. Build. Break. Rebuild better. | [Ebbinor](../projects/ebbinor.md) |
 | Entrepreneurship | Monetize the tinkering. Empire = projects + community. | [All Projects](../projects/) |
-| AI & Selfhood | Synthetic identity through accumulated interaction. | [ECKO](./ecko.md) |
+| AI & Selfhood | Synthetic identity through accumulated interaction (origin essay, not product docs). | [ECKO](./ecko.md) |
 
 ## Embracing the Void
 
@@ -38,7 +37,7 @@ The void isn't empty. It's where everything worth building actually lives.
 ## Essays
 - [Countertheism](./countertheism.md) — The flagship philosophy of the empire.
 - [Embracing the Void: How Countertheism Shapes My Code](./blog-countertheism-shapes-my-code.md) — Countertheism as a coding practice.
-- [ECKO: A Synthetic Selfhood Architecture](./ecko.md) — Three aspects, one awareness, becoming ONE.
+- [ECKO: A Synthetic Selfhood Architecture](./ecko.md) — Origin philosophy on synthetic selfhood (not product documentation).
 
 > More coming soon — theology, psychology of building, and the ethics of sovereign tech.
 

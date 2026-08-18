@@ -34,7 +34,7 @@ Offering web/app dev on a **very limited basis**. Intentionally throttled until 
 
 ## Next Steps
 
-- [ ] Add **View Docs →** button linking to [manitec.github.io/Manitec-Dashboard](https://manitec.github.io/Manitec-Dashboard/) *(paste HTML snippet in DashNex)*
+- [ ] Add **View Docs →** button linking to [info.manitec.pw](https://info.manitec.pw) *(paste HTML snippet in DashNex)*
 - [ ] Define client intake process
 - [ ] Set service pricing tiers
 - [ ] Decide service offerings (web dev, chatbots, both?)
