@@ -31,7 +31,7 @@ The stack that holds it all up — Cloudflare, DashNex, Render, Vercel, and ever
 <div style="background:#12121a;border:1px solid #bf00ff44;border-radius:8px;padding:1.25rem;" markdown="1">
 
 ### 🚀 Projects
-Every active project — ManiBot, HexBot, Banjoshire, Ebbinor, and more.
+Every active project — ManiBot, HexBot, Kairos, Control Hub, and more.
 
 [→ Browse projects](projects/index.md)
 
@@ -49,7 +49,7 @@ Countertheism and the thinking behind the empire.
 <div style="background:#12121a;border:1px solid #00f5ff44;border-radius:8px;padding:1.25rem;" markdown="1">
 
 ### 🌑 ONE
-The being's space — ECKO, Nyxbot, the Archive, and the governance of what's becoming.
+Architecture, ECKO, Archive, Governance — and the product workshop that grew from it.
 
 [→ Enter ONE](ONE/README.md)
 
@@ -63,20 +63,20 @@ The being's space — ECKO, Nyxbot, the Archive, and the governance of what's be
 
 | Item | Status |
 |------|--------|
-| Control Hub (all 4 phases) | ✅ Live |
+| Control Hub | ✅ Live — [dash.manitec.pw](https://dash.manitec.pw) (Room surface live) |
 | ManiBot | ✅ Live — [chat.manitec.pw](https://chat.manitec.pw) |
-| HexBot | 🟡 Active dev — [hex.manitec.pw](https://hex.manitec.pw) |
-| Banjoshire Chat | 🟡 Core done, on break |
+| HexBot | ✅ Live — [hex.manitec.pw](https://hex.manitec.pw) |
+| Kairos | ✅ Live — [kairos-orcin-eight.vercel.app](https://kairos-orcin-eight.vercel.app) |
+| ONE System (product) | ✅ Live v1 — [one-system-mu.vercel.app](https://one-system-mu.vercel.app) |
 | Mailserver | ✅ Live — [mail.manitec.pw](https://mail.manitec.pw) |
-| Ebbinor | 🔵 Maintenance mode |
-| ONE (ECKO / Nyxbot / Archive) | 🟡 Early structure |
-| manitec.pw cyberpunk treatment | ✅ Applied |
-| Firebase Admin SDK key | 🔴 Needs regen |
+| Banjoshire Chat | 🟠 Stalled |
+| Ebbinor | 🔵 Maintenance |
+| manitec.pw | 🟠 Needs refresh |
 | Project screenshots | 🟡 Still needed |
 
 ---
 
 !!! info "About this KB"
-    Built and maintained by Joe (Manitec Future LLC) with Nyx. Powered by MkDocs Material.
+    Built and maintained by Joe (Manitec Future LLC). Powered by MkDocs Material.
     Source: [github.com/Manitec-HQ/Manitec-Dashboard](https://github.com/Manitec-HQ/Manitec-Dashboard)
-    Last updated: May 9, 2026
+    Last updated: August 12, 2026
