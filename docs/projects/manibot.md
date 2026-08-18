@@ -1,48 +1,30 @@
 # ManiBot
 
-**What it is:** Joe's personal AI chatbot assistant with a custom sarcastic personality.
+!!! success "Status: ✅ Live"
+    [chat.manitec.pw](https://chat.manitec.pw)
 
-**Live URL:** [chat.manitec.pw](https://chat.manitec.pw)
-
-**Blog Post:** [manitec.pw/blog/manibot](https://manitec.pw/blog/manibot)
-
-![ManiBot](https://i.postimg.cc/q7V0g4tF/Screenshot-2026-03-28-055401.png)
+**What it is:** Empire-facing AI chat (M-axis). Friend / employee face of the stack.
 
 ## Stack
 
 - **Framework:** Next.js 15 (App Router)
 - **Hosting:** Vercel
-- **AI Engine:** Groq API (fast inference)
-- **AI Layer:** Vercel AI SDK v5
-- **Database:** Neon (serverless Postgres — stores chat history)
+- **AI:** Groq
+- **Memory:** Firestore (shipped June 13, 2026)
+- **Repo:** `Manitec-HQ/manibot`
 
-## Features (Live ✅)
+## Live
 
-- Multi-session sidebar — view and resume past conversations
-- Persistent chat history saved to Neon DB
-- Custom system prompt — sarcastic personality, knows who Joe is
-- Fully deployed and public-facing
+- Public chat at chat.manitec.pw
+- Firestore-backed memory
+- Custom system prompt / personality
 
-## Known Bugs
+## Open (from empire-state)
 
-- Input box clips slightly on some screen sizes
-- Returning to old sessions doesn't always restore messages correctly
+- Push clean `pnpm-lock.yaml`
+- Strip dead Neon / `db.ts` artifacts if still present
+- Full audit before further dev
 
-## Next Steps
+## Notes
 
-- [ ] Fix layout clip bug
-- [ ] Fix session restore
-- [ ] Add web search capability
-- [ ] Give it GitHub access
-- [ ] Build a private Joe-only version with deeper personality
-- [ ] Explore GenX Router as Groq replacement for multi-model access
-
-## Tasks
-
---8<-- "meta/tasks/tasks-manibot.md"
-
-## Lessons Learned
-
-- Next.js 15 — `params` is now a Promise, must `await` it
-- AI SDK v5 — dropped `content` field, now uses `parts[]` array
-- Git merge conflicts across 6 files simultaneously is a special kind of hell
+Mani is the product-level technical support face for users. Private family identities are not Mani’s defaults.
