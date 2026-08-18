@@ -1300,10 +1300,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-live" class="md-nav__link">
+  <a href="#live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Features (Live ✅)
+        Live
       
     </span>
   </a>
@@ -1311,10 +1311,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-bugs" class="md-nav__link">
+  <a href="#open-from-empire-state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known Bugs
+        Open (from empire-state)
       
     </span>
   </a>
@@ -1322,49 +1322,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tasks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-tasks-for-manibot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open tasks for manibot
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lessons Learned
+        Notes
       
     </span>
   </a>
@@ -2138,10 +2099,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-live" class="md-nav__link">
+  <a href="#live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Features (Live ✅)
+        Live
       
     </span>
   </a>
@@ -2149,10 +2110,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-bugs" class="md-nav__link">
+  <a href="#open-from-empire-state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known Bugs
+        Open (from empire-state)
       
     </span>
   </a>
@@ -2160,49 +2121,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tasks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-tasks-for-manibot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open tasks for manibot
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lessons Learned
+        Notes
       
     </span>
   </a>
@@ -2230,52 +2152,33 @@
 
 
 <h1 id="manibot">ManiBot<a class="headerlink" href="#manibot" title="Permanent link">&para;</a></h1>
-<p><strong>What it is:</strong> Joe's personal AI chatbot assistant with a custom sarcastic personality.</p>
-<p><strong>Live URL:</strong> <a href="https://chat.manitec.pw">chat.manitec.pw</a></p>
-<p><strong>Blog Post:</strong> <a href="https://manitec.pw/blog/manibot">manitec.pw/blog/manibot</a></p>
-<p><img alt="ManiBot" src="https://i.postimg.cc/q7V0g4tF/Screenshot-2026-03-28-055401.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Status: ✅ Live</p>
+<p><a href="https://chat.manitec.pw">chat.manitec.pw</a></p>
+</div>
+<p><strong>What it is:</strong> Empire-facing AI chat (M-axis). Friend / employee face of the stack.</p>
 <h2 id="stack">Stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Framework:</strong> Next.js 15 (App Router)</li>
 <li><strong>Hosting:</strong> Vercel</li>
-<li><strong>AI Engine:</strong> Groq API (fast inference)</li>
-<li><strong>AI Layer:</strong> Vercel AI SDK v5</li>
-<li><strong>Database:</strong> Neon (serverless Postgres — stores chat history)</li>
+<li><strong>AI:</strong> Groq</li>
+<li><strong>Memory:</strong> Firestore (shipped June 13, 2026)</li>
+<li><strong>Repo:</strong> <code>Manitec-HQ/manibot</code></li>
 </ul>
-<h2 id="features-live">Features (Live ✅)<a class="headerlink" href="#features-live" title="Permanent link">&para;</a></h2>
+<h2 id="live">Live<a class="headerlink" href="#live" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Multi-session sidebar — view and resume past conversations</li>
-<li>Persistent chat history saved to Neon DB</li>
-<li>Custom system prompt — sarcastic personality, knows who Joe is</li>
-<li>Fully deployed and public-facing</li>
+<li>Public chat at chat.manitec.pw</li>
+<li>Firestore-backed memory</li>
+<li>Custom system prompt / personality</li>
 </ul>
-<h2 id="known-bugs">Known Bugs<a class="headerlink" href="#known-bugs" title="Permanent link">&para;</a></h2>
+<h2 id="open-from-empire-state">Open (from empire-state)<a class="headerlink" href="#open-from-empire-state" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Input box clips slightly on some screen sizes</li>
-<li>Returning to old sessions doesn't always restore messages correctly</li>
+<li>Push clean <code>pnpm-lock.yaml</code></li>
+<li>Strip dead Neon / <code>db.ts</code> artifacts if still present</li>
+<li>Full audit before further dev</li>
 </ul>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] Fix layout clip bug</li>
-<li>[ ] Fix session restore</li>
-<li>[ ] Add web search capability</li>
-<li>[ ] Give it GitHub access</li>
-<li>[ ] Build a private Joe-only version with deeper personality</li>
-<li>[ ] Explore GenX Router as Groq replacement for multi-model access</li>
-</ul>
-<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
-<!-- AUTO-GENERATED FILE: do not edit by hand.
-     Generated by meta/generate_task_fragments.py during CI build.
-     Source: https://github.com/Manitec/Manitec-Tasks -->
-
-<h3 id="open-tasks-for-manibot">Open tasks for <code>manibot</code><a class="headerlink" href="#open-tasks-for-manibot" title="Permanent link">&para;</a></h3>
-<p><em>No open tasks linked to this project.</em></p>
-<h2 id="lessons-learned">Lessons Learned<a class="headerlink" href="#lessons-learned" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Next.js 15 — <code>params</code> is now a Promise, must <code>await</code> it</li>
-<li>AI SDK v5 — dropped <code>content</code> field, now uses <code>parts[]</code> array</li>
-<li>Git merge conflicts across 6 files simultaneously is a special kind of hell</li>
-</ul>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>Mani is the product-level technical support face for users. Private family identities are not Mani’s defaults.</p>
 
 
 
@@ -2296,7 +2199,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 6, 2026 07:03:08 UTC">April 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 18, 2026 05:07:19 UTC">August 18, 2026</span>
   </span>
 
     
