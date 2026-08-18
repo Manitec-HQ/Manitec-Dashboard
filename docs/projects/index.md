@@ -8,22 +8,24 @@ The Manitec empire in project form. Each one built with purpose — some finishe
 
 | Project | Stack | Status | Link |
 |---------|-------|--------|------|
-| [Banjoshire Chat](banjoshire.md) | TypeScript, Next.js, Firebase | 🟡 Core done, on break | [banjo.joesfaves.com](https://banjo.joesfaves.com) |
-| [HexBot](hexbot.md) | FastAPI, Python | 🟢 Active dev | [hex.manitec.pw](https://hex.manitec.pw) |
-| [ManiBot](manibot.md) | Next.js 15, Vercel, Groq, Neon | 🟢 Live | [chat.manitec.pw](https://chat.manitec.pw) |
-| [Mailserver](mailserver.md) | Python, Zoho Mail360 | 🟡 Built | [mail.manitec.pw](https://mail.manitec.pw) |
-| [Manitec Apps](manitec-apps.md) | Python | 🟢 Updated Mar 26 | — |
+| [HexBot](hexbot.md) | Next.js 15, TypeScript, Firebase Admin, Groq | ✅ Live | [hex.manitec.pw](https://hex.manitec.pw) |
+| [ManiBot](manibot.md) | Next.js 15, Vercel, Groq, Firestore | ✅ Live | [chat.manitec.pw](https://chat.manitec.pw) |
+| [Kairos](kairos.md) | Next.js 15, Tavily, Groq, Pexels | ✅ Live | [kairos-orcin-eight.vercel.app](https://kairos-orcin-eight.vercel.app) |
+| [Control Hub](control-hub.md) | Next.js 15, Vercel | ✅ Live | [dash.manitec.pw](https://dash.manitec.pw) |
+| [Mailserver](mailserver.md) | Python, Zoho Mail360 | ✅ Live | [mail.manitec.pw](https://mail.manitec.pw) |
+| [Joe's Faves](joesfaves.md) | Bootstrap, DashNex, Froala | ✅ Live | [joesfaves.com](https://joesfaves.com) |
+| [Command Hub](command-hub.md) | Next.js, Vercel | ✅ Live | — |
 | [Ebbinor](ebbinor.md) | Luanti/Minetest, C | 🔵 Maintenance | [ebbinor.joesfaves.com](https://ebbinor.joesfaves.com) |
-| [Joe's Faves](joesfaves.md) | Bootstrap, DashNex, Froala | 🟢 Live | [joesfaves.com](https://joesfaves.com) |
-| [Control Hub](control-hub.md) | DashNex | 🟢 Live | — |
-| [Command Hub](command-hub.md) | Next.js, Vercel | 🟢 Live | — |
-| [Nyx](nyx.md) | Perplexity, HF MCP, GitHub MCP | 🟢 Active | — |
+| [Banjoshire Chat](banjoshire.md) | TypeScript, Next.js, Firebase | 🟠 Stalled | [banjo.joesfaves.com](https://banjo.joesfaves.com) |
+| [Manitec Apps](manitec-apps.md) | Python | 🟢 Live | — |
 | [Tasks](tasks.md) | GitHub Issues, MkDocs Snippets | 🟢 Auto-updated | — |
+| [Nyx](nyx.md) | — | Private / historical | — |
 
 ## Related Pages
 
 - [Infrastructure](../infra/index.md)
 - [Tools & Services](../infra/tools.md)
+- [ONE](../ONE/README.md)
 
 !!! tip "Got screenshots?"
     Drop them on [postimg.cc](https://postimg.cc/files) and share the link — I'll wire them in here instantly.
