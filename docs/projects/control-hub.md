@@ -1,29 +1,36 @@
 # Manitec Control Hub
 
-**What it is:** Joe's private ops dashboard — a password-gated Next.js app for monitoring deployments, managing services, and running empire infrastructure from one interface.
+!!! success "Status: ✅ Live"
+    Ops dashboard at [dash.manitec.pw](https://dash.manitec.pw).
+
+## Overview
+
+Joe’s private ops surface for the empire: deploys, health, activity, and the topic-led **Room**.
 
 ## Stack
 
 - **Framework:** Next.js 15 (App Router)
 - **Hosting:** Vercel
-- **Auth:** Middleware password gate — `httpOnly` cookie, `HUB_DASHBOARD_PASSWORD` env var
-- **Backend:** Proxies to Manitec Command Hub (FastAPI) for deploy actions
+- **Auth:** Middleware password gate (`HUB_DASHBOARD_PASSWORD`)
+- **Domain:** [dash.manitec.pw](https://dash.manitec.pw)
+- **Repo:** `Manitec-HQ/Manitec-Control-Hub`
 
-## Features (Live ✅)
+## Live surface
 
-- Password gate — middleware-level, redirects unauthorized requests to `/login`
-- Deploy status view — recent deployment visibility with redeploy action
-- Mail admin quick access
-- Dark cyberpunk UI — neon cyan/purple on near-black
+| Piece | Status |
+|---|---|
+| Password gate | ✅ Live |
+| API routes (analytics, bot-health, firebase-status, firestore, github-activity, ping, redeploy, tasks, vercel-deploys) | ✅ Live |
+| Topic-led `/room` | ✅ Live — loads `meta/topics.json` + `projects.json` |
+| Active topic | `plex-real-presence` |
+| `/room/live` | Retired (absorbed) |
 
-## Next Steps
+## Open
 
-- [ ] Route all deploy actions through Command Hub as the single backend authority
-- [ ] Add service health indicators per project
-- [ ] Add GitHub activity feed
-- [ ] Replace shared password gate with stronger token/session auth
+- Wire `one-archive` read endpoint into the dashboard
+- Data enrichment pass
+- Use Room before inventing more systems
 
-## Lessons Learned
+## Notes
 
-- Next.js 15 — `useSearchParams()` must be wrapped in a `<Suspense>` boundary or build fails at static generation
-- `httpOnly` cookies can't be read by JS — keep auth logic server-side only
+Room is atmospheric but not yet a full work surface. Prefer real usage over new architecture.
