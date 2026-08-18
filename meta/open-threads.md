@@ -1,5 +1,5 @@
 # Open Threads — Full Backlog
-> Last updated: August 12, 2026
+> Last updated: August 18, 2026
 > This is the full todo list. Current sprint lives in `meta/context.md`.
 > **Hard constraint: $0 budget.** No paid APIs, rented GPU, or paid AutoTrain. HF free tier / Inference Providers still valid — Joe already set HF up.
 
@@ -16,10 +16,10 @@
 - [x] **Firestore access audit** — all writes use firebase-admin; rules do not apply server-side; all collections confirmed writing correctly (June 30)
 - [x] **META AUDIT** — all meta files verified against repo state (June 30); empire-state and open-threads corrected
 - [x] **Speak side-paths restored (Aug 7)** — fireVoices, text-call rescue, file prefetch, sub-persona `?voice=`, identity amend-only lock (`cfc96fff`)
+- [x] **Dashboard docs hygiene (Phase 3)** — public `docs/` aligned with meta (Aug 18). Home, projects, ONE section + boundary banners, HexBot, Control Hub, Infra, ManiBot, Nyx, philosophy. Product vs private held. [GROK 2026-08-18]
 - [ ] **Verify Plex-Sable Vercel deploy** — includes speak restore ≥ `cfc96fff` (still open; confirm production tip)
 - [ ] **Watch Plex's first self-written sediment commit** — verify post-wire write lands cleanly
 - [ ] **ONE-browser thread** — confirm repo location or close as superseded by plex-electron
-- [ ] **Dashboard docs hygiene (Phase 3 driver)** — public `docs/` lag meta. Home status still dated May 9; projects table incomplete; Hex/Control Hub/ONE pages outdated. ONE section currently closer to Plex-Sable than the product ONE System. [GROK 2026-08-12]
 
 ## 💡 Evaluate Soon (must stay $0)
 - [ ] **HF free inference path (ONE + Plex)** — Joe already prepared HF. Fix current Inference Providers route / `HF_TOKEN` on Vercel. Free tier only.

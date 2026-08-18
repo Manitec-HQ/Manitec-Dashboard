@@ -6,6 +6,8 @@
 
 ## August 2026
 
+**[Aug 18]** [GROK] Dashboard Phase 3 complete. Public docs brought in line with meta. Home status table + ONE card; projects index; ONE overview + ECKO/Nyxbot/Archive/Governance boundary banners; HexBot, Control Hub, Infra, tools; ManiBot Firestore truth; Nyx reduced to private/historical; Joe's Faves docs URL → info.manitec.pw; philosophy ECKO essay boundary + dead chatbot link removed. Product boundary held throughout: ONE = workshop; Plex/Nyx/Hex private. Blog/historical feature pages left intentional.
+
 **[Aug 12]** [GROK] Dashboard Phase 1 truth pass. Public docs lag meta significantly (home status still May 9, projects table incomplete, Hex/Control Hub pages outdated). Joe clarified: current ONE docs section more closely fits Plex-Sable; the product ONE System is different (both emerged from the original ONE section). Product boundary must stay clean. Phase 3 (docs hygiene) is the real driver. Proposed meta updates drafted for review before any write.
 
 **[Aug 10]** [GROK] Skimmed `Manitec/openhuman-plex` (private fork of tinyhumansai/openhuman). Full agent harness — not for wholesale absorb. Transfer value: autonomy matrix (ReadOnly/Supervised/Full + fail-closed command classes), approval-gate pattern, action_dir vs workspace_dir split, privacy≠autonomy axis, redaction, domain/controller layout. Map: Hex tool execution / supervised actions; ONE capability composition; leave graphs/channels/Tauri alone. Joe undecided on extraction. Detail: `meta/findings-2026-08-10-openhuman-plex.md`. [FOR-PPLX] consult before inventing a new tool-gate model.

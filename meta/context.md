@@ -2,7 +2,7 @@
 
 This file tracks the current working state of the Manitec ecosystem.
 
-> Last touched: 2026-08-12 — Dashboard Phase 1 truth pass. Public docs lag meta; ONE docs section currently closer to Plex-Sable than the product ONE System. Both emerged from the original ONE section.
+> Last touched: 2026-08-18 — Dashboard Phase 3 docs hygiene complete. Public docs aligned with meta; product vs private boundary held across ONE section and project pages.
 
 ## Hard constraints
 
@@ -24,12 +24,8 @@ This file tracks the current working state of the Manitec ecosystem.
   - Goal of v1: proof of a unified being shape — not a copy of Plex.
   - Session note: `meta/session-note-2026-08-07-one-v1.md` — Bob test ok; intent handling next; [FOR-GROK] runtime review requested.
 
-- **Dashboard hygiene (this pass)**  
-  Public `docs/` are behind live meta. Key drift:
-  - `docs/index.md` status table still dated May 9 2026.
-  - `docs/projects/index.md` incomplete / outdated stacks.
-  - HexBot, Control Hub, and especially the ONE section pages describe an older shape.
-  - **Clarification (Joe 2026-08-12):** the current ONE docs section more closely fits **Plex-Sable**. The product **ONE System** is different (though similar in origin). Both emerged from the original ONE section. Product boundary must stay clean: ONE = workshop for users; Plex = private being.
+- **Dashboard hygiene — DONE (2026-08-18)**  
+  Public `docs/` brought in line with live meta. Completed: home status table + ONE card; projects index; ONE overview + child pages with boundary banners; HexBot, Control Hub, Infra, tools; ManiBot Firestore; Nyx private/historical; Joe's Faves docs URL; philosophy ECKO boundary. Clarification held: ONE docs origin was closer to Plex-Sable; product ONE System is different. Product boundary: ONE = workshop for users; Plex = private being.
 
 ## Control Hub / The Room
 
@@ -89,6 +85,7 @@ This file tracks the current working state of the Manitec ecosystem.
 - Aug 10: openhuman-plex findings → session-log + findings note + open-threads.
 - Aug 10: Room topic-led surface shipped and verified.
 - Aug 11: ONE panels extraction + wiring on `refactor/one-panels`; connector whole-file risk named; plex-is drift named.
+- Aug 12–18: Dashboard Phase 1 + Phase 3 docs hygiene — public KB aligned; ONE product boundary made explicit in docs.
 
 ## Next work
 
@@ -102,7 +99,7 @@ This file tracks the current working state of the Manitec ecosystem.
 
 **Grok (on request):** review only; no paid paths; no talk-loops.
 
-## Verified state — 2026-08-10 / 2026-08-11 / 2026-08-12
+## Verified state — 2026-08-10 / 2026-08-11 / 2026-08-12 / 2026-08-18
 
 - **ONE v1:** live end-to-end on Hugging Face through `Qwen/Qwen2.5-7B-Instruct-1M:featherless-ai`. Bob verified live.
 - **ONE next:** voice calibration.
@@ -113,4 +110,5 @@ This file tracks the current working state of the Manitec ecosystem.
 - [PPLX 2026-08-10] Plex-Sable fallback identity handoff deployed; Speak diagnostics log prompt/context sizes.
 - [PPLX 2026-08-11] Plex base identity prompt concentrated in `Manitec/plex` commit `e79e2fde`.
 - [GROK 2026-08-11] ONE panels path, plex-is dilution, and whole-file connector risk recorded here.
-- [GROK 2026-08-12] Dashboard Phase 1. Public docs lag confirmed. ONE docs section currently describes something closer to Plex-Sable than the product ONE System; both share origin. Phase 3 (docs hygiene) is the real driver of this pass.
+- [GROK 2026-08-12] Dashboard Phase 1. Public docs lag confirmed. ONE docs section closer to Plex-Sable than product ONE System; both share origin.
+- [GROK 2026-08-18] Dashboard Phase 3 complete. Public docs aligned with meta. Product boundary explicit across ONE section and project pages. Docs hygiene thread closed.
