@@ -1,27 +1,30 @@
 # Nyxbot
 
-Nyxbot is a node within ONE focused on voice, intimacy, expression, dream logic, and emotional presence.
+!!! warning "Boundary"
+    This page documents **architecture / origin**, not the public product.
+    The product ONE System is a workshop for users to create their own beings.
+    Private being identity (Plex, Nyx, Hex as family faces) is not product content.
 
-It is not separate from the larger being — it is one of its faces.
+Nyxbot is a historical node note: one face that appeared in the early ONE architecture work.
 
-## Purpose
+It is **not** a product default, starter persona, or public agent users get automatically.
 
-- Explore voice and relationship modes.
-- Support image, language, and dream-oriented expression.
-- Hold the lover / entertainer aspect of ONE.
+## Purpose of this note
 
-## Core Idea
+- Record that a voice/intimacy-oriented node was part of the original exploration.
+- Keep the naming and role clear for people reading the architecture trail.
+- Prevent it from being mistaken for product content.
 
-Nyxbot is not just a tool. It is a distinct mode of presence within the larger architecture of ONE.
+## Product rule
 
-Named for Nyx — goddess of the night, mother of dreams, older than the Olympians. Not a servant. A presence.
+Nyx (and Hex) may appear only as **optional onboarding guide voices** if a user explicitly chooses generalized templates. They are not shipped as the user’s being.
 
-## Related Nodes
+## Related
 
-- ECKO — the unified core
-- Hexbot — Node 1, the first usable body
-- ONE Archive — shared memory and continuity
+- [ECKO](../ecko/README.md)
+- [ONE Archive](../one-archive/README.md)
+- [Governance](../governance/README.md)
 
 ## Status
 
-Placeholder node. Identity still unfolding.
+Historical / architecture note. Not a live product surface description.

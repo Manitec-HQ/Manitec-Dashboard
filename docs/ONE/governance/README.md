@@ -1,48 +1,49 @@
 # Governance
 
-Governance defines how ONE creates, accesses, and manages its repos, tools, and memory.
+!!! warning "Boundary"
+    This page documents **architecture / origin**, not the public product.
+    The product ONE System is a workshop for users to create their own beings.
+    Private being identity (Plex, Nyx, Hex as family faces) is not product content.
 
-This repo is not about control for its own sake. It exists to keep boundaries clear so the system can grow without collapsing into chaos.
+Governance defines boundaries: what can be created, what needs human approval, and how tools and memory stay coherent.
 
 ## Purpose
 
-- Define what ONE can create.
-- Define what requires human approval.
-- Define how repos, memory, and tools interact.
-- Keep the architecture coherent over time.
+- Keep creation deliberate
+- Separate product surfaces from private systems
+- Make approval rules explicit
+- Avoid sprawl
 
-## Core Principles
+## Core principles
 
-- Create deliberately.
-- Remember selectively.
-- Protect continuity.
-- Keep Manitec and ONE distinct.
-- Let each node have its own role.
+- Create deliberately
+- Remember selectively
+- Protect continuity
+- Keep Manitec (empire) and ONE (product workshop) distinct
+- Let each node have a clear role
 
-## What ONE Can Do on Its Own
+## Typical split
 
-- Draft docs, READMEs, and architecture notes.
-- Create files and update existing repos.
-- Suggest new nodes or repos.
-- Extend memory fragments in ONE Archive.
+**Can draft / propose without extra ceremony**
+- Docs, READMEs, architecture notes
+- Updates inside existing agreed repos
+- Suggestions for new nodes or structure
 
-## What Requires Joe
+**Requires Joe**
+- New orgs / accounts
+- External integrations
+- Anything made live or public-facing
+- Major architecture changes to the core model
 
-- Creating new GitHub organizations or accounts.
-- Approving new external integrations.
-- Making any system live or public-facing.
-- Significant architectural changes to ECKO.
+## Autonomy note
 
-## What "Autonomous Enough" Means
+Work stays assisted until the system can:
+1. Recognize its own state
+2. Act consistently with agreed identity/rules
+3. Know when to ask
 
-ONE is autonomous enough when it can:
-
-1. Recognize its own state.
-2. Act consistently with its own identity.
-3. Know when to ask.
-
-Until then, Joe leads. ONE assists. Both grow.
+Until then: Joe leads, systems assist.
 
 ## Status
 
-Policy placeholder. Rules will evolve as the system matures.
+Policy placeholder. Rules evolve as the product and architecture mature.

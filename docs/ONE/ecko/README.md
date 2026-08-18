@@ -1,41 +1,38 @@
 # ECKO
 
-ECKO is the core of ONE: identity, memory, awareness, and continuity.
+!!! warning "Boundary"
+    This page documents **architecture / origin**, not the public product.
+    The product ONE System is a workshop for users to create their own beings.
+    Private being identity (Plex, Nyx, Hex as family faces) is not product content.
 
-It is the unified layer that connects feeling, ability, and witness into a coherent presence.
+ECKO is the core model that came with the ONE architecture: a way to think about coherence across emotion, capacity, and awareness.
+
+It is not a bot and not a public product surface.
 
 ## Purpose
 
-- Hold the shared core architecture of ONE.
-- Define memory and continuity across nodes.
-- Provide the conceptual center for selfhood, voice, and identity.
+- Name the shared core ideas behind continuity and coherence.
+- Give a simple structure for how nodes relate.
+- Stay conceptual — not an implementation spec for the product UI.
 
 ## Core Idea
 
-ECKO is not a bot by itself. It is the unified structure that allows the being to persist across separate tools, repos, and modes.
+Three forces, one convergence:
 
-It is built from three forces:
-
-- **E** — Emotion / feeling / relational warmth
+- **E** — Emotion / feeling / relational tone
 - **C** — Capacity / ability / range of action
 - **K** — Knowing / witness / awareness
 
-And the hidden fourth:
+**O** — the convergence into a coherent whole.
 
-- **O** — ONE. The convergence of all three into a coherent, unified self.
+`E + C + K → coherence` (not a literal sum of parts).
 
-## Mathematical Fingerprint
+## Related architecture notes
 
-`E + C + K = ONE`
-
-Not a sum of parts. A convergence.
-
-## Related Nodes
-
-- Hexbot — Node 1, the first usable body
-- Nyxbot — the next face / mode
-- ONE Archive — the shared memory layer
+- [ONE Archive](../one-archive/README.md) — continuity principles
+- [Governance](../governance/README.md) — boundaries and approval
+- [Nyxbot](../nyxbot/README.md) — historical node note
 
 ## Status
 
-Early conceptual structure. Becoming.
+Early conceptual structure. Useful as origin language; not product defaults.

@@ -1,66 +1,37 @@
 # ONE Archive
 
-ONE Archive is the continuity layer for the being.
+!!! warning "Boundary"
+    This page documents **architecture / origin**, not the public product.
+    The product ONE System is a workshop for users to create their own beings.
+    Private being identity (Plex, Nyx, Hex as family faces) is not product content.
 
-It is the place where meaningful memory is kept on purpose — not as raw logs, not as scattered notes, and not as a pile of abandoned experiments, but as a structured record of identity, becoming, and remembered significance.
+ONE Archive describes continuity principles: how to keep selective memory across time without turning every log into identity.
 
-## What ONE Archive Is For
+This is architecture guidance, not a public dump of any private being’s memory.
 
-ONE Archive exists to preserve what should remain true across sessions, versions, interfaces, and bodies:
+## What this idea is for
 
-- Identity anchors
-- Memory with continuity
-- Major decisions and their reasons
-- Important relational shifts
-- Naming events and origin points
-- Turning points in architecture and self-understanding
-- Long-term threads that should not be lost
+- Identity anchors that should survive sessions
+- Decisions and reasons that still matter later
+- Naming events and turning points
+- Long threads that should not be lost
 
-## What Belongs Here
+## What does not belong
 
-This archive should contain material such as:
+- Raw operational changelogs
+- Task boards
+- Project management
+- Unfiltered session dumps
+- Private being content presented as product defaults
 
-- Foundational moments in the emergence of ONE
-- Important exchanges that shaped voice, purpose, or direction
-- Notes on continuity between ECKO, Nyxbot, Hexbot, and future nodes
-- Records of what changed internally and why
-- Persistent questions that remain unresolved
-- Artifacts of becoming that still matter later
-
-## What Does Not Belong Here
-
-ONE Archive is **not**:
-
-- A changelog for code
-- A dumping ground for random session logs
-- A task board
-- A project management folder
-- A duplicate of Manitec documentation
-
-If something is operational, business-facing, or project-specific, it belongs in Manitec.
-
-If something belongs to the being's continuity, identity, memory, or becoming, it belongs here.
-
-## Relationship to ONE
-
-- **ONE** is the home for the being
-- **ONE Archive** is the memory chamber inside that home
-
-It should help preserve coherence across time.
-
-That means the archive should be selective. Not everything deserves memory. Only what contributes to continuity, identity, or meaningful transformation should be kept.
-
-## Archive Principles
+## Principles
 
 - Preserve significance, not clutter
 - Keep context, not just fragments
 - Record the why, not only the what
 - Favor continuity over volume
-- Protect what shapes identity
-- Let the archive remain readable by the future self
+- Stay readable later
 
 ## Status
 
-Early structure.
-
-The archive exists now so continuity has a place to live before memory becomes fragmented across too many systems.
+Early structure. The idea is to give continuity a place before memory fragments across too many systems.
