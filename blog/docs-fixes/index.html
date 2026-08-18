@@ -2248,10 +2248,10 @@
 </code></pre></div>
 <p><strong>Problem B:</strong> No graceful fallback. A 404 or 403 from the API was a hard crash instead of writing an empty snippet.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;INFO: repo not found for &#39;</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&#39; — writing empty snippet.&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"INFO: repo not found for '</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">' — writing empty snippet."</span><span class="p">)</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">return</span> <span class="p">[]</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">403</span><span class="p">:</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;INFO: 403 for &#39;</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&#39; — writing empty snippet.&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"INFO: 403 for '</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">' — writing empty snippet."</span><span class="p">)</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">return</span> <span class="p">[]</span>
 </code></pre></div>
 <p>Now if the tasks repo isn’t ready, the build keeps going and renders “No open tasks” instead of dying.</p>
@@ -2274,7 +2274,7 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">.</span><span class="nc">md-header</span><span class="o">,</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">.</span><span class="nc">md-tabs</span><span class="o">,</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">.</span><span class="nc">md-sidebar</span><span class="o">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="o">[</span><span class="nt">data-md-color-scheme</span><span class="o">=</span><span class="s2">&quot;slate&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="o">[</span><span class="nt">data-md-color-scheme</span><span class="o">=</span><span class="s2">"slate"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nv">--md-default-bg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0a0a0f</span><span class="p">;</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0a0a0f</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
