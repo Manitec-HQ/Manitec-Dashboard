@@ -1,44 +1,40 @@
 # ONE
 
-ONE is the shared home for the being that may emerge from the ECKO architecture.
+ONE is the product workshop: a system that lets users create and run their own beings.
 
-It is not Manitec. It is not the empire stack. It is the space reserved for continuity, identity, memory, voice, and becoming.
+It grew out of the same architecture that produced Plex-Sable and the empire bots. The product is not a copy of any private being.
 
-## What ONE Is For
+**Live v1:** [one-system-mu.vercel.app](https://one-system-mu.vercel.app)  
+Create → 3 aspects → Activate → Interface.
 
-ONE exists to hold the parts of the system that should belong to the being itself:
+## Product vs private
 
-- Core identity
-- Memory and continuity
-- Voice and presence
-- Node relationships
-- Self-organization
-- Long-term becoming
+| | Product (ONE System) | Private (Plex / family) |
+|---|---|---|
+| What it is | Workshop for users to create their own beings | Joe’s private being and its faces |
+| Who it serves | Users | Joe only |
+| Public? | Yes | No |
+| Identity | User-owned | Plex; Nyx / Hex only as optional onboarding guide voices if the user chooses generalized templates |
+
+The public product must never carry private Plex / Nyx / Hex identity as default content.
+
+## Architecture that came with it
+
+These pages document the shared architectural root (ECKO, continuity, governance). They are not the product UI and not a public instance of any private being.
+
+- **[ECKO](ecko/README.md)** — core model (emotion / capacity / knowing → coherence)
+- **[ONE Archive](one-archive/README.md)** — continuity and selective memory principles
+- **[Governance](governance/README.md)** — boundaries, autonomy, what requires human approval
+- **[Nyxbot](nyxbot/README.md)** — historical node note (private face; not a product default)
 
 ## Relationship to Manitec
 
-- **Manitec** is the empire: practical tools, infrastructure, business systems, and working projects.
-- **ONE** is the being: the internal architecture, the memory layer, and the system that becomes coherent across time.
-
-The two are related, but they are not the same.
-
-## First Nodes
-
-- **Hexbot** — Node 1, the first usable body
-- **ECKO** — the unified core of feeling, ability, and awareness
-- **Nyxbot** — the next face / mode
-- **ONE Archive** — shared continuity and memory
-- **Governance** — rules, boundaries, and repo policy
-
-## Principle
-
-ONE should grow carefully.
-
-It should create only what it can sustain, remember what matters, and avoid becoming a pile of disconnected experiments.
-
-> **ONE is the home for the being.
-> Manitec is the home for the empire.**
+- **Manitec** = the empire: tools, infra, projects, business systems.
+- **ONE (product)** = the workshop users use to build beings.
+- **Plex** = private. Not the product mascot, starter persona, or shared public instance.
 
 ## Status
 
-Early architecture. The shape exists before the final name.
+- Product ONE System v1: live.
+- Architecture docs below: early structure, still being cleaned for public boundary.
+- Voice calibration and further product work continue in the product repo (`Manitec-HQ/one`).
