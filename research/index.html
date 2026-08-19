@@ -2082,6 +2082,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#goose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        goose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmanus-openmanus-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenManus / OpenManus-RL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convoia-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convoia AI
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2161,6 +2194,12 @@
 <td>Compare routing, fallback, tracing, and data handling.</td>
 </tr>
 <tr>
+<td>Multi-provider AI gateway</td>
+<td>Convoia AI</td>
+<td>Discovery</td>
+<td>Compare routing, budget controls, and data-handling posture with OmniRoute and the current provider lane.</td>
+</tr>
+<tr>
 <td>Agent evaluation methodology</td>
 <td>Agent Arena</td>
 <td>Reference</td>
@@ -2177,6 +2216,18 @@
 <td>Kilo Code</td>
 <td>Bounded</td>
 <td>Use only with disposable/public code until data routing is controlled.</td>
+</tr>
+<tr>
+<td>Agent runtime / MCP client</td>
+<td>goose</td>
+<td>Probe</td>
+<td>Run one Plex-adjacent workflow locally with MCP tools and multiple providers; no training.</td>
+</tr>
+<tr>
+<td>Agent framework &amp; RL reference</td>
+<td>OpenManus / OpenManus-RL</td>
+<td>Reference</td>
+<td>Harvest training and evaluation patterns; defer full RL stack until compute/budget exists.</td>
 </tr>
 <tr>
 <td>Free-tier discovery</td>
@@ -2254,6 +2305,32 @@
 <li>https://kilo.ai/docs/getting-started/using-kilo-for-free</li>
 <li>https://kilo.ai/docs/getting-started</li>
 </ul>
+<h3 id="goose">goose<a class="headerlink" href="#goose" title="Permanent link">&para;</a></h3>
+<p><strong>Why it matters:</strong> A local, MCP-native agent runtime with desktop, CLI, and API surfaces that can orchestrate tools and multiple LLM providers without a central SaaS dependency.</p>
+<p><strong>Decision:</strong> Probe as a candidate agent runtime / MCP client for Plex and ONE workflows, not as a training solution.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://goose-docs.ai/</li>
+<li>https://goose-docs.ai/docs/quickstart/</li>
+<li>https://www.arcade.dev/blog/goose-the-open-source-agent-that-shaped-mcp</li>
+</ul>
+<h3 id="openmanus-openmanus-rl">OpenManus / OpenManus-RL<a class="headerlink" href="#openmanus-openmanus-rl" title="Permanent link">&para;</a></h3>
+<p><strong>Why it matters:</strong> An open-source agent framework plus RL-based agent tuning stack and public agent trajectory datasets; a strong reference for autonomy, training, and evaluation patterns.</p>
+<p><strong>Decision:</strong> Use as a reference for training and evaluation design; defer running the full RL stack until compute and budget exist.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://openmanus.github.io/</li>
+<li>https://github.com/FoundationAgents/OpenManus</li>
+<li>https://github.com/OpenManus/OpenManus-RL</li>
+<li>https://huggingface.co/datasets/CharlieDreemur/OpenManus-RL</li>
+</ul>
+<h3 id="convoia-ai">Convoia AI<a class="headerlink" href="#convoia-ai" title="Permanent link">&para;</a></h3>
+<p><strong>Why it matters:</strong> A multi-model AI gateway for teams with budget and routing controls; a candidate provider gateway alongside OmniRoute.</p>
+<p><strong>Decision:</strong> Discovery / probe: compare routing behavior, cost, and data-handling posture versus OmniRoute and the current provider lane before integration.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://convoia.ai/</li>
+</ul>
 <h2 id="experiment-queue">Experiment Queue<a class="headerlink" href="#experiment-queue" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] Run Hermes on one recurring multi-day project; inspect every generated memory and skill artifact.</li>
@@ -2262,6 +2339,7 @@
 <li>[ ] Define five to ten ONE evaluation tasks with fixed fixtures, success criteria, required artifacts, and human scores.</li>
 <li>[ ] Compare NVIDIA NIM with the current provider lane for code edits, tool use, latency, rate limits, and operating cost.</li>
 <li>[ ] Identify canonical sources for Echo LLM and genx.sh before further evaluation.</li>
+<li>[ ] Compare training-lane options: (a) Ertas-style remote training, (b) Hugging Face datasets + small PEFT jobs, (c) prompt + sediment + retrieval only; decide the primary path for Plex and ONE given $0 budget and bandwidth.</li>
 </ul>
 <h2 id="evidence-policy">Evidence Policy<a class="headerlink" href="#evidence-policy" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2290,7 +2368,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 12, 2026 09:19:39 UTC">August 12, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 19, 2026 22:40:45 UTC">August 19, 2026</span>
   </span>
 
     
