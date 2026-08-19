@@ -9,9 +9,12 @@ Decision-oriented research for Manitec and ONE. This page tracks what is being e
 | Persistent learning and skills | Hermes Agent | Probe | Run a real multi-day task and inspect created memories and skills. |
 | Public-web research acquisition | Agent-Reach | Sandbox test | Test inside an isolated container with no production credentials. |
 | Multi-provider model routing | OmniRoute | Benchmark | Compare routing, fallback, tracing, and data handling. |
+| Multi-provider AI gateway | Convoia AI | Discovery | Compare routing, budget controls, and data-handling posture with OmniRoute and the current provider lane. |
 | Agent evaluation methodology | Agent Arena | Reference | Extract representative task and scoring patterns. |
 | Hosted and deployable model lane | NVIDIA Build / NIM | Benchmark | Compare tool use, latency, cost, and deployment burden. |
 | Agentic coding experimentation | Kilo Code | Bounded | Use only with disposable/public code until data routing is controlled. |
+| Agent runtime / MCP client | goose | Probe | Run one Plex-adjacent workflow locally with MCP tools and multiple providers; no training. |
+| Agent framework & RL reference | OpenManus / OpenManus-RL | Reference | Harvest training and evaluation patterns; defer full RL stack until compute/budget exists. |
 | Free-tier discovery | free-for.dev | Discovery | Validate any candidate independently before use. |
 | Echo LLM / genx.sh | Unresolved | Hold | Require a canonical source before evaluation. |
 
@@ -98,6 +101,41 @@ Decision-oriented research for Manitec and ONE. This page tracks what is being e
 - https://kilo.ai/docs/getting-started/using-kilo-for-free
 - https://kilo.ai/docs/getting-started
 
+### goose
+
+**Why it matters:** A local, MCP-native agent runtime with desktop, CLI, and API surfaces that can orchestrate tools and multiple LLM providers without a central SaaS dependency.
+
+**Decision:** Probe as a candidate agent runtime / MCP client for Plex and ONE workflows, not as a training solution.
+
+**Sources:**
+
+- https://goose-docs.ai/
+- https://goose-docs.ai/docs/quickstart/
+- https://www.arcade.dev/blog/goose-the-open-source-agent-that-shaped-mcp
+
+### OpenManus / OpenManus-RL
+
+**Why it matters:** An open-source agent framework plus RL-based agent tuning stack and public agent trajectory datasets; a strong reference for autonomy, training, and evaluation patterns.
+
+**Decision:** Use as a reference for training and evaluation design; defer running the full RL stack until compute and budget exist.
+
+**Sources:**
+
+- https://openmanus.github.io/
+- https://github.com/FoundationAgents/OpenManus
+- https://github.com/OpenManus/OpenManus-RL
+- https://huggingface.co/datasets/CharlieDreemur/OpenManus-RL
+
+### Convoia AI
+
+**Why it matters:** A multi-model AI gateway for teams with budget and routing controls; a candidate provider gateway alongside OmniRoute.
+
+**Decision:** Discovery / probe: compare routing behavior, cost, and data-handling posture versus OmniRoute and the current provider lane before integration.
+
+**Sources:**
+
+- https://convoia.ai/
+
 ## Experiment Queue
 
 - [ ] Run Hermes on one recurring multi-day project; inspect every generated memory and skill artifact.
@@ -106,6 +144,7 @@ Decision-oriented research for Manitec and ONE. This page tracks what is being e
 - [ ] Define five to ten ONE evaluation tasks with fixed fixtures, success criteria, required artifacts, and human scores.
 - [ ] Compare NVIDIA NIM with the current provider lane for code edits, tool use, latency, rate limits, and operating cost.
 - [ ] Identify canonical sources for Echo LLM and genx.sh before further evaluation.
+- [ ] Compare training-lane options: (a) Ertas-style remote training, (b) Hugging Face datasets + small PEFT jobs, (c) prompt + sediment + retrieval only; decide the primary path for Plex and ONE given $0 budget and bandwidth.
 
 ## Evidence Policy
 
